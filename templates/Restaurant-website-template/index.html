@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verdant Table | Organic Farm-to-Table Restaurant in India</title>
+<meta name="description" content="Verdant Table is India's premium organic, farm-to-table dining destination. Fresh seasonal menus, sustainably sourced ingredients, and an unforgettable dining experience. Reserve your table today.">
+<meta name="keywords" content="organic restaurant India, farm to table dining, sustainable restaurant, healthy fine dining India, green restaurant, best restaurant Bengaluru">
+<meta name="author" content="Verdant Table">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.verdanttable.in/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant.restaurant">
+<meta property="og:title" content="Verdant Table | Organic Farm-to-Table Restaurant in India">
+<meta property="og:description" content="Fresh seasonal menus, sustainably sourced ingredients, and an unforgettable organic dining experience in the heart of India.">
+<meta property="og:image" content="assets/images/og-cover.jpg">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Verdant Table">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Verdant Table | Organic Farm-to-Table Restaurant">
+<meta name="twitter:description" content="India's premium organic dining experience. Fresh, seasonal, sustainable.">
+
+<!-- Favicon (inline SVG, no external file needed) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%83%3C/text%3E%3C/svg%3E">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Verdant Table",
+  "image": "assets/images/og-cover.jpg",
+  "servesCuisine": ["Organic", "Indian", "Farm-to-table", "Continental"],
+  "priceRange": "₹₹₹",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "12th Main, Indiranagar",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "postalCode": "560038",
+    "addressCountry": "IN"
+  },
+  "telephone": "+91-80-4567-8900",
+  "openingHours": "Mo-Su 11:00-23:00",
+  "acceptsReservations": "True"
+}
+</script>
+
+<!-- Tailwind CSS (CDN, configured) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          moss: { 50:'#f2f7f0',100:'#e2edde',200:'#c5dbbd',300:'#a0c493',400:'#78a869',500:'#5a8b4a',600:'#456e39',700:'#37562f',800:'#2e4529',900:'#283a24',950:'#131f10' },
+          clay: { 50:'#fdf6ee',100:'#f9e9d4',200:'#f2d1a8',300:'#e9b271',400:'#df9046',500:'#d3752c',600:'#b45a22',700:'#93441f',800:'#78381f',900:'#63301c' },
+          cream: '#fbf7ee'
+        },
+        fontFamily: {
+          display: ['"Fraunces"','serif'],
+          body: ['"Inter"','sans-serif']
+        },
+        boxShadow: {
+          soft: '0 20px 60px -15px rgba(40,58,36,0.25)',
+          glow: '0 0 40px rgba(120,168,105,0.35)'
+        },
+        borderRadius: { '4xl':'2rem','5xl':'2.5rem' }
+      }
+    }
+  }
+</script>
+
+<!-- Premium typography -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{ --grain-opacity:.05; }
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
+  }
+  body{ font-family:'Inter',sans-serif; background:#fbf7ee; color:#283a24; }
+  .font-display{ font-family:'Fraunces',serif; }
+
+  /* Skip link */
+  .skip-link{position:absolute; left:-999px; top:auto; background:#283a24; color:#fff; padding:.75rem 1.25rem; z-index:100; border-radius:0 0 .5rem 0;}
+  .skip-link:focus{left:0; top:0;}
+
+  :focus-visible{ outline:3px solid #d3752c; outline-offset:3px; border-radius:4px; }
+
+  /* Grain overlay for texture (premium feel) */
+  .grain::before{
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity:var(--grain-opacity); mix-blend-mode:multiply;
+  }
+
+  /* Reveal-on-scroll */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  .reveal-scale{ opacity:0; transform:scale(.92); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal-scale.in{ opacity:1; transform:scale(1); }
+  .stagger > * { transition-delay:calc(var(--i,0) * 90ms); }
+
+  /* Blob morph animation */
+  .blob{ animation:morph 12s ease-in-out infinite; }
+  @keyframes morph{
+    0%,100%{ border-radius:42% 58% 65% 35% / 45% 40% 60% 55%; }
+    50%{ border-radius:60% 40% 30% 70% / 55% 60% 40% 45%; }
+  }
+  .float{ animation:float 6s ease-in-out infinite; }
+  .float-slow{ animation:float 9s ease-in-out infinite; }
+  @keyframes float{ 0%,100%{transform:translateY(0px) rotate(0deg);} 50%{transform:translateY(-18px) rotate(3deg);} }
+
+  /* Marquee */
+  .marquee-track{ display:flex; width:max-content; animation:marquee 32s linear infinite; }
+  .marquee:hover .marquee-track{ animation-play-state:paused; }
+  @keyframes marquee{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* Magnetic / glow button */
+  .btn-glow{ position:relative; overflow:hidden; isolation:isolate; }
+  .btn-glow::after{
+    content:""; position:absolute; inset:0; z-index:-1; opacity:0; transition:opacity .4s ease;
+    background:radial-gradient(120px 60px at var(--x,50%) var(--y,50%), rgba(255,255,255,.35), transparent 70%);
+  }
+  .btn-glow:hover::after{ opacity:1; }
+
+  /* Underline hover */
+  .link-underline{ background-image:linear-gradient(#d3752c,#d3752c); background-position:0 100%; background-repeat:no-repeat; background-size:0% 2px; transition:background-size .35s ease; }
+  .link-underline:hover, .link-underline:focus-visible{ background-size:100% 2px; }
+
+  /* Card tilt */
+  .tilt{ transition:transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease; }
+  .tilt:hover{ transform:translateY(-10px) rotate(-.5deg); }
+
+  /* Menu tab underline */
+  .tab-btn[aria-selected="true"]{ color:#283a24; }
+  .tab-btn[aria-selected="true"] .tab-underline{ transform:scaleX(1); }
+  .tab-underline{ transform:scaleX(0); transition:transform .35s cubic-bezier(.2,.7,.2,1); transform-origin:left; }
+
+  /* Accordion */
+  .acc-panel{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .45s cubic-bezier(.2,.7,.2,1); }
+  .acc-panel.open{ grid-template-rows:1fr; }
+  .acc-panel > div{ overflow:hidden; }
+  .acc-icon{ transition:transform .35s ease; }
+  .acc-item[data-open="true"] .acc-icon{ transform:rotate(45deg); }
+
+  /* Testimonial slider */
+  .t-track{ transition:transform .6s cubic-bezier(.2,.7,.2,1); }
+
+  /* Nav shrink */
+  #site-nav{ transition:background-color .35s ease, box-shadow .35s ease, padding .35s ease; }
+
+  /* Cursor-follow highlight for hero */
+  .noise-text{ background:linear-gradient(120deg,#456e39,#d3752c,#456e39); background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:sheen 6s linear infinite; }
+  @keyframes sheen{ to{ background-position:200% center; } }
+
+  ::selection{ background:#78a869; color:#fff; }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:#f2f7f0; }
+  ::-webkit-scrollbar-thumb{ background:#a0c493; border-radius:99px; }
+
+  /* Back to top */
+  #back-to-top{ opacity:0; pointer-events:none; transform:translateY(10px); transition:opacity .3s ease, transform .3s ease; }
+  #back-to-top.show{ opacity:1; pointer-events:auto; transform:translateY(0); }
+
+  .clip-wave{ clip-path: ellipse(70% 60% at 50% 40%); }
+
+/* sticky header CTA */
+
+  .download-pill{
+    position:fixed;
+    left:50%;
+    bottom:24px;
+    transform:translateX(-50%);
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    padding:12px 14px 12px 22px;
+
+    background:rgba(17,24,39,.92);
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:999px;
+
+    box-shadow:0 10px 40px rgba(0,0,0,.28);
+
+    z-index:9999;
+}
+
+.offer-text{
+    color:#fff;
+    font-weight:600;
+    white-space:nowrap;
+}
+
+.download-btn{
+    text-decoration:none;
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#fff;
+
+    font-weight:700;
+
+    padding:12px 24px;
+
+    border-radius:999px;
+
+    transition:.3s;
+
+    animation:ctaPulse 2.2s infinite;
+}
+
+.download-btn:hover{
+    transform:scale(1.08);
+}
+
+@keyframes ctaPulse{
+
+0%,100%{
+transform:scale(1);
+box-shadow:0 0 0 rgba(37,99,235,.5);
+}
+
+50%{
+transform:scale(1.08);
+box-shadow:0 0 25px rgba(37,99,235,.65);
+}
+
+}
+
+@media(max-width:768px){
+
+.download-pill{
+
+width:calc(100% - 30px);
+
+justify-content:space-between;
+
+padding:10px 14px;
+
+bottom:18px;
+
+}
+
+.offer-text{
+
+font-size:13px;
+
+}
+
+.download-btn{
+
+padding:10px 18px;
+font-size:14px;
+
+}
+
+}
+
+
+</style>
+</head>
+<body class="antialiased selection:bg-moss-500 selection:text-white">
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ============ sticky header CTA ============ -->
+<div class="download-pill">
+    <span class="offer-text">🎉 Limited Time Offer</span>
+
+    <a href="https://studio.lifehutsolutions.com/?product=p1784047721794" class="download-btn">
+        ⬇ Download Now
+    </a>
+</div>
+
+<!-- ============ HEADER / NAV ============ -->
+<header id="site-nav" class="fixed top-0 inset-x-0 z-50 bg-cream/80 backdrop-blur-md border-b border-moss-200/60 px-5 md:px-10 py-4">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between" aria-label="Primary">
+    <a href="#main-content" class="flex items-center gap-2 font-display text-2xl font-semibold text-moss-900" aria-label="Verdant Table home">
+      <span class="w-9 h-9 rounded-full bg-moss-600 text-cream grid place-items-center text-sm">🌿</span>
+      Verdant <span class="text-clay-500">Table</span>
+    </a>
+
+    <ul class="hidden lg:flex items-center gap-9 text-sm font-medium text-moss-800">
+      <li><a href="#about" class="link-underline pb-1">About</a></li>
+      <li><a href="#menu" class="link-underline pb-1">Menu</a></li>
+      <li><a href="#features" class="link-underline pb-1">Why Us</a></li>
+      <li><a href="#testimonials" class="link-underline pb-1">Reviews</a></li>
+      <li><a href="#faq" class="link-underline pb-1">FAQ</a></li>
+    </ul>
+
+    <div class="hidden lg:flex items-center gap-4">
+      <a href="tel:+918045678900" class="text-sm font-medium text-moss-800 link-underline pb-1">+91 80 4567 8900</a>
+      <a href="#cta" class="btn-glow inline-flex items-center gap-2 bg-moss-700 hover:bg-moss-800 text-cream text-sm font-semibold px-5 py-3 rounded-full shadow-soft transition-colors">
+        Reserve a Table
+      </a>
+    </div>
+
+    <button id="menu-toggle" class="lg:hidden w-11 h-11 grid place-items-center rounded-full border border-moss-300 text-moss-800" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </nav>
+
+  <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-2">
+    <ul class="flex flex-col gap-1 text-moss-900 font-medium">
+      <li><a href="#about" class="block px-3 py-3 rounded-lg hover:bg-moss-100">About</a></li>
+      <li><a href="#menu" class="block px-3 py-3 rounded-lg hover:bg-moss-100">Menu</a></li>
+      <li><a href="#features" class="block px-3 py-3 rounded-lg hover:bg-moss-100">Why Us</a></li>
+      <li><a href="#testimonials" class="block px-3 py-3 rounded-lg hover:bg-moss-100">Reviews</a></li>
+      <li><a href="#faq" class="block px-3 py-3 rounded-lg hover:bg-moss-100">FAQ</a></li>
+      <li class="pt-2"><a href="#cta" class="block text-center bg-moss-700 text-cream font-semibold px-5 py-3 rounded-full">Reserve a Table</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- ============ HERO ============ -->
+<section class="relative overflow-hidden pt-40 pb-28 px-5 md:px-10 grain" aria-labelledby="hero-heading">
+  <div class="absolute -top-24 -left-24 w-96 h-96 bg-moss-300/50 blob float-slow" aria-hidden="true"></div>
+  <div class="absolute top-40 -right-32 w-[28rem] h-[28rem] bg-clay-200/60 blob float" aria-hidden="true"></div>
+  <div class="absolute bottom-0 left-1/3 w-72 h-72 bg-moss-200/50 blob float-slow" aria-hidden="true"></div>
+
+  <div class="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <span class="reveal in inline-flex items-center gap-2 bg-moss-100 text-moss-700 text-xs font-semibold tracking-wide uppercase px-4 py-2 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-clay-500 animate-pulse"></span>
+        Farm-to-Table · Bengaluru, India
+      </span>
+
+      <h1 id="hero-heading" class="reveal in font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] font-semibold text-moss-950 mt-6">
+        Rooted in soil,
+        <span class="noise-text italic">crafted</span>
+        with care.
+      </h1>
+
+      <p class="reveal in mt-6 text-lg text-moss-800/90 max-w-xl">
+        Verdant Table brings India's finest organic produce to your plate — a seasonal, sustainable menu shaped daily by our partner farms, served with warmth in the heart of the city.
+      </p>
+
+      <div class="reveal in mt-9 flex flex-wrap items-center gap-4">
+        <a href="#cta" class="btn-glow bg-clay-500 hover:bg-clay-600 text-white font-semibold px-7 py-4 rounded-full shadow-soft transition-colors inline-flex items-center gap-2">
+          Reserve a Table
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#menu" class="font-semibold text-moss-900 border-2 border-moss-800/80 hover:bg-moss-900 hover:text-cream px-7 py-4 rounded-full transition-colors">
+          Explore the Menu
+        </a>
+      </div>
+
+      <dl class="reveal in mt-12 grid grid-cols-3 gap-6 max-w-md">
+        <div>
+          <dt class="sr-only">Years of sustainable dining</dt>
+          <dd class="font-display text-3xl font-semibold text-moss-900 counter" data-target="9">0</dd>
+          <p class="text-xs text-moss-700 mt-1">Years serving Bengaluru</p>
+        </div>
+        <div>
+          <dt class="sr-only">Partner organic farms</dt>
+          <dd class="font-display text-3xl font-semibold text-moss-900 counter" data-target="42">0</dd>
+          <p class="text-xs text-moss-700 mt-1">Partner organic farms</p>
+        </div>
+        <div>
+          <dt class="sr-only">Guest rating</dt>
+          <dd class="font-display text-3xl font-semibold text-moss-900"><span class="counter" data-target="4.9" data-decimal="1">0</span>/5</dd>
+          <p class="text-xs text-moss-700 mt-1">Average guest rating</p>
+        </div>
+      </dl>
+    </div>
+
+    <div class="reveal-scale in relative">
+      <div class="relative rounded-4xl overflow-hidden shadow-soft aspect-[4/5]">
+        <svg viewBox="0 0 400 500" class="w-full h-full" role="img" aria-label="Illustration of a chef plating a fresh organic salad bowl with garden vegetables">
+          <defs>
+            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#e2edde"/>
+              <stop offset="100%" stop-color="#c5dbbd"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="500" fill="url(#skyGrad)"/>
+          <circle cx="320" cy="90" r="55" fill="#f2d1a8" opacity="0.7"/>
+          <ellipse cx="200" cy="410" rx="170" ry="34" fill="#37562f" opacity="0.14"/>
+          <g transform="translate(70,180)">
+            <ellipse cx="130" cy="190" rx="130" ry="26" fill="#456e39" opacity="0.25"/>
+            <circle cx="130" cy="120" r="118" fill="#fbf7ee"/>
+            <circle cx="130" cy="120" r="98" fill="#e2edde"/>
+            <path d="M60 110 q70 -70 140 0 q-10 55 -70 60 q-60 -5 -70 -60z" fill="#78a869"/>
+            <circle cx="95" cy="105" r="12" fill="#d3752c"/>
+            <circle cx="150" cy="95" r="10" fill="#e9b271"/>
+            <circle cx="175" cy="125" r="11" fill="#93441f" opacity="0.8"/>
+            <circle cx="110" cy="140" r="9" fill="#f2d1a8"/>
+            <path d="M70 100 q10 -25 30 -10" stroke="#37562f" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M190 100 q-10 -25 -30 -10" stroke="#37562f" stroke-width="4" fill="none" stroke-linecap="round"/>
+          </g>
+          <g class="float" transform="translate(30,60)">
+            <path d="M0 30 q15 -35 40 -30 q-5 25 -40 30z" fill="#5a8b4a"/>
+          </g>
+          <g class="float-slow" transform="translate(300,300)">
+            <path d="M0 30 q15 -35 40 -30 q-5 25 -40 30z" fill="#d3752c"/>
+          </g>
+        </svg>
+      </div>
+      <div class="absolute -bottom-8 -left-8 bg-white rounded-3xl shadow-soft px-6 py-5 max-w-[220px] hidden sm:block">
+        <p class="font-display text-2xl text-moss-900 font-semibold">100%</p>
+        <p class="text-xs text-moss-700 mt-1">Organic-certified ingredients, sourced within 200km</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Partner marquee -->
+  <div class="marquee relative mt-24 border-y border-moss-200 py-6 overflow-hidden">
+    <div class="marquee-track gap-16 text-moss-500 font-display text-xl">
+      <span>Organic India Certified</span><span aria-hidden="true">•</span>
+      <span>FSSAI Approved</span><span aria-hidden="true">•</span>
+      <span>Zero Food Waste Kitchen</span><span aria-hidden="true">•</span>
+      <span>Featured in Condé Nast India</span><span aria-hidden="true">•</span>
+      <span>Times Food Awards 2025</span><span aria-hidden="true">•</span>
+      <span>Organic India Certified</span><span aria-hidden="true">•</span>
+      <span>FSSAI Approved</span><span aria-hidden="true">•</span>
+      <span>Zero Food Waste Kitchen</span><span aria-hidden="true">•</span>
+      <span>Featured in Condé Nast India</span><span aria-hidden="true">•</span>
+      <span>Times Food Awards 2025</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="relative py-28 px-5 md:px-10 bg-moss-950 text-cream overflow-hidden" aria-labelledby="about-heading">
+  <div class="absolute top-10 right-10 w-72 h-72 bg-moss-800 blob opacity-60" aria-hidden="true"></div>
+  <div class="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal order-2 lg:order-1 grid grid-cols-2 gap-5">
+      <div class="rounded-4xl overflow-hidden aspect-square shadow-soft translate-y-8 tilt">
+        <svg viewBox="0 0 200 200" class="w-full h-full" role="img" aria-label="Organic vegetables harvested in wicker basket">
+          <rect width="200" height="200" fill="#e2edde"/>
+          <circle cx="70" cy="70" r="35" fill="#5a8b4a"/>
+          <circle cx="130" cy="60" r="26" fill="#d3752c"/>
+          <circle cx="110" cy="130" r="30" fill="#93441f"/>
+          <circle cx="150" cy="140" r="22" fill="#78a869"/>
+        </svg>
+      </div>
+      <div class="rounded-4xl overflow-hidden aspect-square shadow-soft tilt">
+        <svg viewBox="0 0 200 200" class="w-full h-full" role="img" aria-label="Chef's hands preparing fresh herbs">
+          <rect width="200" height="200" fill="#c5dbbd"/>
+          <path d="M40 160 Q100 40 160 160 Z" fill="#456e39"/>
+          <circle cx="100" cy="90" r="18" fill="#f2d1a8"/>
+        </svg>
+      </div>
+      <div class="rounded-4xl overflow-hidden aspect-square shadow-soft tilt col-span-2 -mt-4">
+        <svg viewBox="0 0 400 180" class="w-full h-full" role="img" aria-label="Restaurant interior with wooden tables and greenery">
+          <rect width="400" height="180" fill="#f9e9d4"/>
+          <rect x="0" y="120" width="400" height="60" fill="#b45a22" opacity="0.35"/>
+          <circle cx="80" cy="60" r="30" fill="#78a869"/>
+          <circle cx="320" cy="50" r="24" fill="#5a8b4a"/>
+          <rect x="150" y="80" width="100" height="40" rx="8" fill="#e9b271"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="order-1 lg:order-2">
+      <p class="reveal text-clay-300 uppercase tracking-widest text-xs font-semibold">Our Story</p>
+      <h2 id="about-heading" class="reveal font-display text-4xl sm:text-5xl font-semibold mt-3 leading-tight">
+        From Indian soil to your table, honestly grown.
+      </h2>
+      <p class="reveal mt-6 text-moss-100/85 leading-relaxed">
+        Founded in 2017 by chef Ananya Rao, Verdant Table began as a single stall at a Bengaluru farmers' market. Today, it's a full dining destination built on one promise: every ingredient is organic, seasonal, and traceable to the farmer who grew it.
+      </p>
+      <p class="reveal mt-4 text-moss-100/85 leading-relaxed">
+        We work directly with over 40 smallholder farms across Karnataka and Tamil Nadu, cutting out middlemen so farmers earn fairly and our kitchen gets produce that's often harvested the same morning it's served.
+      </p>
+
+      <ul class="reveal stagger mt-8 grid sm:grid-cols-2 gap-4">
+        <li style="--i:0" class="reveal flex items-start gap-3">
+          <span class="w-9 h-9 shrink-0 rounded-full bg-moss-700 grid place-items-center" aria-hidden="true">🌱</span>
+          <span class="text-sm text-moss-100/90">100% chemical-free, certified organic sourcing</span>
+        </li>
+        <li style="--i:1" class="reveal flex items-start gap-3">
+          <span class="w-9 h-9 shrink-0 rounded-full bg-moss-700 grid place-items-center" aria-hidden="true">♻️</span>
+          <span class="text-sm text-moss-100/90">Zero-waste kitchen, compost returned to partner farms</span>
+        </li>
+        <li style="--i:2" class="reveal flex items-start gap-3">
+          <span class="w-9 h-9 shrink-0 rounded-full bg-moss-700 grid place-items-center" aria-hidden="true">🤝</span>
+          <span class="text-sm text-moss-100/90">Fair-trade pricing directly with 40+ Indian farms</span>
+        </li>
+        <li style="--i:3" class="reveal flex items-start gap-3">
+          <span class="w-9 h-9 shrink-0 rounded-full bg-moss-700 grid place-items-center" aria-hidden="true">👩‍🍳</span>
+          <span class="text-sm text-moss-100/90">Menus rewritten weekly around what's in season</span>
+        </li>
+      </ul>
+
+      <a href="#menu" class="reveal inline-flex items-center gap-2 mt-9 font-semibold text-clay-300 link-underline pb-1">
+        See what's on the menu this season
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section id="menu" class="py-28 px-5 md:px-10" aria-labelledby="menu-heading">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="reveal text-clay-600 uppercase tracking-widest text-xs font-semibold">Seasonal Menu</p>
+      <h2 id="menu-heading" class="reveal font-display text-4xl sm:text-5xl font-semibold text-moss-950 mt-3">
+        Dishes shaped by the harvest
+      </h2>
+      <p class="reveal mt-5 text-moss-700">
+        Every plate is built around what our farm partners bring in that week — expect small changes, big flavour, always organic.
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="reveal mt-14 flex justify-center">
+      <div role="tablist" aria-label="Menu categories" class="inline-flex flex-wrap justify-center gap-2 bg-moss-100 p-1.5 rounded-full">
+        <button class="tab-btn relative px-5 py-2.5 rounded-full text-sm font-semibold text-moss-600" role="tab" id="tab-starters" aria-controls="panel-starters" aria-selected="true" data-tab="starters">
+          Starters<span class="tab-underline absolute inset-0 -z-10 bg-white rounded-full shadow"></span>
+        </button>
+        <button class="tab-btn relative px-5 py-2.5 rounded-full text-sm font-semibold text-moss-600" role="tab" id="tab-mains" aria-controls="panel-mains" aria-selected="false" tabindex="-1" data-tab="mains">
+          Mains<span class="tab-underline absolute inset-0 -z-10 bg-white rounded-full shadow"></span>
+        </button>
+        <button class="tab-btn relative px-5 py-2.5 rounded-full text-sm font-semibold text-moss-600" role="tab" id="tab-desserts" aria-controls="panel-desserts" aria-selected="false" tabindex="-1" data-tab="desserts">
+          Desserts<span class="tab-underline absolute inset-0 -z-10 bg-white rounded-full shadow"></span>
+        </button>
+        <button class="tab-btn relative px-5 py-2.5 rounded-full text-sm font-semibold text-moss-600" role="tab" id="tab-drinks" aria-controls="panel-drinks" aria-selected="false" tabindex="-1" data-tab="drinks">
+          Drinks<span class="tab-underline absolute inset-0 -z-10 bg-white rounded-full shadow"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Panels -->
+    <div class="mt-14">
+      <div id="panel-starters" role="tabpanel" aria-labelledby="tab-starters" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Menu Item Card (reusable component) -->
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Beetroot &amp; Millet Tikki</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹320</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Foxtail millet, roasted beets, mint chutney, puffed amaranth.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">Vegan · Gluten-free</span>
+        </article>
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Heirloom Tomato Chaat</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹280</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Farm tomatoes, tamarind, sev, coriander, black salt.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">Vegetarian</span>
+        </article>
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Charred Corn Bhutta Soup</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹260</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Smoked corn, coconut milk, curry leaf oil.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">Vegan</span>
+        </article>
+      </div>
+
+      <div id="panel-mains" role="tabpanel" aria-labelledby="tab-mains" class="hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Malabar Jackfruit Curry</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹540</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Raw jackfruit, coconut, kokum, red rice.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">Vegan</span>
+        </article>
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Organic Chicken Sukka</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹620</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Free-range chicken, roasted coconut, Coorg spice.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">High-protein</span>
+        </article>
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Millet Khichdi Bowl</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹380</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Five-millet blend, seasonal greens, ghee tempering.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">Vegetarian · Gluten-free</span>
+        </article>
+      </div>
+
+      <div id="panel-desserts" role="tabpanel" aria-labelledby="tab-desserts" class="hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Jaggery Phirni</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹240</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Rice pudding, organic jaggery, toasted pistachio.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">Vegetarian</span>
+        </article>
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Mango &amp; Cardamom Kulfi</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹260</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Alphonso mango, cardamom, roasted almond.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">Seasonal</span>
+        </article>
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Ragi Chocolate Tart</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹300</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Finger-millet crust, 70% dark chocolate ganache.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">Vegetarian</span>
+        </article>
+      </div>
+
+      <div id="panel-drinks" role="tabpanel" aria-labelledby="tab-drinks" class="hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Turmeric Ginger Cooler</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹180</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Fresh turmeric, ginger, lime, jaggery syrup.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">Vegan</span>
+        </article>
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Sun Tea &amp; Tulsi</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹150</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Slow-brewed garden tulsi, lemongrass, honey.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">Caffeine-free</span>
+        </article>
+        <article class="reveal tilt bg-white rounded-3xl p-6 shadow-soft border border-moss-100">
+          <div class="flex justify-between items-start gap-3">
+            <h3 class="font-display text-xl font-semibold text-moss-950">Filter Coffee, Estate Beans</h3>
+            <span class="font-display text-lg text-clay-600 whitespace-nowrap">₹160</span>
+          </div>
+          <p class="text-sm text-moss-700 mt-2">Single-estate Coorg beans, traditional decoction.</p>
+          <span class="inline-block mt-4 text-xs font-semibold text-moss-600 bg-moss-100 px-3 py-1 rounded-full">Signature</span>
+        </article>
+      </div>
+    </div>
+
+    <div class="reveal text-center mt-14">
+      <a href="#cta" class="btn-glow inline-flex items-center gap-2 bg-moss-800 hover:bg-moss-900 text-cream font-semibold px-7 py-4 rounded-full shadow-soft transition-colors">
+        Book Your Table
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="features" class="py-28 px-5 md:px-10 bg-moss-100/60" aria-labelledby="features-heading">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="reveal text-clay-600 uppercase tracking-widest text-xs font-semibold">Why Verdant Table</p>
+      <h2 id="features-heading" class="reveal font-display text-4xl sm:text-5xl font-semibold text-moss-950 mt-3">
+        Dining that's good for you, and where it comes from
+      </h2>
+    </div>
+
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="reveal tilt bg-white rounded-4xl p-8 shadow-soft">
+        <div class="w-14 h-14 rounded-2xl bg-moss-600 text-cream grid place-items-center text-2xl mb-6" aria-hidden="true">🌾</div>
+        <h3 class="font-display text-xl font-semibold text-moss-950">Certified Organic</h3>
+        <p class="text-sm text-moss-700 mt-3 leading-relaxed">Every ingredient carries India Organic / NPOP certification, verified twice a year.</p>
+      </div>
+      <div class="reveal tilt bg-white rounded-4xl p-8 shadow-soft">
+        <div class="w-14 h-14 rounded-2xl bg-clay-500 text-white grid place-items-center text-2xl mb-6" aria-hidden="true">🚜</div>
+        <h3 class="font-display text-xl font-semibold text-moss-950">Farm-Direct Sourcing</h3>
+        <p class="text-sm text-moss-700 mt-3 leading-relaxed">We buy directly from 40+ farms within 200km, often harvested the same day.</p>
+      </div>
+      <div class="reveal tilt bg-white rounded-4xl p-8 shadow-soft">
+        <div class="w-14 h-14 rounded-2xl bg-moss-600 text-cream grid place-items-center text-2xl mb-6" aria-hidden="true">👩‍🍳</div>
+        <h3 class="font-display text-xl font-semibold text-moss-950">Chef-Led Seasonality</h3>
+        <p class="text-sm text-moss-700 mt-3 leading-relaxed">Our menu is rewritten weekly, shaped entirely by what's ready to harvest.</p>
+      </div>
+      <div class="reveal tilt bg-white rounded-4xl p-8 shadow-soft">
+        <div class="w-14 h-14 rounded-2xl bg-clay-500 text-white grid place-items-center text-2xl mb-6" aria-hidden="true">♻️</div>
+        <h3 class="font-display text-xl font-semibold text-moss-950">Zero-Waste Kitchen</h3>
+        <p class="text-sm text-moss-700 mt-3 leading-relaxed">Compost from our kitchen returns to partner farms — a closed, honest loop.</p>
+      </div>
+      <div class="reveal tilt bg-white rounded-4xl p-8 shadow-soft">
+        <div class="w-14 h-14 rounded-2xl bg-moss-600 text-cream grid place-items-center text-2xl mb-6" aria-hidden="true">🧾</div>
+        <h3 class="font-display text-xl font-semibold text-moss-950">Full Traceability</h3>
+        <p class="text-sm text-moss-700 mt-3 leading-relaxed">Scan the QR on your table to see exactly which farm grew your meal.</p>
+      </div>
+      <div class="reveal tilt bg-white rounded-4xl p-8 shadow-soft">
+        <div class="w-14 h-14 rounded-2xl bg-clay-500 text-white grid place-items-center text-2xl mb-6" aria-hidden="true">🤝</div>
+        <h3 class="font-display text-xl font-semibold text-moss-950">Fair to Farmers</h3>
+        <p class="text-sm text-moss-700 mt-3 leading-relaxed">No middlemen — our farm partners are paid fair, above-market prices.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" class="py-28 px-5 md:px-10 overflow-hidden" aria-labelledby="testimonials-heading">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="reveal text-clay-600 uppercase tracking-widest text-xs font-semibold">Guest Stories</p>
+      <h2 id="testimonials-heading" class="reveal font-display text-4xl sm:text-5xl font-semibold text-moss-950 mt-3">
+        Loved across Bengaluru
+      </h2>
+    </div>
+
+    <div class="reveal mt-16 relative max-w-3xl mx-auto">
+      <div class="overflow-hidden rounded-4xl">
+        <div id="t-track" class="t-track flex">
+          <!-- Slide 1 -->
+          <figure class="w-full shrink-0 bg-white rounded-4xl p-10 md:p-14 shadow-soft text-center">
+            <div class="flex justify-center gap-1 text-clay-500 mb-6" aria-hidden="true">★★★★★</div>
+            <blockquote class="font-display text-xl md:text-2xl text-moss-900 leading-snug">
+              "The most honest dining experience I've had in Bengaluru. You can genuinely taste that everything is fresh — this is what farm-to-table should mean."
+            </blockquote>
+            <figcaption class="mt-8">
+              <p class="font-semibold text-moss-950">Rhea Kapoor</p>
+              <p class="text-sm text-moss-600">Food Blogger, Bengaluru</p>
+            </figcaption>
+          </figure>
+          <!-- Slide 2 -->
+          <figure class="w-full shrink-0 bg-white rounded-4xl p-10 md:p-14 shadow-soft text-center">
+            <div class="flex justify-center gap-1 text-clay-500 mb-6" aria-hidden="true">★★★★★</div>
+            <blockquote class="font-display text-xl md:text-2xl text-moss-900 leading-snug">
+              "We hosted our anniversary dinner here — the millet khichdi bowl alone was worth the visit. Warm service, beautiful space, zero pretension."
+            </blockquote>
+            <figcaption class="mt-8">
+              <p class="font-semibold text-moss-950">Arjun &amp; Meera Nair</p>
+              <p class="text-sm text-moss-600">Regular Guests since 2021</p>
+            </figcaption>
+          </figure>
+          <!-- Slide 3 -->
+          <figure class="w-full shrink-0 bg-white rounded-4xl p-10 md:p-14 shadow-soft text-center">
+            <div class="flex justify-center gap-1 text-clay-500 mb-6" aria-hidden="true">★★★★★</div>
+            <blockquote class="font-display text-xl md:text-2xl text-moss-900 leading-snug">
+              "As a nutritionist, I recommend Verdant Table to every client in the city. Clean ingredients, thoughtful portions, and genuinely delicious."
+            </blockquote>
+            <figcaption class="mt-8">
+              <p class="font-semibold text-moss-950">Dr. Sanya Iyer</p>
+              <p class="text-sm text-moss-600">Clinical Nutritionist</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <button id="t-prev" class="hidden sm:grid absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-soft place-items-center text-moss-800 hover:bg-moss-700 hover:text-white transition-colors" aria-label="Previous testimonial">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button id="t-next" class="hidden sm:grid absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white shadow-soft place-items-center text-moss-800 hover:bg-moss-700 hover:text-white transition-colors" aria-label="Next testimonial">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <div id="t-dots" class="flex justify-center gap-2 mt-8" role="tablist" aria-label="Testimonial navigation">
+        <button class="t-dot w-2.5 h-2.5 rounded-full bg-moss-700" data-i="0" aria-label="Show testimonial 1" aria-selected="true"></button>
+        <button class="t-dot w-2.5 h-2.5 rounded-full bg-moss-300" data-i="1" aria-label="Show testimonial 2" aria-selected="false"></button>
+        <button class="t-dot w-2.5 h-2.5 rounded-full bg-moss-300" data-i="2" aria-label="Show testimonial 3" aria-selected="false"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="py-28 px-5 md:px-10 bg-moss-100/60" aria-labelledby="faq-heading">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="reveal text-clay-600 uppercase tracking-widest text-xs font-semibold">FAQ</p>
+      <h2 id="faq-heading" class="reveal font-display text-4xl sm:text-5xl font-semibold text-moss-950 mt-3">
+        Good to know before you visit
+      </h2>
+    </div>
+
+    <div class="reveal mt-14 space-y-4" id="accordion">
+      <div class="acc-item bg-white rounded-2xl shadow-soft" data-open="false">
+        <h3>
+          <button class="acc-trigger w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-semibold text-moss-950" aria-expanded="false" aria-controls="acc-panel-1">
+            Do you cater to vegan and gluten-free diets?
+            <svg class="acc-icon w-5 h-5 shrink-0 text-clay-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+        </h3>
+        <div class="acc-panel" id="acc-panel-1">
+          <div class="px-6 pb-5 text-moss-700 text-sm leading-relaxed">
+            Yes — over half our menu is vegan, and every dish is clearly labelled for gluten-free, dairy-free, and nut-free options. Just let your server know of any allergies.
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item bg-white rounded-2xl shadow-soft" data-open="false">
+        <h3>
+          <button class="acc-trigger w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-semibold text-moss-950" aria-expanded="false" aria-controls="acc-panel-2">
+            How far in advance should I book a table?
+          </button>
+        </h3>
+        <div class="acc-panel" id="acc-panel-2">
+          <div class="px-6 pb-5 text-moss-700 text-sm leading-relaxed">
+            We recommend booking 2-3 days ahead for weekday dinners, and at least a week ahead for weekends or festival dates, as tables fill quickly.
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item bg-white rounded-2xl shadow-soft" data-open="false">
+        <h3>
+          <button class="acc-trigger w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-semibold text-moss-950" aria-expanded="false" aria-controls="acc-panel-3">
+            Is home delivery available?
+          </button>
+        </h3>
+        <div class="acc-panel" id="acc-panel-3">
+          <div class="px-6 pb-5 text-moss-700 text-sm leading-relaxed">
+            Yes, we deliver across Indiranagar, Koramangala, and HSR Layout via our own delivery team to keep food quality and packaging sustainable — no third-party apps.
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item bg-white rounded-2xl shadow-soft" data-open="false">
+        <h3>
+          <button class="acc-trigger w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-semibold text-moss-950" aria-expanded="false" aria-controls="acc-panel-4">
+            Do you host private events or corporate dinners?
+          </button>
+        </h3>
+        <div class="acc-panel" id="acc-panel-4">
+          <div class="px-6 pb-5 text-moss-700 text-sm leading-relaxed">
+            Absolutely — our private dining room seats up to 24 guests, with custom seasonal menus available for corporate dinners, celebrations, and tastings.
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item bg-white rounded-2xl shadow-soft" data-open="false">
+        <h3>
+          <button class="acc-trigger w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-semibold text-moss-950" aria-expanded="false" aria-controls="acc-panel-5">
+            What are your operating hours?
+          </button>
+        </h3>
+        <div class="acc-panel" id="acc-panel-5">
+          <div class="px-6 pb-5 text-moss-700 text-sm leading-relaxed">
+            We're open daily from 11:00 AM to 11:00 PM, with lunch served until 3:30 PM and dinner from 7:00 PM onward.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section id="cta" class="relative py-28 px-5 md:px-10 overflow-hidden" aria-labelledby="cta-heading">
+  <div class="absolute inset-0 bg-moss-800"></div>
+  <div class="absolute -top-20 -right-20 w-80 h-80 bg-moss-700 blob float" aria-hidden="true"></div>
+  <div class="absolute -bottom-24 -left-16 w-72 h-72 bg-clay-600/40 blob float-slow" aria-hidden="true"></div>
+
+  <div class="relative max-w-4xl mx-auto text-center">
+    <h2 id="cta-heading" class="reveal font-display text-4xl sm:text-5xl font-semibold text-cream leading-tight">
+      Your table by the garden window is waiting.
+    </h2>
+    <p class="reveal mt-5 text-moss-100/85 max-w-xl mx-auto">
+      Reserve now and taste what genuinely organic, farm-fresh dining feels like — crafted fresh, every single day.
+    </p>
+
+    <form class="reveal mt-10 bg-cream rounded-3xl p-3 shadow-soft flex flex-col sm:flex-row gap-3 max-w-xl mx-auto" novalidate aria-label="Table reservation form">
+      <label for="cta-phone" class="sr-only">Phone number</label>
+      <input id="cta-phone" type="tel" required pattern="[0-9]{10}" placeholder="Enter your phone number"
+        class="flex-1 bg-transparent px-4 py-3 rounded-2xl text-moss-900 placeholder:text-moss-500 focus:outline-none focus:ring-2 focus:ring-moss-500">
+      <button type="submit" class="btn-glow bg-clay-500 hover:bg-clay-600 text-white font-semibold px-7 py-3 rounded-2xl transition-colors">
+        Reserve Now
+      </button>
+    </form>
+    <p class="reveal mt-4 text-xs text-moss-200">We'll confirm your reservation over SMS/WhatsApp within 30 minutes.</p>
+
+    <div class="reveal mt-10 flex flex-wrap items-center justify-center gap-6 text-cream/90 text-sm">
+      <span class="flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +91 80 4567 8900</span>
+      <span class="flex items-center gap-2"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Indiranagar, Bengaluru</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-moss-950 text-moss-200 pt-20 pb-8 px-5 md:px-10" role="contentinfo">
+  <div class="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+    <div>
+      <a href="#main-content" class="flex items-center gap-2 font-display text-2xl font-semibold text-cream">
+        <span class="w-9 h-9 rounded-full bg-moss-700 grid place-items-center text-sm">🌿</span>
+        Verdant Table
+      </a>
+      <p class="text-sm mt-4 leading-relaxed text-moss-300 max-w-xs">
+        Organic, farm-to-table dining in the heart of Bengaluru — honest food, honestly sourced.
+      </p>
+      <div class="flex items-center gap-3 mt-6">
+        <a href="#" aria-label="Verdant Table on Instagram" class="w-10 h-10 rounded-full border border-moss-700 grid place-items-center hover:bg-moss-700 transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" aria-label="Verdant Table on Facebook" class="w-10 h-10 rounded-full border border-moss-700 grid place-items-center hover:bg-moss-700 transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Verdant Table on WhatsApp" class="w-10 h-10 rounded-full border border-moss-700 grid place-items-center hover:bg-moss-700 transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav aria-label="Quick links">
+      <h4 class="font-display text-lg text-cream font-semibold">Explore</h4>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li><a href="#about" class="link-underline pb-1">About Us</a></li>
+        <li><a href="#menu" class="link-underline pb-1">Menu</a></li>
+        <li><a href="#features" class="link-underline pb-1">Why Us</a></li>
+        <li><a href="#testimonials" class="link-underline pb-1">Reviews</a></li>
+        <li><a href="#faq" class="link-underline pb-1">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="Legal links">
+      <h4 class="font-display text-lg text-cream font-semibold">Company</h4>
+      <ul class="mt-4 space-y-3 text-sm">
+        <li><a href="#" class="link-underline pb-1">Careers</a></li>
+        <li><a href="#" class="link-underline pb-1">Sustainability Report</a></li>
+        <li><a href="#" class="link-underline pb-1">Privacy Policy</a></li>
+        <li><a href="#" class="link-underline pb-1">Terms of Service</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <h4 class="font-display text-lg text-cream font-semibold">Stay in the loop</h4>
+      <p class="text-sm mt-4 text-moss-300">Seasonal menu drops &amp; harvest stories, straight to your inbox.</p>
+      <form class="mt-4 flex gap-2" aria-label="Newsletter signup">
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input id="newsletter-email" type="email" required placeholder="you@email.com"
+          class="flex-1 min-w-0 bg-moss-900 border border-moss-700 rounded-xl px-4 py-3 text-sm text-cream placeholder:text-moss-400 focus:outline-none focus:ring-2 focus:ring-moss-500">
+        <button type="submit" aria-label="Subscribe" class="btn-glow bg-clay-500 hover:bg-clay-600 rounded-xl px-4 grid place-items-center transition-colors">
+          <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto border-t border-moss-800 mt-14 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-moss-400">
+    <p>© 2026 Verdant Table Restaurant Pvt. Ltd. — Bengaluru, India. All rights reserved. —  FSSAI Lic. No. 12345678901234 </p>
+    <p>Powered by
+  <a href="https://lifehutsolutions.com/studio/" target="_blank" rel="noopener noreferrer">
+    Lifehut Studio
+  </a>.</p> 
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-moss-800 text-cream shadow-soft grid place-items-center hover:bg-moss-900 transition-colors" aria-label="Back to top">
+  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* Mobile menu toggle */
+  var menuToggle = document.getElementById('menu-toggle');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var iconOpen = document.getElementById('icon-open');
+  var iconClose = document.getElementById('icon-close');
+  menuToggle.addEventListener('click', function(){
+    var expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!expanded));
+    mobileMenu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileMenu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* Sticky nav shrink on scroll + back-to-top visibility */
+  var nav = document.getElementById('site-nav');
+  var backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 40) {
+      nav.classList.add('shadow-md','py-2');
+      nav.classList.remove('py-4');
+    } else {
+      nav.classList.remove('shadow-md','py-2');
+      nav.classList.add('py-4');
+    }
+    if (window.scrollY > 600) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
+  }, { passive: true });
+  backToTop.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* Scroll reveal via IntersectionObserver */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* Animated counters */
+  var counters = document.querySelectorAll('.counter');
+  function animateCounter(el){
+    var target = parseFloat(el.getAttribute('data-target'));
+    var decimals = parseInt(el.getAttribute('data-decimal') || '0', 10);
+    var duration = 1400;
+    var start = null;
+    function step(ts){
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var value = target * eased;
+      el.textContent = decimals ? value.toFixed(decimals) : Math.floor(value);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = decimals ? target.toFixed(decimals) : target;
+    }
+    requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window && counters.length) {
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          cio.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function(el){ cio.observe(el); });
+  }
+
+  /* Menu tabs */
+  var tabButtons = document.querySelectorAll('.tab-btn');
+  var panels = { starters: document.getElementById('panel-starters'), mains: document.getElementById('panel-mains'), desserts: document.getElementById('panel-desserts'), drinks: document.getElementById('panel-drinks') };
+  tabButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      tabButtons.forEach(function(b){ b.setAttribute('aria-selected','false'); b.setAttribute('tabindex','-1'); });
+      btn.setAttribute('aria-selected','true'); btn.setAttribute('tabindex','0');
+      Object.keys(panels).forEach(function(key){ panels[key].classList.add('hidden'); });
+      panels[btn.dataset.tab].classList.remove('hidden');
+      panels[btn.dataset.tab].querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    });
+    btn.addEventListener('keydown', function(e){
+      var idx = Array.prototype.indexOf.call(tabButtons, btn);
+      if (e.key === 'ArrowRight') { e.preventDefault(); tabButtons[(idx+1) % tabButtons.length].focus(); tabButtons[(idx+1) % tabButtons.length].click(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); tabButtons[(idx-1+tabButtons.length) % tabButtons.length].focus(); tabButtons[(idx-1+tabButtons.length) % tabButtons.length].click(); }
+    });
+  });
+
+  /* FAQ accordion */
+  document.querySelectorAll('.acc-item').forEach(function(item){
+    var trigger = item.querySelector('.acc-trigger');
+    var panel = item.querySelector('.acc-panel');
+    trigger.addEventListener('click', function(){
+      var isOpen = item.getAttribute('data-open') === 'true';
+      document.querySelectorAll('.acc-item').forEach(function(other){
+        other.setAttribute('data-open','false');
+        other.querySelector('.acc-trigger').setAttribute('aria-expanded','false');
+        other.querySelector('.acc-panel').classList.remove('open');
+      });
+      if (!isOpen) {
+        item.setAttribute('data-open','true');
+        trigger.setAttribute('aria-expanded','true');
+        panel.classList.add('open');
+      }
+    });
+  });
+
+  /* Testimonial slider */
+  var track = document.getElementById('t-track');
+  var dots = document.querySelectorAll('.t-dot');
+  var slideCount = track.children.length;
+  var current = 0;
+  function goTo(i){
+    current = (i + slideCount) % slideCount;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d, idx){
+      d.classList.toggle('bg-moss-700', idx === current);
+      d.classList.toggle('bg-moss-300', idx !== current);
+      d.setAttribute('aria-selected', idx === current ? 'true' : 'false');
+    });
+  }
+  document.getElementById('t-next').addEventListener('click', function(){ goTo(current + 1); });
+  document.getElementById('t-prev').addEventListener('click', function(){ goTo(current - 1); });
+  dots.forEach(function(d){ d.addEventListener('click', function(){ goTo(parseInt(d.dataset.i,10)); }); });
+  var autoSlide = setInterval(function(){ goTo(current + 1); }, 6000);
+  track.closest('section').addEventListener('mouseenter', function(){ clearInterval(autoSlide); });
+
+  /* Magnetic glow buttons - track pointer position for CSS var */
+  document.querySelectorAll('.btn-glow').forEach(function(btn){
+    btn.addEventListener('pointermove', function(e){
+      var rect = btn.getBoundingClientRect();
+      btn.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+      btn.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+    });
+  });
+
+  /* Basic form handling (front-end only, prevents actual submission for demo) */
+  document.querySelectorAll('form').forEach(function(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      if (!btn) return;
+      var original = btn.innerHTML;
+      btn.innerHTML = '✓ Received!';
+      btn.disabled = true;
+      setTimeout(function(){ btn.innerHTML = original; btn.disabled = false; form.reset(); }, 2200);
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Lifehut Studio Preview Viewer",
+  "description": "Fixed product preview showcase with device switcher, dual laptop+mobile view, scrollable HTML frame, interactive controls, and CTA bar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
