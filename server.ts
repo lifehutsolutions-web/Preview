@@ -93,12 +93,17 @@ async function startServer() {
               }
             }
 
+            const rawThumbnail = templateConfig.thumbnailUrl || templateConfig.imageUrl || templateConfig.image || '';
+            const thumbnailUrl = rawThumbnail ? rawThumbnail.replace(/^https:\/([^\/])/, 'https://$1') : undefined;
+
             templatesList.push({
               id: folderName,
               title: templateConfig.title || formatTitle(folderName),
               tagline: templateConfig.tagline || meta.tagline,
               description: templateConfig.description || meta.description,
               category: templateConfig.category || meta.category,
+              tag: templateConfig.tag || templateConfig.subTag || 'BUSINESS APPLICATION',
+              thumbnailUrl,
               price: templateConfig.price || meta.price,
               originalPrice: templateConfig.originalPrice || meta.originalPrice,
               badge: templateConfig.badge || meta.badge,

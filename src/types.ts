@@ -17,5 +17,6 @@ export interface ProductTemplate {
   rating?: number;
   salesCount?: number;
   thumbnailUrl?: string;
+  tag?: string;
 }
 

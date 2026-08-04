@@ -28,12 +28,17 @@ const globTemplatesList: ProductTemplate[] = Object.keys(rawHtmlMap).map((filePa
     }
   }
 
+  const rawThumbnail = config.thumbnailUrl || config.imageUrl || config.image || '';
+  const thumbnailUrl = rawThumbnail ? rawThumbnail.replace(/^https:\/([^\/])/, 'https://$1') : undefined;
+
   return {
     id: folderName,
     title: config.title || formatTitle(folderName),
     tagline: config.tagline || `${formatTitle(folderName)} - Modern Web Template`,
     description: config.description || `A modern, fully responsive ${formatTitle(folderName)} template built for high conversion.`,
     category: config.category || 'Website Template',
+    tag: config.tag || config.subTag || 'BUSINESS APPLICATION',
+    thumbnailUrl,
     price: config.price || '₹499',
     originalPrice: config.originalPrice || '₹2999',
     checkoutUrl: config.checkoutUrl || 'https://studio.lifehutsolutions.com/?product=p1784546590983',

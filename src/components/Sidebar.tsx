@@ -134,8 +134,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   onClick={() => onSelectTemplate(template)}
                   className={`relative w-full h-32 bg-gradient-to-br ${style.bg} p-3.5 flex flex-col justify-between cursor-pointer group select-none overflow-hidden`}
                 >
-                  {/* Subtle Grid overlay inside thumbnail */}
-                  <div className="absolute inset-0 bg-[radial-gradient(#fff_1px,transparent_1px)] opacity-10 [background-size:12px_12px] pointer-events-none" />
+                  {/* Custom Thumbnail Image Background if provided */}
+                  {template.thumbnailUrl && (
+                    <img
+                      src={template.thumbnailUrl}
+                      alt={template.title}
+                      className="absolute inset-0 w-full h-full object-cover z-0"
+                      onError={(e) => {
+                        (e.target as HTMLElement).style.display = 'none';
+                      }}
+                    />
+                  )}
+                  {/* Subtle Overlay */}
+                  <div className={`absolute inset-0 ${template.thumbnailUrl ? 'bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-slate-950/40' : 'bg-[radial-gradient(#fff_1px,transparent_1px)] opacity-10 [background-size:12px_12px]'} pointer-events-none z-0`} />
 
                   {/* Top Bar inside Thumbnail */}
                   <div className="flex items-center justify-between z-10">
@@ -152,12 +163,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
                   {/* Center Graphic Icon & Title inside Thumbnail */}
                   <div className="z-10 flex items-center gap-2.5 my-auto">
-                    <div className="w-9 h-9 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-xl shadow-inner shrink-0">
-                      {style.icon}
-                    </div>
+                    {!template.thumbnailUrl && (
+                      <div className="w-9 h-9 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-xl shadow-inner shrink-0">
+                        {style.icon}
+                      </div>
+                    )}
                     <div className="overflow-hidden">
                       <p className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold truncate">
-                        {style.tag}
+                        {template.tag || style.tag}
                       </p>
                       <h4 className="text-xs font-black text-white leading-tight truncate">
                         {template.title}
