@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     SEO META TAGS — these are also auto-synced from SITE_CONFIG
+     below (search "STEP 1" in the script at the bottom of this
+     file). Editing SITE_CONFIG is enough for 95% of users.
+     ============================================================ -->
+<title id="metaTitle">Your Business Name — Building Tomorrow, Today | Construction Company in India</title>
+<meta id="metaDescription" name="description" content="Your Business Name is a trusted construction company in Your City, India, delivering residential, commercial and industrial projects on time, every time.">
+<meta name="keywords" id="metaKeywords" content="construction company India, builders Your City, residential construction, commercial construction, Your Business Name">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Your Business Name">
+<link id="canonicalLink" rel="canonical" href="https://www.yourdomain.com/">
+
+<!-- Open Graph -->
+<meta id="ogTitle" property="og:title" content="Your Business Name — Building Tomorrow, Today">
+<meta id="ogDescription" property="og:description" content="Trusted construction partner in Your City, India. Residential, commercial &amp; industrial builds.">
+<meta property="og:type" content="website">
+<meta id="ogUrl" property="og:url" content="https://www.yourdomain.com/">
+<meta id="ogImage" property="og:image" content="https://www.yourdomain.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%97%EF%B8%8F%3C/text%3E%3C/svg%3E">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind (CDN, single file, no build step) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          yellow: { DEFAULT:'#FFC107', dark:'#E0A800' },
+          concrete: { DEFAULT:'#757575', light:'#A6A6A6', dark:'#4A4A4A' },
+          charcoal: { DEFAULT:'#212121', light:'#2E2E2E' },
+          orange: { DEFAULT:'#FF6F00' },
+          offwhite: '#FAFAFA',
+          green: { DEFAULT:'#4CAF50' }
+        },
+        fontFamily: {
+          heading: ['Oswald','sans-serif'],
+          body: ['Inter','sans-serif'],
+          mono: ['JetBrains Mono','monospace']
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  :root{
+    --safety-yellow:#FFC107;
+    --concrete-gray:#757575;
+    --charcoal:#212121;
+    --accent-orange:#FF6F00;
+    --off-white:#FAFAFA;
+    --construction-green:#4CAF50;
+  }
+  *{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+  body{ font-family:'Inter',sans-serif; background:var(--off-white); color:var(--charcoal); overflow-x:hidden; }
+  h1,h2,h3,h4,.font-heading{ font-family:'Oswald',sans-serif; }
+  .font-mono-eng{ font-family:'JetBrains Mono',monospace; }
+
+  /* ---------- Accessibility ---------- */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:3px solid var(--accent-orange); outline-offset:3px; border-radius:2px;
+  }
+  .skip-link{ position:absolute; left:-999px; top:0; background:var(--safety-yellow); color:var(--charcoal); padding:.75rem 1.25rem; z-index:9999; font-weight:700; }
+  .skip-link:focus{ left:1rem; top:1rem; }
+
+  /* ---------- Custom cursor (desktop only) ---------- */
+  .hammer-cursor{ position:fixed; top:0; left:0; width:34px; height:34px; pointer-events:none; z-index:9998; transform:translate(-6px,-4px); font-size:26px; transition:transform .06s linear; display:none; }
+  @media (hover:hover) and (pointer:fine){ .hammer-cursor{ display:block; } .cursor-active *{ cursor:none !important; } }
+
+  /* ---------- Loading screen ---------- */
+  #loadScreen{ position:fixed; inset:0; background:var(--charcoal); z-index:99999; display:flex; align-items:center; justify-content:center; flex-direction:column; transition:opacity .6s ease, visibility .6s ease; background-image:
+      repeating-linear-gradient(135deg, rgba(255,193,7,0.05) 0 18px, transparent 18px 36px); }
+  #loadScreen.hide{ opacity:0; visibility:hidden; pointer-events:none; }
+  .load-bar-outer{ width:280px; height:14px; background:#3a3a3a; border:2px solid var(--safety-yellow); border-radius:3px; overflow:hidden; }
+  .load-bar-inner{ height:100%; width:0%; background:linear-gradient(90deg,var(--safety-yellow),var(--accent-orange)); transition:width .25s ease; }
+  .beacon{ width:14px; height:14px; background:var(--accent-orange); border-radius:50%; box-shadow:0 0 20px 6px var(--accent-orange); animation:beaconSpin 1.2s linear infinite; }
+  @keyframes beaconSpin{ 0%,100%{ opacity:1; } 50%{ opacity:.25; } }
+
+  /* ---------- Build progress signature widget ---------- */
+  #buildProgress{ position:fixed; right:14px; bottom:14px; z-index:60; width:58px; height:78px; }
+  #buildProgress .plate{ position:absolute; bottom:0; width:100%; text-align:center; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--charcoal); background:var(--safety-yellow); padding:2px 0; border-radius:0 0 4px 4px; font-weight:700; }
+  .crane-hook{ position:fixed; top:0; left:0; height:100vh; width:3px; background:var(--concrete-gray); opacity:.25; z-index:40; display:none; }
+  @media (min-width:1024px){ .crane-hook{ display:block; left:12px; } }
+  .crane-hook .hook{ position:absolute; left:-9px; width:21px; height:21px; background:var(--charcoal); border:2px solid var(--safety-yellow); border-radius:4px; transition:top .05s linear; display:flex; align-items:center; justify-content:center; font-size:12px; }
+
+  /* ---------- Steel-beam headline reveal ---------- */
+  .beam-word{ display:inline-block; opacity:0; transform:translateX(-40px); animation:beamIn .7s cubic-bezier(.2,.8,.2,1) forwards; }
+  @keyframes beamIn{ to{ opacity:1; transform:translateX(0); } }
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- Container / Service card door ---------- */
+  .container-card{ position:relative; overflow:hidden; border:3px solid var(--charcoal); background:var(--charcoal); border-radius:6px; }
+  .container-card::before{ content:''; position:absolute; top:8px; left:8px; width:14px; height:14px; border:2px solid var(--safety-yellow); border-radius:2px; }
+  .container-card::after{ content:''; position:absolute; top:8px; right:8px; width:14px; height:14px; border:2px solid var(--safety-yellow); border-radius:2px; }
+  .container-door{ transition:transform .5s cubic-bezier(.2,.8,.2,1); }
+  .container-card:hover .container-door, .container-card:focus-within .container-door{ transform:translateX(-100%); }
+  .container-inside{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:1.5rem; text-align:center; }
+
+  /* ---------- Portfolio progress fill ---------- */
+  .progress-track{ background:#e5e5e5; border-radius:6px; overflow:hidden; height:10px; }
+  .progress-fill{ height:100%; background:linear-gradient(90deg,var(--construction-green),#7bd67f); width:0; transition:width 1.2s cubic-bezier(.2,.8,.2,1); }
+
+  /* ---------- Team ID card flip ---------- */
+  .id-card{ perspective:1200px; }
+  .id-inner{ position:relative; transition:transform .6s; transform-style:preserve-3d; }
+  .id-card:hover .id-inner, .id-card:focus-within .id-inner{ transform:rotateY(180deg); }
+  .id-front,.id-back{ backface-visibility:hidden; }
+  .id-back{ position:absolute; inset:0; transform:rotateY(180deg); }
+
+  /* ---------- Testimonial stamp ---------- */
+  .stamp{ display:inline-block; transform:rotate(-12deg) scale(1); border:3px solid var(--construction-green); color:var(--construction-green); font-weight:800; letter-spacing:.1em; padding:.15rem .6rem; border-radius:6px; font-family:'JetBrains Mono',monospace; opacity:0; animation:stampIn .4s ease .2s forwards; }
+  @keyframes stampIn{ 0%{ opacity:0; transform:rotate(-12deg) scale(1.8);} 100%{ opacity:1; transform:rotate(-12deg) scale(1);} }
+
+  /* ---------- Toolbox FAQ ---------- */
+  .toolbox summary::-webkit-details-marker{ display:none; }
+  .toolbox[open] .chev{ transform:rotate(180deg); }
+
+  /* ---------- Nav sign swing ---------- */
+  .site-sign{ transition:transform .25s ease; transform-origin:top center; }
+  .site-sign:hover, .site-sign:focus{ transform:rotate(-3deg); }
+
+  /* ---------- Misc ---------- */
+  .diagonal-stripes{ background-image:repeating-linear-gradient(45deg, var(--safety-yellow) 0 22px, var(--charcoal) 22px 44px); }
+  .blueprint-bg{ background-color:#0F3460; background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size:26px 26px; }
+  #blueprintOverlay{ position:fixed; inset:0; z-index:9990; pointer-events:none; opacity:0; transition:opacity .4s ease; background-color:rgba(15,52,96,.85); background-image:linear-gradient(rgba(255,255,255,.15) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.15) 1px,transparent 1px); background-size:32px 32px; }
+  #blueprintOverlay.show{ opacity:1; }
+  .dust-particle{ position:absolute; background:rgba(255,255,255,.5); border-radius:50%; animation:dustFloat linear infinite; }
+  @keyframes dustFloat{ 0%{ transform:translateY(0) translateX(0); opacity:0;} 10%{opacity:.6;} 90%{opacity:.4;} 100%{ transform:translateY(-120px) translateX(20px); opacity:0;} }
+  .marquee-track{ animation:marquee 30s linear infinite; }
+  @keyframes marquee{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  input,textarea,select{ background:#fff; }
+  ::selection{ background:var(--safety-yellow); color:var(--charcoal); }
+</style>
+</head>
+
+<body class="bg-offwhite text-charcoal font-body antialiased">
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ============================================================ -->
+<!-- LOADING SCREEN -->
+<!-- ============================================================ -->
+<div id="loadScreen" aria-hidden="true">
+  <div class="beacon mb-6"></div>
+  <p class="font-mono-eng text-yellow text-sm tracking-widest mb-3" id="loadLabel">PREPARING CONSTRUCTION SITE...</p>
+  <div class="load-bar-outer"><div class="load-bar-inner" id="loadBar"></div></div>
+  <p class="font-mono-eng text-concrete text-xs mt-3" id="loadPct">0%</p>
+</div>
+
+<!-- Blueprint easter-egg overlay -->
+<div id="blueprintOverlay"></div>
+
+<!-- Custom cursor -->
+<div class="hammer-cursor" id="hammerCursor" aria-hidden="true">🔨</div>
+
+<!-- Crane-cable scroll progress -->
+<div class="crane-hook" aria-hidden="true"><div class="hook" id="craneHook">🏗️</div></div>
+
+<!-- Signature build-progress widget -->
+<div id="buildProgress" aria-hidden="true">
+  <svg viewBox="0 0 58 78" width="58" height="78">
+    <rect x="18" y="60" width="22" height="14" fill="#757575" id="bp-foundation" opacity="0"/>
+    <rect x="18" y="40" width="22" height="20" fill="#9e9e9e" id="bp-frame" opacity="0"/>
+    <rect x="18" y="20" width="22" height="20" fill="#FFC107" id="bp-walls" opacity="0"/>
+    <rect x="18" y="8" width="22" height="12" fill="#FF6F00" id="bp-roof" opacity="0"/>
+    <rect x="26" y="0" width="6" height="8" fill="#212121" id="bp-crane" opacity="0"/>
+  </svg>
+  <div class="plate"><span id="buildPct">0</span>%</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- HEADER / NAVIGATION -->
+<!-- ============================================================ -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-charcoal/95 backdrop-blur border-b-4 border-yellow">
+  <nav class="max-w-7xl mx-auto px-5 lg:px-8 flex items-center justify-between h-20" aria-label="Primary">
+    <a href="#hero" class="flex items-center gap-2 font-heading text-xl md:text-2xl font-bold text-yellow" data-bind="business.name">
+      <span aria-hidden="true">🏗️</span> <span data-bind="business.name">Your Business Name</span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-2 font-heading text-sm tracking-wide uppercase text-offwhite">
+      <li><a href="#about" class="site-sign inline-block px-3 py-2 hover:text-yellow">Foundation</a></li>
+      <li><a href="#services" class="site-sign inline-block px-3 py-2 hover:text-yellow">Services</a></li>
+      <li><a href="#portfolio" class="site-sign inline-block px-3 py-2 hover:text-yellow">Projects</a></li>
+      <li><a href="#process" class="site-sign inline-block px-3 py-2 hover:text-yellow">Process</a></li>
+      <li><a href="#team" class="site-sign inline-block px-3 py-2 hover:text-yellow">Team</a></li>
+      <li><a href="#faq" class="site-sign inline-block px-3 py-2 hover:text-yellow">FAQ</a></li>
+      <li><a href="#blog" class="site-sign inline-block px-3 py-2 hover:text-yellow">Site Reports</a></li>
+    </ul>
+    <a href="#contact" class="hidden lg:inline-flex items-center gap-2 bg-yellow text-charcoal font-heading font-bold uppercase text-sm px-5 py-3 rounded hover:bg-white transition-colors">
+      🦺 Start Your Project
+    </a>
+    <button id="menuBtn" class="lg:hidden text-yellow p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="2" y="4" width="20" height="3"/><rect x="2" y="11" width="20" height="3"/><rect x="2" y="18" width="20" height="3"/></svg>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="lg:hidden hidden bg-charcoal border-t border-yellow/40">
+    <ul class="flex flex-col font-heading uppercase text-offwhite">
+      <li><a href="#about" class="block px-6 py-4 border-b border-white/10">Foundation</a></li>
+      <li><a href="#services" class="block px-6 py-4 border-b border-white/10">Services</a></li>
+      <li><a href="#portfolio" class="block px-6 py-4 border-b border-white/10">Projects</a></li>
+      <li><a href="#process" class="block px-6 py-4 border-b border-white/10">Process</a></li>
+      <li><a href="#team" class="block px-6 py-4 border-b border-white/10">Team</a></li>
+      <li><a href="#faq" class="block px-6 py-4 border-b border-white/10">FAQ</a></li>
+      <li><a href="#blog" class="block px-6 py-4 border-b border-white/10">Site Reports</a></li>
+      <li><a href="#contact" class="block px-6 py-4 text-yellow">🦺 Start Your Project</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================ -->
+<!-- HERO -->
+<!-- ============================================================ -->
+<section id="hero" class="relative min-h-screen flex items-center bg-charcoal text-offwhite pt-20 overflow-hidden">
+  <div class="absolute inset-0 opacity-20 diagonal-stripes" style="clip-path:polygon(0 92%,100% 100%,100% 100%,0 100%);"></div>
+  <div class="absolute inset-0 -z-0" aria-hidden="true">
+    <svg viewBox="0 0 1200 700" class="w-full h-full opacity-25" preserveAspectRatio="xMidYMax slice">
+      <rect x="0" y="560" width="1200" height="140" fill="#111"/>
+      <rect x="120" y="330" width="220" height="230" fill="#3a3a3a"/>
+      <rect x="360" y="260" width="180" height="300" fill="#333"/>
+      <rect x="560" y="400" width="200" height="160" fill="#3a3a3a"/>
+      <g stroke="#FFC107" stroke-width="4">
+        <line x1="900" y1="80" x2="900" y2="560"/>
+        <line x1="900" y1="90" x2="1100" y2="130"/>
+        <line x1="1080" y1="130" x2="1080" y2="220"/>
+        <line x1="900" y1="90" x2="820" y2="120"/>
+      </g>
+      <g stroke="#757575" stroke-width="2" opacity=".6">
+        <line x1="360" y1="260" x2="540" y2="260"/><line x1="360" y1="300" x2="540" y2="300"/>
+        <line x1="360" y1="340" x2="540" y2="340"/><line x1="360" y1="380" x2="540" y2="380"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-10 items-center w-full">
+    <div>
+      <p class="font-mono-eng text-yellow tracking-widest text-sm mb-4">🚧 SITE STATUS: NOW BUILDING</p>
+      <h1 class="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6" id="heroHeadline" data-bind="hero.headline">
+        <!-- animated word-by-word via JS -->
+      </h1>
+      <p class="text-lg text-concrete-light text-offwhite/80 max-w-xl mb-8" data-bind="hero.subheadline">We take your project from bare soil to finished building — on schedule, on budget, built to last.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#contact" class="group inline-flex items-center gap-2 bg-yellow text-charcoal font-heading font-bold uppercase px-7 py-4 rounded hover:bg-white transition-all">
+          🦺 Start Your Project
+        </a>
+        <a href="#portfolio" class="inline-flex items-center gap-2 border-2 border-offwhite/40 text-offwhite font-heading font-bold uppercase px-7 py-4 rounded hover:border-yellow hover:text-yellow transition-colors">
+          View Our Work
+        </a>
+      </div>
+      <div class="flex flex-wrap gap-8 mt-10 font-mono-eng text-sm">
+        <div><span class="text-yellow text-2xl font-bold block" data-bind="stats.0.value">520</span><span class="text-offwhite/60">Projects Delivered</span></div>
+        <div><span class="text-yellow text-2xl font-bold block" data-bind="business.established">2015</span><span class="text-offwhite/60">Founded</span></div>
+        <div><span class="text-yellow text-2xl font-bold block">100%</span><span class="text-offwhite/60">On-Time Handover</span></div>
+      </div>
+    </div>
+    <div class="hidden lg:block" aria-hidden="true">
+      <svg viewBox="0 0 400 420" class="w-full">
+        <rect x="60" y="260" width="280" height="160" fill="#2E2E2E" stroke="#FFC107" stroke-width="3"/>
+        <g id="heroFloors"></g>
+        <rect x="150" y="330" width="50" height="90" fill="#FFC107"/>
+      </svg>
+    </div>
+  </div>
+  <a href="#about" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-yellow animate-bounce" aria-label="Scroll to next section">▼</a>
+</section>
+
+<!-- ============================================================ -->
+<!-- ABOUT / OUR FOUNDATION -->
+<!-- ============================================================ -->
+<section id="about" class="py-24 bg-offwhite">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-14 items-start">
+      <div class="reveal">
+        <p class="font-mono-eng text-orange text-sm tracking-widest mb-3">01 / OUR FOUNDATION</p>
+        <h2 class="font-heading font-bold text-3xl sm:text-4xl mb-6">Every great build starts below the surface.</h2>
+        <p class="text-concrete-dark text-lg leading-relaxed mb-4" data-bind="about.paragraph1">
+          <span data-bind="business.name">Your Business Name</span> was founded on a simple idea: construction should be transparent, on-time, and built to outlast the paperwork. What started as a small site crew has grown into a full-service construction company trusted across <span data-bind="business.city">Your City</span>.
+        </p>
+        <p class="text-concrete-dark text-lg leading-relaxed" data-bind="about.paragraph2">
+          Today, our engineers, architects and site teams work as one crew — from the first site inspection to the day we hand you the keys.
+        </p>
+      </div>
+      <div class="reveal">
+        <ol class="relative border-l-4 border-yellow pl-8 space-y-8" id="timelineList"></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- STATS -->
+<!-- ============================================================ -->
+<section class="py-16 bg-charcoal text-offwhite">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8" id="statsGrid"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SERVICES -->
+<!-- ============================================================ -->
+<section id="services" class="py-24 bg-offwhite">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="font-mono-eng text-orange text-sm tracking-widest mb-3">02 / SERVICES</p>
+      <h2 class="font-heading font-bold text-3xl sm:text-4xl mb-4">What we build</h2>
+      <p class="text-concrete-dark text-lg">Open a container to see what's inside.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PORTFOLIO -->
+<!-- ============================================================ -->
+<section id="portfolio" class="py-24 bg-charcoal text-offwhite">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="font-mono-eng text-yellow text-sm tracking-widest mb-3">03 / SITE TOUR</p>
+      <h2 class="font-heading font-bold text-3xl sm:text-4xl mb-4">Projects under our belt</h2>
+      <p class="text-offwhite/70 text-lg">Hover a card to watch it complete.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PROCESS -->
+<!-- ============================================================ -->
+<section id="process" class="py-24 bg-offwhite">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="font-mono-eng text-orange text-sm tracking-widest mb-3">04 / SCHEDULE</p>
+      <h2 class="font-heading font-bold text-3xl sm:text-4xl mb-4">How a project moves with us</h2>
+    </div>
+    <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4" id="processGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TEAM -->
+<!-- ============================================================ -->
+<section id="team" class="py-24 bg-offwhite">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="font-mono-eng text-orange text-sm tracking-widest mb-3">05 / CREW</p>
+      <h2 class="font-heading font-bold text-3xl sm:text-4xl mb-4">Meet the site team</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" id="teamGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- TESTIMONIALS -->
+<!-- ============================================================ -->
+<section class="py-24 bg-charcoal text-charcoal" style="background:#EFEFEF;">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="font-mono-eng text-orange text-sm tracking-widest mb-3">06 / INSPECTION REPORTS</p>
+      <h2 class="font-heading font-bold text-3xl sm:text-4xl mb-4">What clients say after handover</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6" id="testimonialGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FAQ -->
+<!-- ============================================================ -->
+<section id="faq" class="py-24 bg-offwhite">
+  <div class="max-w-4xl mx-auto px-5 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <p class="font-mono-eng text-orange text-sm tracking-widest mb-3">07 / TOOLBOX</p>
+      <h2 class="font-heading font-bold text-3xl sm:text-4xl mb-4">Frequently asked questions</h2>
+    </div>
+    <div class="space-y-4" id="faqList"></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- BLOG / SITE REPORTS -->
+<!-- ============================================================ -->
+<section id="blog" class="py-24 bg-charcoal text-offwhite">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="font-mono-eng text-yellow text-sm tracking-widest mb-3">08 / DAILY SITE REPORTS</p>
+      <h2 class="font-heading font-bold text-3xl sm:text-4xl mb-4">From the site log</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6" id="blogGrid"></div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CONTACT -->
+<!-- ============================================================ -->
+<section id="contact" class="py-24 bg-offwhite">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="font-mono-eng text-orange text-sm tracking-widest mb-3">09 / SITE OFFICE</p>
+      <h2 class="font-heading font-bold text-3xl sm:text-4xl mb-4">Request a site visit</h2>
+      <p class="text-concrete-dark text-lg">Tell us about your project. We'll get back within one working day.</p>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-10">
+      <form id="intakeForm" class="bg-white border-2 border-charcoal/10 rounded-xl p-6 sm:p-8 shadow-sm reveal" novalidate>
+        <h3 class="font-heading font-bold text-xl mb-1">Project Intake Form</h3>
+        <p class="font-mono-eng text-xs text-concrete mb-6">FORM REF: SITE-INTAKE-01</p>
+        <div id="formSuccess" class="hidden bg-green/10 border border-green text-green-800 rounded-lg p-4 mb-6">
+          <p class="font-heading font-bold">✅ Project Registered</p>
+          <p class="text-sm">Our engineers will contact you shortly.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="sm:col-span-2">
+            <label for="f-name" class="block text-sm font-semibold mb-1">Your Name *</label>
+            <input id="f-name" name="name" type="text" required class="w-full border border-concrete-light rounded-md px-3 py-2.5">
+          </div>
+          <div>
+            <label for="f-phone" class="block text-sm font-semibold mb-1">Phone Number *</label>
+            <input id="f-phone" name="phone" type="tel" required class="w-full border border-concrete-light rounded-md px-3 py-2.5">
+          </div>
+          <div>
+            <label for="f-email" class="block text-sm font-semibold mb-1">Email *</label>
+            <input id="f-email" name="email" type="email" required class="w-full border border-concrete-light rounded-md px-3 py-2.5">
+          </div>
+          <div class="sm:col-span-2">
+            <label for="f-location" class="block text-sm font-semibold mb-1">Site Location</label>
+            <input id="f-location" name="location" type="text" placeholder="Area, City" class="w-full border border-concrete-light rounded-md px-3 py-2.5">
+          </div>
+          <div>
+            <label for="f-type" class="block text-sm font-semibold mb-1">Construction Type</label>
+            <select id="f-type" name="type" class="w-full border border-concrete-light rounded-md px-3 py-2.5">
+              <option>Residential</option><option>Commercial</option><option>Industrial</option><option>Renovation</option>
+            </select>
+          </div>
+          <div>
+            <label for="f-budget" class="block text-sm font-semibold mb-1">Estimated Budget</label>
+            <input id="f-budget" name="budget" type="text" placeholder="₹ In Lakhs" class="w-full border border-concrete-light rounded-md px-3 py-2.5">
+          </div>
+          <div class="sm:col-span-2">
+            <label for="f-timeline" class="block text-sm font-semibold mb-1">Preferred Timeline</label>
+            <input id="f-timeline" name="timeline" type="text" placeholder="e.g. Within 3 months" class="w-full border border-concrete-light rounded-md px-3 py-2.5">
+          </div>
+          <div class="sm:col-span-2">
+            <label for="f-message" class="block text-sm font-semibold mb-1">Project Details</label>
+            <textarea id="f-message" name="message" rows="4" class="w-full border border-concrete-light rounded-md px-3 py-2.5"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="mt-6 w-full bg-yellow text-charcoal font-heading font-bold uppercase py-4 rounded hover:bg-orange hover:text-white transition-colors">Request Site Visit</button>
+        <p class="text-xs text-concrete mt-3">* This demo form shows a success message only. Connect it to your email, CRM or WhatsApp API — see the Customization Guide PDF, or ask Lifehut Studio to wire it up for you.</p>
+      </form>
+
+      <div class="reveal">
+        <div class="bg-charcoal text-offwhite rounded-xl p-6 sm:p-8 mb-6">
+          <h3 class="font-heading font-bold text-xl mb-4">Site Office Details</h3>
+          <ul class="space-y-3 font-body text-sm">
+            <li>📍 <span data-bind="business.address">Your Street, Your Area, Your City, Your State - 600001, India</span></li>
+            <li>📞 <a class="hover:text-yellow" data-bind-href="tel" data-bind="business.phone">+91 98765 43210</a></li>
+            <li>💬 <a class="hover:text-yellow" data-bind-href="whatsapp" data-bind="business.whatsapp">+91 98765 43210</a></li>
+            <li>✉️ <a class="hover:text-yellow" data-bind-href="mailto" data-bind="business.email">info@yourdomain.com</a></li>
+            <li>🕒 <span data-bind="business.workingHours">Mon – Sat: 9:00 AM – 6:00 PM</span></li>
+          </ul>
+          <div class="flex gap-3 mt-6" id="socialIcons"></div>
+        </div>
+        <div class="rounded-xl overflow-hidden border-2 border-charcoal/10 h-64">
+          <iframe id="mapEmbed" title="Site location map" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src=""></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================ -->
+<!-- FOOTER -->
+<!-- ============================================================ -->
+<footer class="bg-charcoal text-offwhite pt-16 pb-8 border-t-8 diagonal-stripes">
+  <div class="bg-charcoal">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 pt-10 grid md:grid-cols-4 gap-10">
+      <div>
+        <p class="font-heading font-bold text-xl text-yellow mb-3" data-bind="business.name">Your Business Name</p>
+        <p class="text-offwhite/70 text-sm" data-bind="hero.subheadline">We take your project from bare soil to finished building — on schedule, on budget, built to last.</p>
+      </div>
+      <div>
+        <p class="font-heading font-bold uppercase text-sm text-yellow mb-3">Site Map</p>
+        <ul class="space-y-2 text-sm text-offwhite/70">
+          <li><a href="#about" class="hover:text-yellow">Foundation</a></li>
+          <li><a href="#services" class="hover:text-yellow">Services</a></li>
+          <li><a href="#portfolio" class="hover:text-yellow">Projects</a></li>
+          <li><a href="#contact" class="hover:text-yellow">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-heading font-bold uppercase text-sm text-yellow mb-3">Contact</p>
+        <ul class="space-y-2 text-sm text-offwhite/70">
+          <li data-bind="business.address">Your Street, Your City, India</li>
+          <li><a class="hover:text-yellow" data-bind-href="tel" data-bind="business.phone">+91 98765 43210</a></li>
+          <li><a class="hover:text-yellow" data-bind-href="mailto" data-bind="business.email">info@yourdomain.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-heading font-bold uppercase text-sm text-yellow mb-3">Follow the site</p>
+        <div class="flex gap-3" id="socialIconsFooter"></div>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-offwhite/60">
+      <p>© <span id="yearNow"></span> <span data-bind="business.legalName">Your Business Name Pvt. Ltd.</span> All rights reserved.</p>
+      <p>
+        Crafted with 🏗️ by
+        <a href="https://studio.lifehutsolutions.com/" target="_blank" rel="noopener" class="text-yellow hover:underline font-semibold">Lifehut Studio</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a id="whatsappFloat" href="#" target="_blank" rel="noopener" class="fixed bottom-6 left-6 z-50 bg-green text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition-transform" aria-label="Chat on WhatsApp">💬</a>
+
+<!-- ============================================================ -->
+<!-- LOCAL BUSINESS SCHEMA (SEO) — auto filled from SITE_CONFIG -->
+<!-- ============================================================ -->
+<script type="application/ld+json" id="ldJson"></script>
+
+<script>
+/* =====================================================================
+   ███████████████████████████████████████████████████████████████████
+   ██                                                                 ██
+   ██   CUSTOMIZE YOUR WEBSITE — EDIT ONLY THIS SECTION               ██
+   ██   No coding knowledge needed. Just replace the text between     ██
+   ██   the quotes " " below. Do NOT touch anything after the line    ██
+   ██   that says "DO NOT EDIT BELOW THIS LINE".                      ██
+   ██                                                                 ██
+   ██   Full instructions: see "Customization Guide.pdf"              ██
+   ██                                                                 ██
+   ███████████████████████████████████████████████████████████████████
+   ===================================================================== */
+const SITE_CONFIG = {
+
+  // ---------- 1. META / SEO ----------
+  meta: {
+    siteTitle: "Your Business Name — Building Tomorrow, Today | Construction Company in India",
+    metaDescription: "Your Business Name is a trusted construction company in Your City, India, delivering residential, commercial and industrial projects on time, every time.",
+    keywords: "construction company India, builders Your City, residential construction, commercial construction, Your Business Name",
+    canonicalUrl: "https://www.yourdomain.com/",
+    ogImage: "https://www.yourdomain.com/og-image.jpg"
+  },
+
+  // ---------- 2. BUSINESS DETAILS ----------
+  business: {
+    name: "Your Business Name",
+    legalName: "Your Business Name Pvt. Ltd.",
+    tagline: "Building Tomorrow, Today.",
+    city: "Your City",
+    state: "Your State",
+    address: "Your Street, Your Area, Your City, Your State - 600001, India",
+    phone: "+91 98765 43210",          // used for click-to-call
+    whatsapp: "919876543210",          // digits only, with country code, no + or spaces
+    email: "info@yourdomain.com",
+    workingHours: "Mon – Sat: 9:00 AM – 6:00 PM",
+    established: "2015",
+    mapQuery: "Your City, Your State, India", // used to build the Google Map
+    social: {
+      instagram: "https://instagram.com/yourbusiness",
+      facebook: "https://facebook.com/yourbusiness",
+      linkedin: "https://linkedin.com/company/yourbusiness",
+      youtube: "https://youtube.com/@yourbusiness"
+    }
+  },
+
+  // ---------- 3. HERO SECTION ----------
+  hero: {
+    headline: "Building Tomorrow, Today.",
+    subheadline: "We take your project from bare soil to finished building — on schedule, on budget, built to last."
+  },
+
+  // ---------- 4. ABOUT / OUR FOUNDATION ----------
+  about: {
+    paragraph1: "Your Business Name was founded on a simple idea: construction should be transparent, on-time, and built to outlast the paperwork. What started as a small site crew has grown into a full-service construction company trusted across Your City.",
+    paragraph2: "Today, our engineers, architects and site teams work as one crew — from the first site inspection to the day we hand you the keys.",
+    timeline: [
+      { label:"Planning", desc:"Requirement study, feasibility and design sign-off." },
+      { label:"Excavation", desc:"Soil testing and site clearance before we break ground." },
+      { label:"Foundation", desc:"Piling and footing work, engineered for the soil report." },
+      { label:"Construction", desc:"Structure, walls, MEP and finishing, tracked weekly." },
+      { label:"Completion", desc:"Final inspection, snag-list closure and handover." }
+    ]
+  },
+
+  // ---------- 5. STATS ----------
+  stats: [
+    { value:520, suffix:"+", label:"Projects Delivered" },
+    { value:11,  suffix:"",  label:"Years in Business" },
+    { value:98,  suffix:"%", label:"Client Satisfaction" },
+    { value:60,  suffix:"+", label:"Skilled Engineers" }
+  ],
+
+  // ---------- 6. SERVICES (Construction Containers) ----------
+  services: [
+    { icon:"🏠", title:"Residential Construction", desc:"Custom homes, villas and apartment blocks built to your family's brief and budget." },
+    { icon:"🏢", title:"Commercial Construction", desc:"Offices, retail and hospitality spaces designed for footfall and function." },
+    { icon:"🏭", title:"Industrial Construction", desc:"Factories, warehouses and industrial sheds engineered for heavy use." },
+    { icon:"🛠️", title:"Renovation & Remodeling", desc:"Structural upgrades, interior remodels and facade renewals." },
+    { icon:"📐", title:"Architecture & Design", desc:"In-house architects turn your brief into approved, buildable drawings." },
+    { icon:"🚧", title:"Project Management", desc:"One point of contact tracking cost, quality and schedule end to end." }
+  ],
+
+  // ---------- 7. PORTFOLIO ----------
+  portfolio: [
+    { title:"Skyline Residency", category:"Residential", progress:100 },
+    { title:"Orion Business Park", category:"Commercial", progress:100 },
+    { title:"Greenfield Warehouse", category:"Industrial", progress:90 },
+    { title:"Lakeview Villas", category:"Residential", progress:100 },
+    { title:"Metro Retail Plaza", category:"Commercial", progress:75 },
+    { title:"Sunrise Apartments", category:"Residential", progress:100 }
+  ],
+
+  // ---------- 8. PROCESS ----------
+  process: [
+    { title:"Site Inspection" }, { title:"Planning" }, { title:"Foundation" },
+    { title:"Structure" }, { title:"Interior" }, { title:"Delivery" }
+  ],
+
+  // ---------- 9. TEAM ----------
+  team: [
+    { name:"Add Name", role:"Project Manager", id:"021" },
+    { name:"Add Name", role:"Site Engineer", id:"022" },
+    { name:"Add Name", role:"Architect", id:"023" },
+    { name:"Add Name", role:"Safety Officer", id:"024" }
+  ],
+
+  // ---------- 10. TESTIMONIALS ----------
+  testimonials: [
+    { name:"Client Name", role:"Homeowner, Your City", rating:5, quote:"Handed over two weeks early with zero surprises on cost. Site was clean and safe the whole way through." },
+    { name:"Client Name", role:"Director, Local Business", rating:5, quote:"Clear weekly updates and a team that actually answers the phone. Would build with them again." },
+    { name:"Client Name", role:"Homeowner, Your City", rating:5, quote:"Quality of finishing was well above what we expected for the budget we gave them." }
+  ],
+
+  // ---------- 11. FAQ ----------
+  faq: [
+    { q:"How long does a typical residential project take?", a:"Most independent homes are completed in 8–12 months from foundation to handover, depending on size and design complexity." },
+    { q:"Do you handle approvals and permits?", a:"Yes, our team manages plan approvals, NOCs and completion certificates as part of the project scope." },
+    { q:"Can I visit the site during construction?", a:"Absolutely. We encourage scheduled site visits and share weekly photo and video progress reports." },
+    { q:"What is included in your quote?", a:"Material, labour, project management and standard finishes are included; optional upgrades are quoted separately and always approved by you first." },
+    { q:"Do you offer post-handover support?", a:"Yes, every project comes with a defect-liability period and a dedicated support contact after handover." }
+  ],
+
+  // ---------- 12. BLOG / SITE REPORTS ----------
+  blog: [
+    { date:"12 Jul 2026", weather:"☀️ Clear", status:"Foundation — 100%", title:"Why soil testing decides your foundation design", excerpt:"A short guide to why we never skip geotechnical testing before we pour." },
+    { date:"05 Jul 2026", weather:"⛅ Cloudy", status:"Structure — 60%", title:"Choosing the right concrete grade for your build", excerpt:"M20 vs M25 vs M30 — what the numbers actually mean for your home." },
+    { date:"28 Jun 2026", weather:"🌧️ Monsoon", status:"Planning — 100%", title:"Monsoon-proofing your construction schedule", excerpt:"How we plan around Chennai's monsoon without losing weeks of progress." }
+  ]
+};
+/* =====================================================================
+   DO NOT EDIT BELOW THIS LINE
+   ===================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  const C = SITE_CONFIG;
+  const get = (obj, path) => path.split('.').reduce((o,k)=> (o||{})[k], obj);
+
+  /* ---------- STEP 1: SEO / META sync ---------- */
+  document.title = C.meta.siteTitle;
+  document.getElementById('metaTitle').textContent = C.meta.siteTitle;
+  document.getElementById('metaDescription').setAttribute('content', C.meta.metaDescription);
+  document.getElementById('metaKeywords').setAttribute('content', C.meta.keywords);
+  document.getElementById('canonicalLink').setAttribute('href', C.meta.canonicalUrl);
+  document.getElementById('ogTitle').setAttribute('content', C.meta.siteTitle);
+  document.getElementById('ogDescription').setAttribute('content', C.meta.metaDescription);
+  document.getElementById('ogUrl').setAttribute('content', C.meta.canonicalUrl);
+  document.getElementById('ogImage').setAttribute('content', C.meta.ogImage);
+
+  document.getElementById('ldJson').textContent = JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"GeneralContractor",
+    "name": C.business.name,
+    "legalName": C.business.legalName,
+    "url": C.meta.canonicalUrl,
+    "telephone": C.business.phone,
+    "email": C.business.email,
+    "address": { "@type":"PostalAddress", "streetAddress": C.business.address, "addressCountry":"IN" },
+    "areaServed": C.business.city,
+    "sameAs": Object.values(C.business.social || {})
+  });
+
+  /* ---------- STEP 2: simple data-bind text/links ---------- */
+  document.querySelectorAll('[data-bind]').forEach(el => {
+    const val = get(C, el.getAttribute('data-bind'));
+    if (val !== undefined) el.textContent = val;
+  });
+  document.querySelectorAll('[data-bind-href]').forEach(el => {
+    const type = el.getAttribute('data-bind-href');
+    const raw = el.textContent.trim();
+    if (type === 'tel') el.setAttribute('href', 'tel:' + raw.replace(/\s+/g,''));
+    if (type === 'mailto') el.setAttribute('href', 'mailto:' + raw);
+    if (type === 'whatsapp') el.setAttribute('href', 'https://wa.me/' + C.business.whatsapp);
+  });
+
+  /* ---------- STEP 3: Hero headline beam-in ---------- */
+  const headlineEl = document.getElementById('heroHeadline');
+  headlineEl.innerHTML = C.hero.headline.split(' ').map((w,i)=>
+    `<span class="beam-word" style="animation-delay:${i*0.12}s">${w}&nbsp;</span>`).join('');
+
+  /* ---------- STEP 4: Timeline ---------- */
+  const timelineHTML = C.about.timeline.map(t => `
+    <li class="reveal">
+      <span class="absolute -left-[42px] w-6 h-6 bg-yellow border-4 border-offwhite rounded-full"></span>
+      <p class="font-heading font-bold text-lg">${t.label}</p>
+      <p class="text-concrete-dark text-sm">${t.desc}</p>
+    </li>`).join('');
+  document.getElementById('timelineList').innerHTML = timelineHTML;
+
+  /* ---------- STEP 5: Stats ---------- */
+  document.getElementById('statsGrid').innerHTML = C.stats.map((s,i) => `
+    <div class="text-center reveal" style="transition-delay:${i*80}ms">
+      <p class="font-mono-eng text-4xl sm:text-5xl font-bold text-yellow"><span class="stat-num" data-target="${s.value}">0</span>${s.suffix}</p>
+      <p class="text-offwhite/70 text-sm uppercase tracking-wide mt-2">${s.label}</p>
+    </div>`).join('');
+
+  /* ---------- STEP 6: Services (containers) ---------- */
+  document.getElementById('servicesGrid').innerHTML = C.services.map((s,i) => `
+    <div class="container-card h-52 reveal" style="transition-delay:${i*60}ms" tabindex="0">
+      <div class="container-inside">
+        <div>
+          <p class="font-mono-eng text-yellow text-xs mb-2">CONTAINER 0${i+1}</p>
+          <p class="font-heading font-bold text-lg text-offwhite">${s.title}</p>
+        </div>
+      </div>
+      <div class="container-door absolute inset-0 bg-concrete flex flex-col items-center justify-center text-center p-6">
+        <span class="text-4xl mb-3" aria-hidden="true">${s.icon}</span>
+        <p class="font-heading font-bold text-offwhite mb-2">${s.title}</p>
+        <p class="text-offwhite/80 text-sm">${s.desc}</p>
+      </div>
+    </div>`).join('');
+
+  /* ---------- STEP 7: Portfolio ---------- */
+  document.getElementById('portfolioGrid').innerHTML = C.portfolio.map((p,i) => `
+    <div class="group bg-charcoal-light border border-white/10 rounded-xl p-5 reveal" style="transition-delay:${i*60}ms">
+      <div class="h-32 rounded-lg mb-4 blueprint-bg flex items-center justify-center text-3xl">🏗️</div>
+      <p class="font-mono-eng text-xs text-yellow mb-1">${p.category.toUpperCase()}</p>
+      <p class="font-heading font-bold text-lg mb-3">${p.title}</p>
+      <div class="progress-track"><div class="progress-fill portfolio-fill" data-target="${p.progress}"></div></div>
+      <p class="font-mono-eng text-xs text-offwhite/60 mt-2">Progress <span class="portfolio-pct">0</span>%</p>
+    </div>`).join('');
+
+  /* ---------- STEP 8: Process ---------- */
+  document.getElementById('processGrid').innerHTML = C.process.map((p,i) => `
+    <div class="text-center reveal" style="transition-delay:${i*70}ms">
+      <div class="w-12 h-12 mx-auto rounded-full bg-yellow text-charcoal font-mono-eng font-bold flex items-center justify-center mb-3">${i+1}</div>
+      <p class="font-heading font-semibold text-sm">${p.title}</p>
+    </div>`).join('');
+
+  /* ---------- STEP 9: Team ---------- */
+  document.getElementById('teamGrid').innerHTML = C.team.map((t,i) => `
+    <div class="id-card h-56 reveal" style="transition-delay:${i*60}ms" tabindex="0">
+      <div class="id-inner h-full">
+        <div class="id-front absolute inset-0 bg-white border-2 border-charcoal rounded-xl p-5 flex flex-col items-center justify-center text-center">
+          <div class="w-14 h-14 rounded-full bg-yellow flex items-center justify-center text-2xl mb-3">👷</div>
+          <p class="font-heading font-bold">${t.name}</p>
+          <p class="text-xs text-concrete">${t.role}</p>
+        </div>
+        <div class="id-back bg-charcoal text-offwhite border-2 border-yellow rounded-xl p-5 flex flex-col items-center justify-center text-center">
+          <p class="font-mono-eng text-yellow text-xs mb-1">HELMET ID</p>
+          <p class="font-mono-eng text-2xl font-bold mb-2">${t.id}</p>
+          <p class="font-heading font-bold">${t.name}</p>
+          <p class="text-xs text-offwhite/70">${t.role}</p>
+        </div>
+      </div>
+    </div>`).join('');
+
+  /* ---------- STEP 10: Testimonials ---------- */
+  document.getElementById('testimonialGrid').innerHTML = C.testimonials.map((t,i) => `
+    <div class="bg-white rounded-xl p-6 border-2 border-charcoal/10 reveal" style="transition-delay:${i*70}ms">
+      <div class="flex items-center justify-between mb-3">
+        <span class="stamp text-xs">APPROVED</span>
+        <span class="text-yellow" aria-label="${t.rating} out of 5 stars">${'★'.repeat(t.rating)}${'☆'.repeat(5-t.rating)}</span>
+      </div>
+      <p class="text-concrete-dark mb-4">&ldquo;${t.quote}&rdquo;</p>
+      <p class="font-heading font-bold text-sm">${t.name}</p>
+      <p class="text-xs text-concrete">${t.role}</p>
+    </div>`).join('');
+
+  /* ---------- STEP 11: FAQ ---------- */
+  document.getElementById('faqList').innerHTML = C.faq.map((f,i) => `
+    <details class="toolbox bg-white border-2 border-charcoal/10 rounded-lg reveal" style="transition-delay:${i*50}ms">
+      <summary class="cursor-pointer list-none flex items-center justify-between p-5 font-heading font-semibold">
+        <span>🧰 ${f.q}</span>
+        <span class="chev transition-transform">▾</span>
+      </summary>
+      <div class="px-5 pb-5 text-concrete-dark text-sm">${f.a}</div>
+    </details>`).join('');
+
+  /* ---------- STEP 12: Blog ---------- */
+  document.getElementById('blogGrid').innerHTML = C.blog.map((b,i) => `
+    <article class="bg-charcoal-light border border-white/10 rounded-xl p-6 reveal" style="transition-delay:${i*60}ms">
+      <div class="flex justify-between text-xs font-mono-eng text-yellow mb-3"><span>${b.date}</span><span>${b.weather}</span></div>
+      <p class="text-xs font-mono-eng text-offwhite/60 mb-2">${b.status}</p>
+      <h3 class="font-heading font-bold text-lg mb-2">${b.title}</h3>
+      <p class="text-offwhite/70 text-sm">${b.excerpt}</p>
+    </article>`).join('');
+
+  /* ---------- Social icons ---------- */
+  const socials = Object.entries(C.business.social || {}).filter(([,v]) => v);
+  const iconMap = { instagram:'📷', facebook:'📘', linkedin:'💼', youtube:'▶️' };
+  const socialHTML = socials.map(([k,v]) => `<a href="${v}" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-yellow/10 flex items-center justify-center hover:bg-yellow hover:text-charcoal transition-colors" aria-label="${k}">${iconMap[k]||'🔗'}</a>`).join('');
+  document.getElementById('socialIcons').innerHTML = socialHTML;
+  document.getElementById('socialIconsFooter').innerHTML = socialHTML;
+
+  /* ---------- Map + WhatsApp ---------- */
+  document.getElementById('mapEmbed').src = 'https://maps.google.com/maps?q=' + encodeURIComponent(C.business.mapQuery) + '&output=embed';
+  document.getElementById('whatsappFloat').href = 'https://wa.me/' + C.business.whatsapp;
+
+  /* ---------- Year ---------- */
+  document.getElementById('yearNow').textContent = new Date().getFullYear();
+
+  /* =====================================================================
+     INTERACTIONS
+     ===================================================================== */
+
+  /* Loading screen */
+  let pct = 0;
+  const loadBar = document.getElementById('loadBar');
+  const loadPct = document.getElementById('loadPct');
+  const loadLabel = document.getElementById('loadLabel');
+  const labels = ['Preparing construction site...','Installing foundation...','Raising the frame...','Final inspection...'];
+  const loadTimer = setInterval(() => {
+    pct = Math.min(100, pct + Math.random()*18);
+    loadBar.style.width = pct + '%';
+    loadPct.textContent = Math.round(pct) + '%';
+    loadLabel.textContent = labels[Math.min(labels.length-1, Math.floor(pct/26))];
+    if (pct >= 100) {
+      clearInterval(loadTimer);
+      setTimeout(() => document.getElementById('loadScreen').classList.add('hide'), 300);
+    }
+  }, 180);
+  window.addEventListener('load', () => {
+    setTimeout(() => document.getElementById('loadScreen').classList.add('hide'), 900);
+  });
+
+  /* Mobile menu */
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const open = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!open));
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+  /* Custom cursor (desktop only) */
+  if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    document.documentElement.classList.add('cursor-active');
+    const cursor = document.getElementById('hammerCursor');
+    window.addEventListener('mousemove', e => { cursor.style.transform = `translate(${e.clientX-6}px, ${e.clientY-4}px)`; });
+    document.querySelectorAll('a,button,summary,input,textarea,select').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.textContent = '🔧');
+      el.addEventListener('mouseleave', () => cursor.textContent = '🔨');
+    });
+  }
+
+  /* Scroll progress: crane hook + signature build widget */
+  const hook = document.getElementById('craneHook');
+  const bpParts = ['bp-foundation','bp-frame','bp-walls','bp-roof','bp-crane'].map(id => document.getElementById(id));
+  const buildPct = document.getElementById('buildPct');
+  function onScroll() {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100 || 0;
+    if (hook) hook.style.top = `calc(${scrolled}% - 10px)`;
+    buildPct.textContent = Math.round(scrolled);
+    const stage = Math.floor(scrolled / 20);
+    bpParts.forEach((el,i) => { if (el) el.style.opacity = i <= stage ? '1' : '0'; });
+  }
+  document.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  /* Scroll reveal */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold:0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* Counters (stats) */
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target, target = parseInt(el.dataset.target,10);
+      let cur = 0; const step = Math.max(1, Math.round(target/60));
+      const t = setInterval(() => { cur += step; if (cur >= target) { cur = target; clearInterval(t); } el.textContent = cur; }, 20);
+      counterIO.unobserve(el);
+    });
+  }, { threshold:0.5 });
+  document.querySelectorAll('.stat-num').forEach(el => counterIO.observe(el));
+
+  /* Portfolio progress fill */
+  const portIO = new IntersectionObserver((entries) => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const fill = en.target;
+      const target = fill.dataset.target;
+      fill.style.width = target + '%';
+      const pctEl = fill.closest('div').nextElementSibling.querySelector('.portfolio-pct');
+      if (pctEl) pctEl.textContent = target;
+      portIO.unobserve(fill);
+    });
+  }, { threshold:0.4 });
+  document.querySelectorAll('.portfolio-fill').forEach(el => portIO.observe(el));
+
+  /* Contact form (demo submit) */
+  document.getElementById('intakeForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!e.target.checkValidity()) { e.target.reportValidity(); return; }
+    document.getElementById('formSuccess').classList.remove('hidden');
+    e.target.reset();
+  });
+
+  /* Easter egg 1: click hard-hat emoji (nav logo icon) 5x -> fireworks */
+  let hatClicks = 0;
+  const logoIcon = document.querySelector('#hero'); // safe fallback target not used
+  document.querySelectorAll('header a[href="#hero"] span[aria-hidden="true"]').forEach(el => {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', (e) => {
+      hatClicks++;
+      if (hatClicks >= 5) {
+        hatClicks = 0;
+        launchFireworks();
+      }
+    });
+  });
+  function launchFireworks() {
+    for (let i=0;i<24;i++) {
+      const p = document.createElement('div');
+      p.textContent = ['🎉','✨','🏗️','🎊'][i%4];
+      p.style.position='fixed'; p.style.left='50%'; p.style.top='50%'; p.style.fontSize='22px'; p.style.zIndex='99999'; p.style.pointerEvents='none';
+      document.body.appendChild(p);
+      const ang = Math.random()*2*Math.PI, dist = 120+Math.random()*180;
+      p.animate([
+        { transform:'translate(-50%,-50%) scale(1)', opacity:1 },
+        { transform:`translate(${Math.cos(ang)*dist-50}%,${Math.sin(ang)*dist-50}%) scale(0.6)`, opacity:0 }
+      ], { duration:900+Math.random()*400, easing:'ease-out' }).onfinish = () => p.remove();
+    }
+  }
+
+  /* Easter egg 2: double-click logo text -> blueprint overlay mode */
+  document.querySelectorAll('header a[href="#hero"]').forEach(el => {
+    el.addEventListener('dblclick', (e) => {
+      e.preventDefault();
+      document.getElementById('blueprintOverlay').classList.toggle('show');
+    });
+  });
+
+}); // end DOMContentLoaded
+</script>
+</body>
+</html>

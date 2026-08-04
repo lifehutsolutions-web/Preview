@@ -175,101 +175,6 @@
 
   .clip-wave{ clip-path: ellipse(70% 60% at 50% 40%); }
 
-/* sticky header CTA */
-
-  .download-pill{
-    position:fixed;
-    left:50%;
-    bottom:24px;
-    transform:translateX(-50%);
-
-    display:flex;
-    align-items:center;
-    gap:18px;
-
-    padding:12px 14px 12px 22px;
-
-    background:rgba(17,24,39,.92);
-    backdrop-filter:blur(14px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:999px;
-
-    box-shadow:0 10px 40px rgba(0,0,0,.28);
-
-    z-index:9999;
-}
-
-.offer-text{
-    color:#fff;
-    font-weight:600;
-    white-space:nowrap;
-}
-
-.download-btn{
-    text-decoration:none;
-
-    background:linear-gradient(135deg,#2563eb,#1d4ed8);
-    color:#fff;
-
-    font-weight:700;
-
-    padding:12px 24px;
-
-    border-radius:999px;
-
-    transition:.3s;
-
-    animation:ctaPulse 2.2s infinite;
-}
-
-.download-btn:hover{
-    transform:scale(1.08);
-}
-
-@keyframes ctaPulse{
-
-0%,100%{
-transform:scale(1);
-box-shadow:0 0 0 rgba(37,99,235,.5);
-}
-
-50%{
-transform:scale(1.08);
-box-shadow:0 0 25px rgba(37,99,235,.65);
-}
-
-}
-
-@media(max-width:768px){
-
-.download-pill{
-
-width:calc(100% - 30px);
-
-justify-content:space-between;
-
-padding:10px 14px;
-
-bottom:18px;
-
-}
-
-.offer-text{
-
-font-size:13px;
-
-}
-
-.download-btn{
-
-padding:10px 18px;
-font-size:14px;
-
-}
-
-}
 
 
 </style>
@@ -278,14 +183,6 @@ font-size:14px;
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- ============ sticky header CTA ============ -->
-<div class="download-pill">
-    <span class="offer-text">🎉 Limited Time Offer</span>
-
-    <a href="https://studio.lifehutsolutions.com/?product=p1784047721794" class="download-btn">
-        ⬇ Download Now
-    </a>
-</div>
 
 <!-- ============ HEADER / NAV ============ -->
 <header id="site-nav" class="fixed top-0 inset-x-0 z-50 bg-cream/80 backdrop-blur-md border-b border-moss-200/60 px-5 md:px-10 py-4">

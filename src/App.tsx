@@ -20,31 +20,44 @@ export default function App() {
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   const [isLoadingTemplates, setIsLoadingTemplates] = useState<boolean>(true);
 
-  // Fetch backend templates from /api/templates
+  // Fetch backend templates from /api/templates (or fallback to static templates)
   useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const targetId = searchParams.get('template') || searchParams.get('id');
+
+    // Instantly check URL matching on static templates (Cloudflare Pages support)
+    if (targetId && sampleTemplates.length > 0) {
+      const matched = sampleTemplates.find(
+        (t) => t.id.toLowerCase() === targetId.toLowerCase()
+      );
+      if (matched) {
+        setCurrentTemplate(matched);
+        setActiveHtml(matched.htmlContent);
+      }
+    }
+
     async function loadBackendTemplates() {
       try {
         const response = await fetch('/api/templates');
         if (response.ok) {
-          const data: ProductTemplate[] = await response.json();
-          if (Array.isArray(data) && data.length > 0) {
-            setTemplates(data);
+          const contentType = response.headers.get('content-type');
+          if (contentType && contentType.includes('application/json')) {
+            const data: ProductTemplate[] = await response.json();
+            if (Array.isArray(data) && data.length > 0) {
+              setTemplates(data);
 
-            // Check URL query string for ?template= or ?id=
-            const searchParams = new URLSearchParams(window.location.search);
-            const targetId = searchParams.get('template') || searchParams.get('id');
+              const matched = data.find(
+                (t) => t.id.toLowerCase() === targetId?.toLowerCase()
+              );
 
-            const matched = data.find(
-              (t) => t.id.toLowerCase() === targetId?.toLowerCase()
-            );
-
-            const initial = matched || data[0];
-            setCurrentTemplate(initial);
-            setActiveHtml(initial.htmlContent);
+              const initial = matched || data[0];
+              setCurrentTemplate(initial);
+              setActiveHtml(initial.htmlContent);
+            }
           }
         }
       } catch (err) {
-        console.warn('Could not fetch backend templates, using built-in presets:', err);
+        console.warn('Could not fetch backend templates, using static presets:', err);
       } finally {
         setIsLoadingTemplates(false);
       }
