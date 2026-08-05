@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Creative Portfolio Website Template | Studio Antara | Museum Gallery Portfolio</title>
+
+<meta name="description" content="Preview Studio Antara, a premium creative portfolio website template inspired by museum galleries. Showcase projects with elegant framed layouts, curator notes, ambient lighting effects, responsive HTML, Tailwind CSS and SEO-optimized design.">
+
+<meta name="keywords" content="creative portfolio website template, architecture portfolio template, designer portfolio website, agency portfolio template, photography portfolio template, artist portfolio website, museum gallery website template, interior designer portfolio, responsive portfolio template, Tailwind CSS portfolio, HTML portfolio template, Lifehut Solutions">
+
+<meta name="robots" content="index, follow">
+
+<meta name="author" content="Lifehut Solutions">
+
+<link rel="canonical" href="https://preview.lifehutsolutions.com/?template=creative-portfolio-website-template-studio-antara">
+
+<!-- Open Graph -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lifehut Template Preview">
+<meta property="og:title" content="Studio Antara | Museum Gallery Portfolio Website Template">
+<meta property="og:description" content="A premium creative portfolio website inspired by museum galleries with framed projects, curator notes, elegant lighting effects and responsive HTML + Tailwind CSS.">
+
+<meta property="og:url" content="https://preview.lifehutsolutions.com/?template=creative-portfolio-website-template-studio-antara">
+
+<meta property="og:image" content="https://preview.lifehutsolutions.com/assets/images/creative-portfolio-website-template-studio-antara.png">
+
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="Studio Antara | Creative Portfolio Website Template">
+
+<meta name="twitter:description" content="Museum-inspired creative portfolio template for architects, designers, agencies and artists. Responsive, SEO-ready and built with HTML + Tailwind CSS.">
+
+<meta name="twitter:image" content="https://preview.lifehutsolutions.com/assets/images/creative-portfolio-website-template-studio-antara.png">
+
+<meta name="theme-color" content="#F3EEE4">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='14' fill='%231B1812'/%3E%3Crect x='22' y='22' width='56' height='56' fill='none' stroke='%23B08D57' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23B08D57'/%3E%3C/svg%3E">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Tailwind (Play CDN, configured) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          gallery:      '#F3EEE4',
+          'gallery-2':  '#ECE5D6',
+          'gallery-3':  '#E4DBC8',
+          ink:          '#1B1812',
+          'ink-soft':   '#332C22',
+          stone:        '#6E6558',
+          brass:        '#AD8A54',
+          'brass-light':'#D6BC8B',
+          'brass-dark': '#7C6238',
+          maroon:       '#661626',
+          'maroon-deep':'#450F1A',
+          spotlight:    '#FFF3D2'
+        },
+        fontFamily: {
+          display: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
+          body: ['"Work Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace']
+        },
+        boxShadow: {
+          frame: '0 30px 60px -20px rgba(27,24,18,0.35), 0 10px 20px -10px rgba(27,24,18,0.25)',
+          plaque: '0 2px 6px rgba(27,24,18,0.15)'
+        },
+        maxWidth: { 'gallery': '1440px' }
+      }
+    }
+  };
+</script>
+
+<style>
+  /* ---------- Base & Motion Preferences ---------- */
+  :root{
+    --spot-x: 50%;
+    --spot-y: 40%;
+    --spot-size: 420px;
+  }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+  body{
+    background-color: #F3EEE4;
+    background-image:
+      radial-gradient(ellipse at top, rgba(255,255,255,0.5), transparent 60%),
+      repeating-linear-gradient(90deg, rgba(27,24,18,0.02) 0px, rgba(27,24,18,0.02) 1px, transparent 1px, transparent 120px);
+    color:#1B1812;
+    font-feature-settings: "liga" 1, "kern" 1;
+    cursor: default;
+  }
+
+  /* subtle plaster/canvas grain */
+  .grain{ position:fixed; inset:0; pointer-events:none; z-index:2; opacity:.045; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- Skip link ---------- */
+  .skip-link{ position:absolute; left:-999px; top:0; background:#1B1812; color:#F3EEE4; padding:.75rem 1.25rem; z-index:100; font-family:'IBM Plex Mono',monospace; font-size:.85rem; }
+  .skip-link:focus{ left:1rem; top:1rem; border-radius:.25rem; }
+
+  /* ---------- Focus visibility ---------- */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, [tabindex]:focus-visible{
+    outline: 2px solid #AD8A54; outline-offset: 3px; border-radius: 2px;
+  }
+
+  /* ---------- Ambient spotlight cursor ---------- */
+  .spot-layer{
+    position: fixed; inset:0; pointer-events:none; z-index:40; opacity:0;
+    transition: opacity .5s ease;
+    background: radial-gradient(circle var(--spot-size) at var(--spot-x) var(--spot-y), rgba(255,243,210,0.16), rgba(27,24,18,0.0) 42%),
+                radial-gradient(circle 1400px at var(--spot-x) var(--spot-y), rgba(27,24,18,0) 0%, rgba(27,24,18,0.16) 78%);
+  }
+  .spot-active .spot-layer{ opacity:1; }
+  .spot-ring{
+    position: fixed; width: 26px; height:26px; border:1px solid rgba(173,138,84,.9); border-radius:50%;
+    top:0; left:0; transform: translate(calc(var(--spot-x) - 13px), calc(var(--spot-y) - 13px));
+    pointer-events:none; z-index:41; mix-blend-mode:normal; transition: transform .08s linear, width .2s ease, height .2s ease, opacity .3s ease;
+    opacity:0;
+  }
+  .spot-active .spot-ring{ opacity:1; }
+  .spot-ring::after{ content:''; position:absolute; inset:-6px; border:1px solid rgba(173,138,84,.35); border-radius:50%; }
+  @media (hover:none){ .spot-layer, .spot-ring{ display:none; } }
+
+  /* ---------- Footstep rail ---------- */
+  .footstep-rail{ position:fixed; left:0; top:0; width:56px; height:100vh; pointer-events:none; z-index:30; }
+  .footprint{ position:absolute; width:14px; height:22px; opacity:0; animation: stepfade 2.6s ease forwards; }
+  .footprint svg{ width:100%; height:100%; fill:#AD8A54; opacity:.55; }
+  @keyframes stepfade{
+    0%{ opacity:0; transform: translateY(4px) scale(.85); }
+    12%{ opacity:.75; transform: translateY(0) scale(1); }
+    75%{ opacity:.5; }
+    100%{ opacity:0; transform: translateY(-6px) scale(.9); }
+  }
+  @media (max-width: 1023px){ .footstep-rail{ display:none; } }
+
+  /* ---------- Progress rail (top) ---------- */
+  #floor-progress{ position:fixed; top:0; left:0; height:2px; background:linear-gradient(90deg,#AD8A54,#661626); width:0%; z-index:60; transition: width .1s linear; }
+
+  /* ---------- Reveal on scroll ---------- */
+  [data-reveal]{ opacity:0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.22,.61,.36,1), transform .9s cubic-bezier(.22,.61,.36,1); }
+  [data-reveal].is-visible{ opacity:1; transform: translateY(0); }
+  [data-reveal="fade"]{ transform:none; }
+  @media (prefers-reduced-motion: reduce){ [data-reveal]{ opacity:1; transform:none; transition:none; } }
+
+  /* ---------- Frame & Artwork ---------- */
+  .frame{
+    background: linear-gradient(155deg,#C7A16C,#8A6A3E 45%,#6E512C 100%);
+    padding: 10px; border-radius: 3px; box-shadow: var(--tw-shadow, 0 0 0 rgba(0,0,0,0));
+  }
+  .mat{ background:#EFE9DA; padding: 14px; border-radius:1px; }
+  .canvas-wrap{ position:relative; overflow:hidden; border-radius:1px; }
+  .canvas-sheen{
+    position:absolute; inset:0; background: linear-gradient(120deg, rgba(255,255,255,.35), transparent 40%);
+    opacity:.5; mix-blend-mode:overlay; pointer-events:none;
+  }
+  .artwork-glow{ position:absolute; inset:-40%; opacity:0; background: radial-gradient(circle at 50% 35%, rgba(255,243,210,.55), transparent 60%); transition: opacity .5s ease; pointer-events:none; }
+  .artwork-card:hover .artwork-glow, .artwork-card:focus-within .artwork-glow{ opacity:1; }
+  .artwork-card:hover .frame, .artwork-card:focus-within .frame{
+    box-shadow: 0 40px 80px -20px rgba(102,22,38,.28), 0 0 0 3px rgba(173,138,84,.5), 0 0 60px 8px rgba(255,243,210,.35);
+  }
+  .artwork-card .canvas-img{ transition: transform 1.1s cubic-bezier(.16,1,.3,1), filter .6s ease; filter: saturate(.92) brightness(.98); }
+  .artwork-card:hover .canvas-img, .artwork-card:focus-within .canvas-img{ transform: scale(1.045); filter: saturate(1.08) brightness(1.03); }
+  .frame{ transition: box-shadow .5s ease; }
+
+  /* placard underline draw */
+  .placard-link{ position:relative; }
+  .placard-link .u{ position:absolute; left:0; bottom:-2px; height:1px; width:100%; background:currentColor; transform: scaleX(0); transform-origin:left; transition: transform .4s cubic-bezier(.22,.61,.36,1); }
+  .placard-link:hover .u, .placard-link:focus-visible .u{ transform: scaleX(1); }
+
+  /* velvet rope divider */
+  .rope-divider{ display:flex; align-items:center; gap:.75rem; }
+  .rope-divider::before, .rope-divider::after{ content:''; flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(102,22,38,.35),transparent); }
+
+  /* marquee */
+  .marquee-track{ display:flex; width:max-content; animation: marquee 34s linear infinite; }
+  @media (prefers-reduced-motion: reduce){ .marquee-track{ animation:none; } }
+  @keyframes marquee{ from{ transform: translateX(0);} to{ transform: translateX(-50%);} }
+
+  /* card lift utility */
+  .lift{ transition: transform .4s cubic-bezier(.22,.61,.36,1), box-shadow .4s ease; }
+  .lift:hover{ transform: translateY(-6px); }
+
+  /* nav underline */
+  .nav-link{ position:relative; }
+  .nav-link::after{ content:''; position:absolute; left:0; right:0; bottom:-4px; height:1px; background:#AD8A54; transform:scaleX(0); transition: transform .3s ease; }
+  .nav-link:hover::after, .nav-link[aria-current="page"]::after{ transform:scaleX(1); }
+
+  /* accordion */
+  .acc-panel{ display:grid; grid-template-rows:0fr; transition: grid-template-rows .45s cubic-bezier(.22,.61,.36,1); }
+  .acc-panel > div{ overflow:hidden; }
+  .acc-item[data-open="true"] .acc-panel{ grid-template-rows:1fr; }
+  .acc-item[data-open="true"] .acc-chevron{ transform: rotate(135deg); }
+  .acc-chevron{ transition: transform .35s ease; }
+
+  /* mobile menu */
+  #mobile-menu{ transition: opacity .35s ease, visibility .35s ease; }
+  #mobile-menu[data-open="false"]{ opacity:0; visibility:hidden; }
+  #mobile-menu[data-open="true"]{ opacity:1; visibility:visible; }
+  #mobile-menu .menu-item{ transition: transform .5s cubic-bezier(.22,.61,.36,1), opacity .5s ease; opacity:0; transform: translateY(14px); }
+  #mobile-menu[data-open="true"] .menu-item{ opacity:1; transform:translateY(0); }
+
+  /* form field */
+  .field{ background:transparent; border:0; border-bottom:1px solid rgba(27,24,18,.25); padding:.75rem .25rem; width:100%; font-family:'Work Sans',sans-serif; color:#1B1812; }
+  .field::placeholder{ color:#6E6558; }
+  .field:focus{ outline:none; border-bottom-color:#661626; }
+
+  /* number ticker */
+  .stat-num{ font-variant-numeric: tabular-nums; }
+
+  ::selection{ background:#661626; color:#F3EEE4; }
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:#ECE5D6; }
+  ::-webkit-scrollbar-thumb{ background:#AD8A54; border-radius:6px; }
+</style>
+</head>
+
+<body class="font-body antialiased">
+
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="grain" aria-hidden="true"></div>
+<div id="floor-progress" role="progressbar" aria-hidden="true"></div>
+
+<!-- Ambient spotlight cursor -->
+<div class="spot-layer" aria-hidden="true"></div>
+<div class="spot-ring" aria-hidden="true"></div>
+<div class="footstep-rail" id="footstepRail" aria-hidden="true"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="fixed top-0 inset-x-0 z-50 border-b border-ink/10 backdrop-blur-md bg-gallery/85">
+  <div class="max-w-gallery mx-auto px-5 md:px-10 h-[76px] flex items-center justify-between">
+    <a href="#hero" class="flex items-center gap-3 group" aria-label="Studio Antara — home">
+      <span class="w-9 h-9 border border-brass flex items-center justify-center rotate-45 group-hover:rotate-[135deg] transition-transform duration-500">
+        <span class="w-2 h-2 bg-maroon rounded-full -rotate-45 group-hover:-rotate-[135deg] transition-transform duration-500"></span>
+      </span>
+      <span class="font-display text-xl tracking-wide">Studio <em class="not-italic text-maroon">Antara</em></span>
+    </a>
+
+    <nav aria-label="Primary" class="hidden lg:flex items-center gap-9 font-mono text-[13px] uppercase tracking-wider text-ink-soft">
+      <a href="#collection" class="nav-link">The Collection</a>
+      <a href="#process" class="nav-link">Behind the Canvas</a>
+      <a href="#membership" class="nav-link">Membership</a>
+      <a href="#visitors" class="nav-link">Visitor Book</a>
+      <a href="#faq" class="nav-link">Guide</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <button id="soundToggle" type="button" aria-pressed="false"
+        class="hidden sm:flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider border border-ink/20 rounded-full px-3.5 py-2 hover:border-brass hover:text-maroon transition-colors">
+        <svg id="soundIconOn" class="hidden w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        <svg id="soundIconOff" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        <span>Gallery Sound</span>
+      </button>
+      <a href="#contact" class="hidden sm:inline-block bg-maroon text-gallery text-[13px] font-mono uppercase tracking-wider px-5 py-2.5 rounded-full hover:bg-maroon-deep transition-colors">Book a Viewing</a>
+      <button id="menuToggle" type="button" class="lg:hidden w-10 h-10 grid place-items-center border border-ink/20 rounded-full" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MOBILE MENU ================= -->
+<div id="mobile-menu" data-open="false" class="fixed inset-0 z-[55] bg-ink text-gallery lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <div class="flex justify-between items-center px-6 h-[76px] border-b border-gallery/15">
+    <span class="font-display text-xl">Studio Antara</span>
+    <button id="menuClose" type="button" class="w-10 h-10 grid place-items-center border border-gallery/30 rounded-full" aria-label="Close menu">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="px-6 py-10 flex flex-col gap-6 font-display text-4xl" aria-label="Mobile primary">
+    <a class="menu-item" href="#collection" data-close>The Collection</a>
+    <a class="menu-item" href="#process" data-close>Behind the Canvas</a>
+    <a class="menu-item" href="#membership" data-close>Membership</a>
+    <a class="menu-item" href="#visitors" data-close>Visitor Book</a>
+    <a class="menu-item" href="#faq" data-close>Guide</a>
+    <a class="menu-item text-brass-light" href="#contact" data-close>Book a Viewing →</a>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- ================= HERO — ENTRANCE HALL ================= -->
+  <section id="hero" class="relative pt-[76px] overflow-hidden" aria-labelledby="hero-heading">
+    <div class="max-w-gallery mx-auto px-5 md:px-10 pt-16 md:pt-28 pb-20 md:pb-28 grid lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-8">
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-brass-dark mb-6" data-reveal="fade">Est. Jaipur, India — Wing I of III</p>
+        <h1 id="hero-heading" class="font-display text-[13vw] leading-[0.92] sm:text-6xl md:text-7xl lg:text-[6.4rem] tracking-tight text-ink" data-reveal="fade">
+          Every project<br> hung like a<br> <span class="italic text-maroon">painting.</span>
+        </h1>
+        <p class="mt-8 max-w-xl text-stone text-lg leading-relaxed" data-reveal="fade">
+          Studio Antara is a design house working across brand, product and spatial experience.
+          Walk our collection the way you would walk a gallery floor — move close, and the light finds the work.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-5" data-reveal="fade">
+          <a href="#collection" class="bg-ink text-gallery font-mono text-sm uppercase tracking-wider px-7 py-4 rounded-full hover:bg-maroon transition-colors">Enter the Gallery</a>
+          <a href="#contact" class="placard-link font-mono text-sm uppercase tracking-wider text-ink-soft hover:text-maroon">
+            Reserve a Consultation <span class="u" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4" data-reveal>
+        <div class="frame shadow-frame max-w-xs ml-auto">
+          <div class="mat">
+            <div class="canvas-wrap aspect-[3/4] relative">
+              <div class="artwork-glow"></div>
+              <svg viewBox="0 0 300 400" class="w-full h-full canvas-img" role="img" aria-label="Abstract layered artwork in warm terracotta and brass tones, representing the studio's featured work">
+                <defs>
+                  <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#C4784A"/><stop offset="55%" stop-color="#8B4A3B"/><stop offset="100%" stop-color="#3A2B24"/>
+                  </linearGradient>
+                </defs>
+                <rect width="300" height="400" fill="url(#hg1)"/>
+                <circle cx="150" cy="150" r="90" fill="none" stroke="#EFDDB8" stroke-width="2" opacity=".6"/>
+                <path d="M0 320 C 80 260, 220 380, 300 300 L300 400 L0 400 Z" fill="#1B1812" opacity=".55"/>
+                <line x1="20" y1="40" x2="280" y2="40" stroke="#EFDDB8" stroke-width="1" opacity=".4"/>
+              </svg>
+              <div class="canvas-sheen"></div>
+            </div>
+          </div>
+        </div>
+        <p class="mt-4 font-mono text-[11px] text-stone tracking-wide text-right">No. 001 — "Threshold" — Mixed identity study, 2026</p>
+      </div>
+    </div>
+
+    <!-- press / client marquee -->
+    <div class="border-y border-ink/10 py-6 bg-gallery-2/60 overflow-hidden" data-reveal="fade">
+      <div class="marquee-track font-mono text-sm uppercase tracking-[0.3em] text-stone" aria-hidden="true">
+        <div class="flex items-center gap-16 pr-16">
+          <span>Featured — Design Insider India</span><span class="text-brass">✦</span>
+          <span>Kyoorius Design Yearbook</span><span class="text-brass">✦</span>
+          <span>Awwwards Honorable Mention</span><span class="text-brass">✦</span>
+          <span>Brand New Selects</span><span class="text-brass">✦</span>
+        </div>
+        <div class="flex items-center gap-16 pr-16">
+          <span>Featured — Design Insider India</span><span class="text-brass">✦</span>
+          <span>Kyoorius Design Yearbook</span><span class="text-brass">✦</span>
+          <span>Awwwards Honorable Mention</span><span class="text-brass">✦</span>
+          <span>Brand New Selects</span><span class="text-brass">✦</span>
+        </div>
+      </div>
+      <p class="sr-only">As mentioned by Design Insider India, Kyoorius Design Yearbook, Awwwards and Brand New.</p>
+    </div>
+  </section>
+
+  <!-- ================= CURATOR'S NOTE / ABOUT ================= -->
+  <section id="about" class="max-w-gallery mx-auto px-5 md:px-10 py-24 md:py-32" aria-labelledby="about-heading">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-4" data-reveal>
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-brass-dark mb-4">Curator's Note</p>
+        <h2 id="about-heading" class="font-display text-4xl md:text-5xl leading-tight">A studio that treats every brief like a body of work.</h2>
+      </div>
+      <div class="lg:col-span-7 lg:col-start-6 flex flex-col justify-center gap-6" data-reveal>
+        <p class="text-lg text-ink-soft leading-relaxed">
+          Founded in Jaipur in 2018, Studio Antara pairs the discipline of Indian craft traditions with the
+          clarity of contemporary digital design. We keep a small roster of clients each year so that every
+          project — a fintech app, a textile label, a metro wayfinding system — gets the same close attention
+          a conservator gives a canvas.
+        </p>
+        <p class="text-stone leading-relaxed">
+          Our process is slow where it needs to be, and fast where it counts. No templates lifted from a stock
+          library, no identity kits copied twice. Just work that earns its place on the wall.
+        </p>
+        <div class="rope-divider my-2" role="presentation"><span class="font-mono text-xs text-maroon uppercase tracking-widest">Since 2018</span></div>
+        <dl class="grid grid-cols-3 gap-6">
+          <div>
+            <dt class="font-display text-4xl md:text-5xl text-ink stat-num" data-count="86">0</dt>
+            <dd class="font-mono text-[11px] uppercase tracking-wider text-stone mt-1">Pieces exhibited</dd>
+          </div>
+          <div>
+            <dt class="font-display text-4xl md:text-5xl text-ink stat-num" data-count="41">0</dt>
+            <dd class="font-mono text-[11px] uppercase tracking-wider text-stone mt-1">Patrons served</dd>
+          </div>
+          <div>
+            <dt class="font-display text-4xl md:text-5xl text-ink stat-num" data-count="7">0</dt>
+            <dd class="font-mono text-[11px] uppercase tracking-wider text-stone mt-1">Cities, India &amp; abroad</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE COLLECTION ================= -->
+  <section id="collection" class="bg-gallery-2/70 border-y border-ink/10 py-24 md:py-32" aria-labelledby="collection-heading">
+    <div class="max-w-gallery mx-auto px-5 md:px-10">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24" data-reveal>
+        <div>
+          <p class="font-mono text-xs uppercase tracking-[0.3em] text-brass-dark mb-4">Wing II — Permanent Collection</p>
+          <h2 id="collection-heading" class="font-display text-4xl md:text-6xl leading-tight max-w-xl">The Collection</h2>
+        </div>
+        <p class="text-stone max-w-sm">Six pieces from recent commissions. Hover, or tab through with a keyboard, to bring each one into the light.</p>
+      </div>
+
+      <div class="flex flex-col gap-24 md:gap-36">
+
+        <!-- Artwork 01 -->
+        <article class="artwork-card grid md:grid-cols-12 gap-8 md:gap-12 items-center" data-reveal>
+          <div class="md:col-span-7">
+            <div class="frame shadow-frame">
+              <div class="mat">
+                <div class="canvas-wrap aspect-[16/11] relative">
+                  <div class="artwork-glow"></div>
+                  <svg viewBox="0 0 640 440" class="w-full h-full canvas-img" role="img" aria-label="Brand identity artwork for Saffron Threads featuring layered saffron and indigo geometric forms">
+                    <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#D98A3D"/><stop offset="60%" stop-color="#B4552E"/><stop offset="100%" stop-color="#241A2E"/></linearGradient></defs>
+                    <rect width="640" height="440" fill="url(#g1)"/>
+                    <circle cx="480" cy="120" r="140" fill="#2C3E63" opacity=".55"/>
+                    <rect x="60" y="260" width="360" height="8" fill="#F3EEE4" opacity=".7"/>
+                    <rect x="60" y="290" width="220" height="8" fill="#F3EEE4" opacity=".4"/>
+                  </svg>
+                  <div class="canvas-sheen"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-5">
+            <p class="font-mono text-xs text-brass-dark tracking-widest">No. 014 — 2025</p>
+            <h3 class="font-display text-3xl mt-2">Saffron Threads</h3>
+            <p class="text-stone text-sm mt-1 uppercase tracking-wide font-mono">Brand Identity — Textile Heritage</p>
+            <p class="mt-4 text-ink-soft leading-relaxed">A full identity system for a fourth-generation Jaipur block-print house, rebuilding their mark, packaging and retail signage around a single saffron-and-indigo palette drawn from their own dye vats.</p>
+            <a href="#" class="placard-link inline-flex items-center gap-2 mt-6 font-mono text-xs uppercase tracking-wider text-maroon">View the Piece <span aria-hidden="true">→</span><span class="u" aria-hidden="true"></span></a>
+          </div>
+        </article>
+
+        <!-- Artwork 02 -->
+        <article class="artwork-card grid md:grid-cols-12 gap-8 md:gap-12 items-center" data-reveal>
+          <div class="md:col-span-5 md:order-2">
+            <div class="frame shadow-frame">
+              <div class="mat">
+                <div class="canvas-wrap aspect-[3/4] relative">
+                  <div class="artwork-glow"></div>
+                  <svg viewBox="0 0 480 640" class="w-full h-full canvas-img" role="img" aria-label="Product UI artwork for Terra Ledger fintech application in deep teal and brass">
+                    <defs><linearGradient id="g2" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1F3B39"/><stop offset="60%" stop-color="#2E5C55"/><stop offset="100%" stop-color="#A9C1AE"/></linearGradient></defs>
+                    <rect width="480" height="640" fill="url(#g2)"/>
+                    <rect x="60" y="80" width="360" height="240" rx="14" fill="#F3EEE4" opacity=".9"/>
+                    <rect x="90" y="120" width="140" height="18" rx="4" fill="#1B1812" opacity=".7"/>
+                    <rect x="90" y="160" width="220" height="10" rx="3" fill="#6E6558" opacity=".6"/>
+                    <circle cx="360" cy="470" r="70" fill="#AD8A54" opacity=".7"/>
+                  </svg>
+                  <div class="canvas-sheen"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-6 md:order-1">
+            <p class="font-mono text-xs text-brass-dark tracking-widest">No. 022 — 2025</p>
+            <h3 class="font-display text-3xl mt-2">Terra Ledger</h3>
+            <p class="text-stone text-sm mt-1 uppercase tracking-wide font-mono">Product UX — Rural Fintech, Bengaluru</p>
+            <p class="mt-4 text-ink-soft leading-relaxed">End-to-end product design for a savings app built for first-time smartphone users across Karnataka, combining large-type UI patterns with a calm, trust-forward visual language.</p>
+            <a href="#" class="placard-link inline-flex items-center gap-2 mt-6 font-mono text-xs uppercase tracking-wider text-maroon">View the Piece <span aria-hidden="true">→</span><span class="u" aria-hidden="true"></span></a>
+          </div>
+        </article>
+
+        <!-- Artwork 03 -->
+        <article class="artwork-card grid md:grid-cols-12 gap-8 md:gap-12 items-center" data-reveal>
+          <div class="md:col-span-7">
+            <div class="frame shadow-frame">
+              <div class="mat">
+                <div class="canvas-wrap aspect-[16/11] relative">
+                  <div class="artwork-glow"></div>
+                  <svg viewBox="0 0 640 440" class="w-full h-full canvas-img" role="img" aria-label="E-commerce web design artwork for Baithak furniture brand in warm wood tones">
+                    <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8C5A3B"/><stop offset="55%" stop-color="#5B3A28"/><stop offset="100%" stop-color="#1B1812"/></linearGradient></defs>
+                    <rect width="640" height="440" fill="url(#g3)"/>
+                    <rect x="380" y="90" width="200" height="260" fill="#F3EEE4" opacity=".85"/>
+                    <rect x="410" y="130" width="140" height="140" fill="#B4552E" opacity=".5"/>
+                    <line x1="40" y1="380" x2="600" y2="380" stroke="#EFDDB8" stroke-width="1" opacity=".3"/>
+                  </svg>
+                  <div class="canvas-sheen"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-5">
+            <p class="font-mono text-xs text-brass-dark tracking-widest">No. 031 — 2024</p>
+            <h3 class="font-display text-3xl mt-2">Baithak</h3>
+            <p class="text-stone text-sm mt-1 uppercase tracking-wide font-mono">Web Design — Furniture &amp; Home</p>
+            <p class="mt-4 text-ink-soft leading-relaxed">A shopping experience for a Jodhpur furniture atelier, designed around large product photography, honest material notes and a checkout built for tier-2 city bandwidth.</p>
+            <a href="#" class="placard-link inline-flex items-center gap-2 mt-6 font-mono text-xs uppercase tracking-wider text-maroon">View the Piece <span aria-hidden="true">→</span><span class="u" aria-hidden="true"></span></a>
+          </div>
+        </article>
+
+        <!-- Artwork 04 -->
+        <article class="artwork-card grid md:grid-cols-12 gap-8 md:gap-12 items-center" data-reveal>
+          <div class="md:col-span-5 md:order-2">
+            <div class="frame shadow-frame">
+              <div class="mat">
+                <div class="canvas-wrap aspect-[3/4] relative">
+                  <div class="artwork-glow"></div>
+                  <svg viewBox="0 0 480 640" class="w-full h-full canvas-img" role="img" aria-label="Publishing rebrand artwork for Kavya Press in deep maroon and cream">
+                    <defs><linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#661626"/><stop offset="100%" stop-color="#2A0A11"/></linearGradient></defs>
+                    <rect width="480" height="640" fill="url(#g4)"/>
+                    <rect x="70" y="70" width="340" height="500" fill="none" stroke="#EFDDB8" stroke-width="2" opacity=".5"/>
+                    <text x="240" y="340" text-anchor="middle" font-family="Georgia, serif" font-size="120" fill="#EFDDB8" opacity=".85">K</text>
+                  </svg>
+                  <div class="canvas-sheen"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-6 md:order-1">
+            <p class="font-mono text-xs text-brass-dark tracking-widest">No. 038 — 2024</p>
+            <h3 class="font-display text-3xl mt-2">Kavya Press</h3>
+            <p class="text-stone text-sm mt-1 uppercase tracking-wide font-mono">Rebrand — Independent Publishing</p>
+            <p class="mt-4 text-ink-soft leading-relaxed">A full visual identity and cover system for a Hindi-and-English poetry imprint, built around a single letterform that reappears, cropped and recoloured, across every title in the catalogue.</p>
+            <a href="#" class="placard-link inline-flex items-center gap-2 mt-6 font-mono text-xs uppercase tracking-wider text-maroon">View the Piece <span aria-hidden="true">→</span><span class="u" aria-hidden="true"></span></a>
+          </div>
+        </article>
+
+        <!-- Artwork 05 -->
+        <article class="artwork-card grid md:grid-cols-12 gap-8 md:gap-12 items-center" data-reveal>
+          <div class="md:col-span-7">
+            <div class="frame shadow-frame">
+              <div class="mat">
+                <div class="canvas-wrap aspect-[16/11] relative">
+                  <div class="artwork-glow"></div>
+                  <svg viewBox="0 0 640 440" class="w-full h-full canvas-img" role="img" aria-label="Wayfinding system artwork for Namma Transit metro in yellow and slate">
+                    <defs><linearGradient id="g5" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3B4A5A"/><stop offset="100%" stop-color="#1B1812"/></linearGradient></defs>
+                    <rect width="640" height="440" fill="url(#g5)"/>
+                    <rect x="40" y="180" width="560" height="80" fill="#D9A93D" opacity=".9"/>
+                    <rect x="40" y="180" width="10" height="80" fill="#1B1812"/>
+                    <rect x="220" y="180" width="10" height="80" fill="#1B1812"/>
+                    <rect x="420" y="180" width="10" height="80" fill="#1B1812"/>
+                  </svg>
+                  <div class="canvas-sheen"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-5">
+            <p class="font-mono text-xs text-brass-dark tracking-widest">No. 044 — 2023</p>
+            <h3 class="font-display text-3xl mt-2">Namma Transit</h3>
+            <p class="text-stone text-sm mt-1 uppercase tracking-wide font-mono">Wayfinding — Bengaluru Metro Pilot</p>
+            <p class="mt-4 text-ink-soft leading-relaxed">A signage and colour-coding pilot for a Bengaluru metro interchange, tested with commuters across four languages before being handed to the transit authority's in-house team.</p>
+            <a href="#" class="placard-link inline-flex items-center gap-2 mt-6 font-mono text-xs uppercase tracking-wider text-maroon">View the Piece <span aria-hidden="true">→</span><span class="u" aria-hidden="true"></span></a>
+          </div>
+        </article>
+
+        <!-- Artwork 06 -->
+        <article class="artwork-card grid md:grid-cols-12 gap-8 md:gap-12 items-center" data-reveal>
+          <div class="md:col-span-5 md:order-2">
+            <div class="frame shadow-frame">
+              <div class="mat">
+                <div class="canvas-wrap aspect-[3/4] relative">
+                  <div class="artwork-glow"></div>
+                  <svg viewBox="0 0 480 640" class="w-full h-full canvas-img" role="img" aria-label="Space-tech startup website artwork for Antariksh in deep navy and brass">
+                    <defs><radialGradient id="g6" cx="50%" cy="30%" r="80%"><stop offset="0%" stop-color="#3A2B24"/><stop offset="100%" stop-color="#100D0A"/></radialGradient></defs>
+                    <rect width="480" height="640" fill="url(#g6)"/>
+                    <circle cx="240" cy="220" r="70" fill="#AD8A54"/>
+                    <circle cx="360" cy="120" r="4" fill="#F3EEE4"/><circle cx="120" cy="90" r="3" fill="#F3EEE4"/><circle cx="90" cy="300" r="2" fill="#F3EEE4"/>
+                    <circle cx="330" cy="380" r="3" fill="#F3EEE4"/><circle cx="400" cy="480" r="4" fill="#F3EEE4"/>
+                  </svg>
+                  <div class="canvas-sheen"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:col-span-6 md:order-1">
+            <p class="font-mono text-xs text-brass-dark tracking-widest">No. 051 — 2026</p>
+            <h3 class="font-display text-3xl mt-2">Antariksh</h3>
+            <p class="text-stone text-sm mt-1 uppercase tracking-wide font-mono">Website &amp; Brand — Space-Tech Startup</p>
+            <p class="mt-4 text-ink-soft leading-relaxed">A launch site and brand voice for a Hyderabad small-satellite startup, translating orbital mechanics into a visual system a non-technical investor could still follow at a glance.</p>
+            <a href="#" class="placard-link inline-flex items-center gap-2 mt-6 font-mono text-xs uppercase tracking-wider text-maroon">View the Piece <span aria-hidden="true">→</span><span class="u" aria-hidden="true"></span></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BEHIND THE CANVAS / PROCESS ================= -->
+  <section id="process" class="max-w-gallery mx-auto px-5 md:px-10 py-24 md:py-32" aria-labelledby="process-heading">
+    <div class="mb-16 md:mb-20 max-w-2xl" data-reveal>
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-brass-dark mb-4">Wing III — Conservation Room</p>
+      <h2 id="process-heading" class="font-display text-4xl md:text-6xl leading-tight">Behind the canvas.</h2>
+      <p class="mt-5 text-stone text-lg">How a piece moves from brief to wall — the same four stages, every time.</p>
+    </div>
+
+    <ol class="grid md:grid-cols-4 gap-8 md:gap-6">
+      <li class="border-t border-brass/50 pt-6" data-reveal>
+        <span class="font-mono text-xs text-maroon">Stage I</span>
+        <h3 class="font-display text-2xl mt-2">Acquisition</h3>
+        <p class="text-stone mt-3 text-sm leading-relaxed">A working session to understand the brief, audience and constraints — no proposal goes out until we've asked the uncomfortable questions.</p>
+      </li>
+      <li class="border-t border-brass/50 pt-6" data-reveal>
+        <span class="font-mono text-xs text-maroon">Stage II</span>
+        <h3 class="font-display text-2xl mt-2">Sketching</h3>
+        <p class="text-stone mt-3 text-sm leading-relaxed">Rough studies — moodboards, wireframes or type trials — shared early, so direction is agreed before detail work begins.</p>
+      </li>
+      <li class="border-t border-brass/50 pt-6" data-reveal>
+        <span class="font-mono text-xs text-maroon">Stage III</span>
+        <h3 class="font-display text-2xl mt-2">Framing</h3>
+        <p class="text-stone mt-3 text-sm leading-relaxed">The chosen direction is built out in full: systems, screens, or physical signage, refined across two structured review rounds.</p>
+      </li>
+      <li class="border-t border-brass/50 pt-6" data-reveal>
+        <span class="font-mono text-xs text-maroon">Stage IV</span>
+        <h3 class="font-display text-2xl mt-2">Hanging</h3>
+        <p class="text-stone mt-3 text-sm leading-relaxed">Launch, handover and a documented style guide — plus thirty days of light-touch support once the piece is on the wall.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ================= MEMBERSHIP / PRICING ================= -->
+  <section id="membership" class="bg-ink text-gallery py-24 md:py-32" aria-labelledby="membership-heading">
+    <div class="max-w-gallery mx-auto px-5 md:px-10">
+      <div class="mb-16 md:mb-20 max-w-2xl" data-reveal>
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-brass-light mb-4">Become a Patron</p>
+        <h2 id="membership-heading" class="font-display text-4xl md:text-6xl leading-tight">Choose how you visit.</h2>
+        <p class="mt-5 text-gallery/60 text-lg">Transparent, India-priced packages. GST invoicing available on every tier.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+
+        <div class="lift border border-gallery/15 rounded-2xl p-8 flex flex-col" data-reveal>
+          <h3 class="font-display text-2xl">Day Pass</h3>
+          <p class="text-gallery/55 text-sm mt-1">Single project, in and out.</p>
+          <p class="font-display text-5xl mt-8">₹45,000<span class="text-lg font-body text-gallery/50"> onwards</span></p>
+          <ul class="mt-8 space-y-3 text-sm text-gallery/75 flex-1">
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>One brand mark or landing page</li>
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>Two structured revision rounds</li>
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>Source files &amp; usage guide</li>
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>10 business day turnaround</li>
+          </ul>
+          <a href="#contact" class="mt-8 text-center border border-gallery/30 rounded-full py-3 font-mono text-xs uppercase tracking-wider hover:bg-gallery hover:text-ink transition-colors">Reserve This Tier</a>
+        </div>
+
+        <div class="lift relative border-2 border-brass rounded-2xl p-8 flex flex-col bg-gradient-to-b from-maroon/25 to-transparent" data-reveal>
+          <span class="absolute -top-3 left-8 bg-brass text-ink text-[11px] font-mono uppercase tracking-wider px-3 py-1 rounded-full">Most Reserved</span>
+          <h3 class="font-display text-2xl">Season Pass</h3>
+          <p class="text-gallery/55 text-sm mt-1">Full brand &amp; digital system.</p>
+          <p class="font-display text-5xl mt-8">₹1,25,000<span class="text-lg font-body text-gallery/50"> onwards</span></p>
+          <ul class="mt-8 space-y-3 text-sm text-gallery/85 flex-1">
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>Identity, website &amp; core collateral</li>
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>Four structured revision rounds</li>
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>Dedicated design lead</li>
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>6–8 week delivery window</li>
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>60 days of post-launch support</li>
+          </ul>
+          <a href="#contact" class="mt-8 text-center bg-brass text-ink rounded-full py-3 font-mono text-xs uppercase tracking-wider hover:bg-brass-light transition-colors">Reserve This Tier</a>
+        </div>
+
+        <div class="lift border border-gallery/15 rounded-2xl p-8 flex flex-col" data-reveal>
+          <h3 class="font-display text-2xl">Patron Circle</h3>
+          <p class="text-gallery/55 text-sm mt-1">Ongoing monthly retainer.</p>
+          <p class="font-display text-5xl mt-8">₹85,000<span class="text-lg font-body text-gallery/50"> /month</span></p>
+          <ul class="mt-8 space-y-3 text-sm text-gallery/75 flex-1">
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>Standing design capacity, no rebrief</li>
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>Unlimited requests, one active at a time</li>
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>Monthly strategy walkthrough</li>
+            <li class="flex gap-3"><span class="text-brass-light" aria-hidden="true">✦</span>Pause or cancel anytime</li>
+          </ul>
+          <a href="#contact" class="mt-8 text-center border border-gallery/30 rounded-full py-3 font-mono text-xs uppercase tracking-wider hover:bg-gallery hover:text-ink transition-colors">Reserve This Tier</a>
+        </div>
+
+      </div>
+      <p class="text-center text-gallery/45 text-xs font-mono mt-8 uppercase tracking-wider">Prices in INR, exclusive of GST · Custom scopes quoted after Stage I</p>
+    </div>
+  </section>
+
+  <!-- ================= VISITOR BOOK / TESTIMONIALS ================= -->
+  <section id="visitors" class="max-w-gallery mx-auto px-5 md:px-10 py-24 md:py-32" aria-labelledby="visitors-heading">
+    <div class="mb-16 md:mb-20 max-w-2xl" data-reveal>
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-brass-dark mb-4">Guestbook</p>
+      <h2 id="visitors-heading" class="font-display text-4xl md:text-6xl leading-tight">Notes from the visitor book.</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <figure class="lift bg-gallery-2/70 border border-ink/10 rounded-2xl p-8" data-reveal>
+        <blockquote class="font-display text-xl leading-snug text-ink">"They treated our rebrand like an archival project — nothing felt rushed, and nothing felt generic."</blockquote>
+        <figcaption class="mt-6 font-mono text-xs uppercase tracking-wider text-stone">Meera Vashisht · Founder, Saffron Threads · Jaipur</figcaption>
+      </figure>
+      <figure class="lift bg-gallery-2/70 border border-ink/10 rounded-2xl p-8" data-reveal>
+        <blockquote class="font-display text-xl leading-snug text-ink">"Our support tickets on 'how do I do X' dropped by half after the redesign. That's the whole point."</blockquote>
+        <figcaption class="mt-6 font-mono text-xs uppercase tracking-wider text-stone">Rohan Kadakia · Product Lead, Terra Ledger · Bengaluru</figcaption>
+      </figure>
+      <figure class="lift bg-gallery-2/70 border border-ink/10 rounded-2xl p-8" data-reveal>
+        <blockquote class="font-display text-xl leading-snug text-ink">"Studio Antara pushed back on our first idea, and they were right to. The final wayfinding shipped on time."</blockquote>
+        <figcaption class="mt-6 font-mono text-xs uppercase tracking-wider text-stone">Ananya Subramaniam · Project Director, Namma Transit</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= FAQ / GALLERY GUIDE ================= -->
+  <section id="faq" class="bg-gallery-2/70 border-y border-ink/10 py-24 md:py-32" aria-labelledby="faq-heading">
+    <div class="max-w-gallery mx-auto px-5 md:px-10 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-4" data-reveal>
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-brass-dark mb-4">Gallery Guide</p>
+        <h2 id="faq-heading" class="font-display text-4xl leading-tight">Before you visit.</h2>
+        <p class="mt-5 text-stone">Answers to what patrons ask most before reserving a tier.</p>
+      </div>
+      <div class="lg:col-span-7 lg:col-start-6" data-reveal>
+        <div class="divide-y divide-ink/10 border-t border-b border-ink/10">
+
+          <div class="acc-item py-2" data-open="false">
+            <h3><button type="button" class="acc-trigger w-full flex items-center justify-between text-left py-5" aria-expanded="false">
+              <span class="font-display text-xl pr-6">How long does a typical project take?</span>
+              <svg class="acc-chevron w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button></h3>
+            <div class="acc-panel"><div><p class="text-stone pb-5 pr-10 leading-relaxed">Single-project work (Day Pass) typically ships in 7–10 business days. Full identity-and-digital systems (Season Pass) run 6–8 weeks, depending on how quickly feedback comes back to us.</p></div></div>
+          </div>
+
+          <div class="acc-item py-2" data-open="false">
+            <h3><button type="button" class="acc-trigger w-full flex items-center justify-between text-left py-5" aria-expanded="false">
+              <span class="font-display text-xl pr-6">Do you work with clients outside India?</span>
+              <svg class="acc-chevron w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button></h3>
+            <div class="acc-panel"><div><p class="text-stone pb-5 pr-10 leading-relaxed">Yes. Roughly a third of our current roster is outside India. We run structured async reviews and keep a two-hour overlap window with GMT, GST and EST time zones.</p></div></div>
+          </div>
+
+          <div class="acc-item py-2" data-open="false">
+            <h3><button type="button" class="acc-trigger w-full flex items-center justify-between text-left py-5" aria-expanded="false">
+              <span class="font-display text-xl pr-6">What's included in the price, and what isn't?</span>
+              <svg class="acc-chevron w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button></h3>
+            <div class="acc-panel"><div><p class="text-stone pb-5 pr-10 leading-relaxed">All design, source files and a usage guide are included. Stock licensing, printing, paid ad spend and third-party development are quoted separately once scope is confirmed. GST invoices are issued on request.</p></div></div>
+          </div>
+
+          <div class="acc-item py-2" data-open="false">
+            <h3><button type="button" class="acc-trigger w-full flex items-center justify-between text-left py-5" aria-expanded="false">
+              <span class="font-display text-xl pr-6">How many revision rounds do I get?</span>
+              <svg class="acc-chevron w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button></h3>
+            <div class="acc-panel"><div><p class="text-stone pb-5 pr-10 leading-relaxed">Two rounds on the Day Pass, four on the Season Pass, and effectively unlimited on the Patron Circle, since it runs as a standing monthly engagement rather than a fixed brief.</p></div></div>
+          </div>
+
+          <div class="acc-item py-2" data-open="false">
+            <h3><button type="button" class="acc-trigger w-full flex items-center justify-between text-left py-5" aria-expanded="false">
+              <span class="font-display text-xl pr-6">How do payments work?</span>
+              <svg class="acc-chevron w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button></h3>
+            <div class="acc-panel"><div><p class="text-stone pb-5 pr-10 leading-relaxed">A 50% advance confirms the slot, with the balance on delivery for fixed-scope work. Patron Circle retainers are billed in advance each month via UPI, NEFT or card.</p></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA BANNER ================= -->
+  <section class="relative py-24 md:py-32 overflow-hidden" aria-labelledby="cta-heading">
+    <div class="absolute inset-0 bg-maroon"></div>
+    <div class="absolute inset-0 opacity-20" style="background:radial-gradient(circle at 20% 20%, #fff, transparent 40%), radial-gradient(circle at 80% 80%, #fff, transparent 35%);"></div>
+    <div class="relative max-w-gallery mx-auto px-5 md:px-10 text-center text-gallery" data-reveal>
+      <p class="font-mono text-xs uppercase tracking-[0.3em] text-brass-light mb-5">Private Viewings Open</p>
+      <h2 id="cta-heading" class="font-display text-4xl md:text-6xl leading-tight max-w-3xl mx-auto">Bring your next project into the light.</h2>
+      <p class="mt-6 text-gallery/70 text-lg max-w-xl mx-auto">A 30-minute call, no obligation. We'll tell you honestly if we're the right studio for the brief.</p>
+      <a href="#contact" class="inline-block mt-9 bg-gallery text-ink font-mono text-sm uppercase tracking-wider px-9 py-4 rounded-full hover:bg-brass-light transition-colors">Book a Private Viewing</a>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT / FRONT DESK ================= -->
+  <section id="contact" class="max-w-gallery mx-auto px-5 md:px-10 py-24 md:py-32" aria-labelledby="contact-heading">
+    <div class="grid lg:grid-cols-12 gap-14">
+      <div class="lg:col-span-4" data-reveal>
+        <p class="font-mono text-xs uppercase tracking-[0.3em] text-brass-dark mb-4">Front Desk</p>
+        <h2 id="contact-heading" class="font-display text-4xl leading-tight">Plan your visit.</h2>
+        <p class="mt-5 text-stone leading-relaxed">Tell us a little about the piece you want made. We reply within one business day, Monday to Saturday.</p>
+
+        <dl class="mt-10 space-y-5 font-mono text-sm">
+          <div>
+            <dt class="text-stone uppercase text-xs tracking-wider">Studio</dt>
+            <dd class="mt-1">C-14, Amrapali Marg, C-Scheme<br>Jaipur, Rajasthan 302001, India</dd>
+          </div>
+          <div>
+            <dt class="text-stone uppercase text-xs tracking-wider">Reach us</dt>
+            <dd class="mt-1"><a class="placard-link" href="mailto:hello@studioantara.in">hello@studioantara.in</a><br><a class="placard-link" href="tel:+911412345678">+91 141 234 5678</a></dd>
+          </div>
+          <div>
+            <dt class="text-stone uppercase text-xs tracking-wider">Open for briefs</dt>
+            <dd class="mt-1">Mon – Sat, 10:00 – 19:00 IST</dd>
+          </div>
+        </dl>
+
+        <a href="https://wa.me/919812345678" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-2 border border-ink/20 rounded-full px-5 py-3 font-mono text-xs uppercase tracking-wider hover:border-brass hover:text-maroon transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2Zm0 18.12h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.03-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.53 3.7-8.22 8.24-8.22 2.2 0 4.27.86 5.82 2.42a8.16 8.16 0 0 1 2.41 5.81c0 4.53-3.7 8.2-8.23 8.2Z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <form id="contactForm" class="lg:col-span-7 lg:col-start-6" novalidate data-reveal>
+        <div class="grid sm:grid-cols-2 gap-x-8 gap-y-7">
+          <div class="sm:col-span-1">
+            <label for="name" class="font-mono text-xs uppercase tracking-wider text-stone">Full name</label>
+            <input id="name" name="name" type="text" class="field mt-2" placeholder="Aditi Rao" required autocomplete="name">
+          </div>
+          <div class="sm:col-span-1">
+            <label for="email" class="font-mono text-xs uppercase tracking-wider text-stone">Email</label>
+            <input id="email" name="email" type="email" class="field mt-2" placeholder="you@company.com" required autocomplete="email">
+          </div>
+          <div class="sm:col-span-1">
+            <label for="phone" class="font-mono text-xs uppercase tracking-wider text-stone">Phone (WhatsApp preferred)</label>
+            <input id="phone" name="phone" type="tel" class="field mt-2" placeholder="+91 98765 43210" autocomplete="tel">
+          </div>
+          <div class="sm:col-span-1">
+            <label for="tier" class="font-mono text-xs uppercase tracking-wider text-stone">Interested in</label>
+            <select id="tier" name="tier" class="field mt-2">
+              <option>Day Pass</option>
+              <option>Season Pass</option>
+              <option>Patron Circle</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label for="message" class="font-mono text-xs uppercase tracking-wider text-stone">Tell us about the piece</label>
+            <textarea id="message" name="message" rows="4" class="field mt-2" placeholder="What are you building, and by when?" required></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="mt-8 bg-ink text-gallery font-mono text-sm uppercase tracking-wider px-8 py-4 rounded-full hover:bg-maroon transition-colors">Request a Private Viewing</button>
+        <p id="formStatus" class="mt-4 font-mono text-xs text-maroon" role="status" aria-live="polite"></p>
+        <p class="mt-2 text-xs text-stone">This is a template form — connect it to your backend or a service such as Formspree before going live.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-ink text-gallery/80 pt-20 pb-10" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Gallery information</h2>
+  <div class="max-w-gallery mx-auto px-5 md:px-10 grid md:grid-cols-12 gap-12">
+    <div class="md:col-span-4">
+      <span class="font-display text-2xl text-gallery">Studio <em class="not-italic text-brass-light">Antara</em></span>
+      <p class="mt-4 text-sm leading-relaxed max-w-xs">A design studio in Jaipur, India, building brand, product and spatial work worth walking a gallery for.</p>
+      <div class="flex gap-4 mt-6">
+        <a href="#" aria-label="Studio Antara on Instagram" class="w-9 h-9 border border-gallery/25 rounded-full grid place-items-center hover:border-brass-light hover:text-brass-light transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" aria-label="Studio Antara on Behance" class="w-9 h-9 border border-gallery/25 rounded-full grid place-items-center hover:border-brass-light hover:text-brass-light transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 7h7M2 12h6M2 12v6h5.5c3 0 3-3 1.5-4.2M2 12V7h4.5C9 7 9.5 9.5 8 10.6M16 15.5c1 1 3 1 4 0M14 13h8c0-3-2-5-4.5-5S14 10 14 13Z"/></svg>
+        </a>
+        <a href="#" aria-label="Studio Antara on LinkedIn" class="w-9 h-9 border border-gallery/25 rounded-full grid place-items-center hover:border-brass-light hover:text-brass-light transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="8" y1="11" x2="8" y2="16"/><circle cx="8" cy="8" r="1"/><path d="M12 16v-3.2c0-1.5 1-2.3 2.3-2.3S16 11.3 16 12.8V16"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav class="md:col-span-2" aria-label="Gallery">
+      <p class="font-mono text-xs uppercase tracking-wider text-brass-light mb-4">Gallery</p>
+      <ul class="space-y-3 text-sm">
+        <li><a class="hover:text-gallery" href="#collection">The Collection</a></li>
+        <li><a class="hover:text-gallery" href="#process">Behind the Canvas</a></li>
+        <li><a class="hover:text-gallery" href="#membership">Membership</a></li>
+        <li><a class="hover:text-gallery" href="#visitors">Visitor Book</a></li>
+      </ul>
+    </nav>
+
+    <nav class="md:col-span-2" aria-label="Studio">
+      <p class="font-mono text-xs uppercase tracking-wider text-brass-light mb-4">Studio</p>
+      <ul class="space-y-3 text-sm">
+        <li><a class="hover:text-gallery" href="#about">Curator's Note</a></li>
+        <li><a class="hover:text-gallery" href="#faq">Guide / FAQ</a></li>
+        <li><a class="hover:text-gallery" href="#contact">Front Desk</a></li>
+      </ul>
+    </nav>
+
+    <div class="md:col-span-4">
+      <p class="font-mono text-xs uppercase tracking-wider text-brass-light mb-4">Stay in the loop</p>
+      <form class="flex gap-2" onsubmit="event.preventDefault(); this.querySelector('[data-nl-status]').textContent='Thank you — you are on the list.';">
+        <label for="nl-email" class="sr-only">Email address</label>
+        <input id="nl-email" type="email" required placeholder="you@email.com" class="flex-1 bg-transparent border border-gallery/25 rounded-full px-4 py-2.5 text-sm placeholder:text-gallery/40 focus:outline-none focus:border-brass-light">
+        <button type="submit" class="bg-brass text-ink rounded-full px-5 py-2.5 text-sm font-mono uppercase tracking-wide hover:bg-brass-light transition-colors">Join</button>
+      </form>
+      <p data-nl-status class="text-xs text-brass-light mt-2" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="max-w-gallery mx-auto px-5 md:px-10 mt-16 pt-8 border-t border-gallery/15 flex flex-col sm:flex-row justify-between gap-4 text-xs text-gallery/50 font-mono">
+    <p>© <span id="year">2026</span> Studio Antara, Jaipur, India. All rights reserved.</p>
+    <div class="flex gap-6">
+      <a href="https://studio.lifehutsolutions.com" target="_blank"
+     rel="noopener noreferrer" class="hover:text-gallery">Built by Lifehut Studio</a>
+      
+      <a href="#hero" class="hover:text-gallery">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= JSON-LD STRUCTURED DATA ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Studio Antara",
+  "image": "https://www.studioantara.in/og-cover.jpg",
+  "@id": "https://www.studioantara.in/",
+  "url": "https://www.studioantara.in/",
+  "telephone": "+91-141-234-5678",
+  "priceRange": "₹₹₹",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "C-14, Amrapali Marg, C-Scheme",
+    "addressLocality": "Jaipur",
+    "addressRegion": "Rajasthan",
+    "postalCode": "302001",
+    "addressCountry": "IN"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 26.9124, "longitude": 75.7873 },
+  "areaServed": "IN",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "10:00",
+    "closes": "19:00"
+  },
+  "sameAs": ["https://www.instagram.com/", "https://www.behance.net/", "https://www.linkedin.com/"]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isTouch = window.matchMedia('(hover: none)').matches;
+
+  /* ---------------- Year ---------------- */
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------------- Ambient spotlight cursor ---------------- */
+  if (!isTouch) {
+    var root = document.documentElement;
+    var raf = null, tx = 0, ty = 0;
+    function applySpot(){
+      root.style.setProperty('--spot-x', tx + 'px');
+      root.style.setProperty('--spot-y', ty + 'px');
+      raf = null;
+    }
+    window.addEventListener('mousemove', function(e){
+      tx = e.clientX; ty = e.clientY;
+      document.body.classList.add('spot-active');
+      if (!raf) raf = requestAnimationFrame(applySpot);
+    }, { passive: true });
+    window.addEventListener('mouseleave', function(){ document.body.classList.remove('spot-active'); });
+  }
+
+  /* ---------------- Reveal on scroll ---------------- */
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* ---------------- Count-up stats ---------------- */
+  var statEls = document.querySelectorAll('.stat-num');
+  if ('IntersectionObserver' in window && statEls.length) {
+    var statIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+        statIO.unobserve(el);
+        if (reduceMotion) { el.textContent = target; return; }
+        var start = null, duration = 1400;
+        function step(ts){
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(eased * target);
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    statEls.forEach(function(el){ statIO.observe(el); });
+  }
+
+  /* ---------------- Floor progress bar ---------------- */
+  var progressBar = document.getElementById('floor-progress');
+  function updateProgress(){
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    if (progressBar) progressBar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  /* ---------------- Gallery sound: footstep synthesis ---------------- */
+  var audioCtx = null;
+  var soundOn = false;
+  var soundToggle = document.getElementById('soundToggle');
+  var iconOn = document.getElementById('soundIconOn');
+  var iconOff = document.getElementById('soundIconOff');
+
+  function ensureAudio(){
+    if (!audioCtx) {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (AC) audioCtx = new AC();
+    }
+    if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+  }
+
+  function playFootstep(foot){
+    if (!soundOn || !audioCtx) return;
+    var now = audioCtx.currentTime;
+    var pitch = foot === 'L' ? 1 : 0.94;
+
+    // noise burst (heel strike)
+    var bufferSize = audioCtx.sampleRate * 0.12;
+    var buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+    var data = buffer.getChannelData(0);
+    for (var i = 0; i < bufferSize; i++) {
+      data[i] = (Math.random() * 2 - 1) * (1 - i / bufferSize);
+    }
+    var noise = audioCtx.createBufferSource();
+    noise.buffer = buffer;
+
+    var filter = audioCtx.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = 420 * pitch;
+    filter.Q.value = 0.7;
+
+    var noiseGain = audioCtx.createGain();
+    noiseGain.gain.setValueAtTime(0.16, now);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.13);
+
+    noise.connect(filter);
+    filter.connect(noiseGain);
+    noiseGain.connect(audioCtx.destination);
+
+    // low thump
+    var osc = audioCtx.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(90 * pitch, now);
+    osc.frequency.exponentialRampToValueAtTime(55 * pitch, now + 0.1);
+
+    var oscGain = audioCtx.createGain();
+    oscGain.gain.setValueAtTime(0.09, now);
+    oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+
+    osc.connect(oscGain);
+    oscGain.connect(audioCtx.destination);
+
+    noise.start(now); noise.stop(now + 0.14);
+    osc.start(now); osc.stop(now + 0.17);
+  }
+
+  if (soundToggle) {
+    soundToggle.addEventListener('click', function(){
+      ensureAudio();
+      soundOn = !soundOn;
+      soundToggle.setAttribute('aria-pressed', String(soundOn));
+      if (iconOn && iconOff) { iconOn.classList.toggle('hidden', !soundOn); iconOff.classList.toggle('hidden', soundOn); }
+      if (soundOn) playFootstep('L');
+    });
+  }
+
+  /* ---------------- Footstep trail + scroll-triggered sound ---------------- */
+  var rail = document.getElementById('footstepRail');
+  var lastFoot = 'R';
+  var lastScrollY = window.scrollY;
+  var accumulated = 0;
+  var footCap = 10;
+
+  var footprintSVG = '<svg viewBox="0 0 24 40"><path d="M12 2c-3 0-5 3-5 7 0 3 1 5 1 8 0 6-4 8-4 14 0 4 3 7 8 7 4 0 8-2 8-8 0-5-3-8-3-14 0-4 1-6 1-9 0-3-2-5-6-5z"/></svg>';
+
+  function spawnFootprint(){
+    if (!rail) return;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? window.scrollY / docHeight : 0;
+    var top = Math.min(Math.max(pct * (window.innerHeight - 60), 0), window.innerHeight - 60);
+    var el = document.createElement('span');
+    el.className = 'footprint';
+    el.style.top = top + 'px';
+    el.style.left = (lastFoot === 'L' ? '6px' : '22px');
+    el.style.transform = lastFoot === 'L' ? 'rotate(-8deg)' : 'rotate(8deg)';
+    el.innerHTML = footprintSVG;
+    rail.appendChild(el);
+    if (rail.children.length > footCap) rail.removeChild(rail.children[0]);
+    el.addEventListener('animationend', function(){ if (el.parentNode) el.parentNode.removeChild(el); });
+  }
+
+  function onScroll(){
+    var current = window.scrollY;
+    accumulated += Math.abs(current - lastScrollY);
+    lastScrollY = current;
+    if (accumulated > 130) {
+      accumulated = 0;
+      lastFoot = lastFoot === 'L' ? 'R' : 'L';
+      spawnFootprint();
+      playFootstep(lastFoot);
+    }
+  }
+  var scrollTicking = false;
+  window.addEventListener('scroll', function(){
+    if (!scrollTicking) {
+      requestAnimationFrame(function(){ onScroll(); scrollTicking = false; });
+      scrollTicking = true;
+    }
+  }, { passive: true });
+
+  /* ---------------- Mobile menu ---------------- */
+  var menuToggle = document.getElementById('menuToggle');
+  var menuClose = document.getElementById('menuClose');
+  var mobileMenu = document.getElementById('mobile-menu');
+
+  function openMenu(){
+    mobileMenu.setAttribute('data-open', 'true');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    var firstLink = mobileMenu.querySelector('a');
+    if (firstLink) firstLink.focus();
+  }
+  function closeMenu(){
+    mobileMenu.setAttribute('data-open', 'false');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    menuToggle.focus();
+  }
+  if (menuToggle) menuToggle.addEventListener('click', openMenu);
+  if (menuClose) menuClose.addEventListener('click', closeMenu);
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll('[data-close]').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && mobileMenu.getAttribute('data-open') === 'true') closeMenu();
+    });
+  }
+
+  /* ---------------- FAQ accordion ---------------- */
+  document.querySelectorAll('.acc-item').forEach(function(item){
+    var trigger = item.querySelector('.acc-trigger');
+    trigger.addEventListener('click', function(){
+      var isOpen = item.getAttribute('data-open') === 'true';
+      // close siblings for a cleaner single-open accordion
+      item.closest('div').parentElement && null;
+      document.querySelectorAll('.acc-item').forEach(function(other){
+        if (other !== item) { other.setAttribute('data-open', 'false'); other.querySelector('.acc-trigger').setAttribute('aria-expanded', 'false'); }
+      });
+      item.setAttribute('data-open', String(!isOpen));
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  /* ---------------- Contact form (demo, no backend) ---------------- */
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+  if (form) {
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        status.textContent = 'Please fill in the required fields before sending.';
+        form.reportValidity();
+        return;
+      }
+      status.textContent = 'Thank you — your request has reached the front desk. We reply within one business day.';
+      form.reset();
+    });
+  }
+
+  /* ---------------- Active nav link on scroll ---------------- */
+  var sections = ['collection','process','membership','visitors','faq'].map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  var navLinks = document.querySelectorAll('.nav-link');
+  if ('IntersectionObserver' in window && sections.length) {
+    var navIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          navLinks.forEach(function(link){
+            var match = link.getAttribute('href') === '#' + entry.target.id;
+            link.toggleAttribute('aria-current', match);
+            if (match) link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current');
+          });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function(s){ navIO.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>

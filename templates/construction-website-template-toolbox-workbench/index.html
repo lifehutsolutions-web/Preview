@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ToolBox Workbench | Construction Website Template | Contractor HTML Template</title>
+
+<meta name="description" content="Preview ToolBox Workbench, a premium construction website template featuring an interactive toolbox hero, pull-out service drawers, pegboard workbench styling, before & after project slider, responsive HTML, Tailwind CSS and SEO-optimized performance.">
+
+<meta name="keywords" content="construction website template, contractor website template, handyman website template, builder HTML template, renovation website template, industrial website template, Tailwind CSS template, responsive construction website, before after image slider, construction company website, Lifehut Solutions">
+
+<meta name="robots" content="index, follow">
+
+<meta name="author" content="Lifehut Solutions">
+
+<link rel="canonical" href="https://preview.lifehutsolutions.com/?template=construction-website-template-toolbox-workbench">
+
+<meta name="theme-color" content="#374151">
+
+<!-- Open Graph -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lifehut Template Preview">
+<meta property="og:title" content="ToolBox Workbench | Construction Website Template">
+
+<meta property="og:description" content="An interactive construction website template styled as a craftsman's toolbox with pull-out service drawers, pegboard textures and before & after project reveals.">
+
+<meta property="og:url" content="https://preview.lifehutsolutions.com/?template=construction-website-template-toolbox-workbench">
+
+<meta property="og:image" content="https://preview.lifehutsolutions.com/assets/images/construction-website-template-toolbox-workbench.png">
+
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="ToolBox Workbench | Construction Website Template">
+
+<meta name="twitter:description" content="Interactive construction website template with toolbox hero, pull-out service drawers, before & after portfolio slider, responsive HTML and Tailwind CSS.">
+
+<meta name="twitter:image" content="https://preview.lifehutsolutions.com/assets/images/construction-website-template-toolbox-workbench.png">
+
+<meta name="theme-color" content="#1C2024">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧰</text></svg>">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind (utility layer only — visual identity lives in the custom CSS below) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['Anton', 'sans-serif'],
+          body: ['Barlow', 'sans-serif'],
+          mono: ['"Space Mono"', 'monospace'],
+        },
+        container: { center: true },
+      }
+    }
+  }
+</script>
+
+<style>
+/* =======================================================================
+   DESIGN TOKENS — Toolbox & Workbench identity
+   ======================================================================= */
+:root{
+  --steel-dark:#1B1F23;      /* toolbox body / primary background */
+  --steel-mid:#24292E;       /* secondary panel background */
+  --steel-line:#3C444B;      /* hairline borders / rivets */
+  --pegboard:#2E3A42;        /* pegboard panel background */
+  --pegboard-dot:#465862;    /* pegboard holes */
+  --oak:#7A4E2E;             /* workbench wood accent */
+  --oak-deep:#5B3A22;
+  --oak-light:#A5764B;
+  --safety-orange:#FF6A1A;   /* tool-handle orange — primary accent */
+  --safety-orange-dim:#CC5514;
+  --caution-yellow:#FFC93C;  /* tape-measure yellow — secondary accent */
+  --chalk:#F3EFE6;           /* chalk-white text/background */
+  --chalk-dim:#C9C2B4;
+  --ink:#14171A;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+}
+body{
+  background:var(--steel-dark);
+  color:var(--chalk);
+  font-family:'Barlow',sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.font-display{font-family:'Anton',sans-serif; letter-spacing:0.01em; text-transform:uppercase;}
+.font-mono-tag{font-family:'Space Mono',monospace;}
+
+/* Skip link */
+.skip-link{position:absolute; left:-9999px; top:0; background:var(--safety-orange); color:var(--ink); padding:12px 20px; z-index:999; font-weight:700;}
+.skip-link:focus{left:12px; top:12px;}
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+  outline:3px solid var(--caution-yellow); outline-offset:3px; border-radius:2px;
+}
+
+/* ---------- Pegboard texture ---------- */
+.pegboard-bg{
+  background-color:var(--pegboard);
+  background-image:
+    radial-gradient(circle, var(--pegboard-dot) 2.2px, transparent 2.6px);
+  background-size:34px 34px;
+  background-position:17px 17px;
+  position:relative;
+}
+.pegboard-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(27,31,35,0.0) 0%, rgba(27,31,35,0.55) 100%);
+  pointer-events:none;
+}
+
+/* ---------- Worn steel texture (hero / header) ---------- */
+.steel-bg{
+  background-color:var(--steel-dark);
+  background-image:
+    linear-gradient(115deg, rgba(255,255,255,0.025) 0%, transparent 35%, transparent 65%, rgba(255,255,255,0.03) 100%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 3px);
+}
+
+/* ---------- Wood grain (cards / wood accents) ---------- */
+.wood-grain{
+  background-color:var(--oak);
+  background-image:
+    repeating-linear-gradient(92deg, rgba(0,0,0,0.10) 0px, rgba(0,0,0,0.10) 2px, transparent 2px, transparent 9px),
+    repeating-linear-gradient(92deg, rgba(255,255,255,0.05) 0px, transparent 6px, rgba(255,255,255,0.05) 14px);
+}
+
+/* ---------- Rivets / hardware detail ---------- */
+.rivet{width:8px; height:8px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #9aa5ab, #4b5459 70%); box-shadow: inset 0 0 1px rgba(0,0,0,0.6);}
+
+/* ---------- Section title-block strip (toolbox job ticket) ---------- */
+.job-ticket{
+  border:1px dashed var(--steel-line);
+  font-family:'Space Mono',monospace;
+  font-size:0.7rem;
+  letter-spacing:0.08em;
+}
+
+/* ---------- Header ---------- */
+#site-header{
+  backdrop-filter:blur(8px);
+  background:rgba(27,31,35,0.9);
+  border-bottom:1px solid var(--steel-line);
+  transition:padding .25s ease, background .25s ease;
+}
+.nav-link{position:relative; font-weight:600; font-size:0.92rem; letter-spacing:0.02em;}
+.nav-link::after{content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:var(--safety-orange); transition:width .2s ease;}
+.nav-link:hover::after, .nav-link:focus-visible::after{width:100%;}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  font-weight:700; text-transform:uppercase; letter-spacing:0.04em; font-size:0.85rem;
+  padding:0.95rem 1.75rem; border-radius:4px; transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  border:2px solid transparent;
+}
+.btn-primary{background:var(--safety-orange); color:var(--ink); box-shadow:0 4px 0 var(--safety-orange-dim);}
+.btn-primary:hover{transform:translateY(-2px); box-shadow:0 6px 0 var(--safety-orange-dim);}
+.btn-primary:active{transform:translateY(2px); box-shadow:0 1px 0 var(--safety-orange-dim);}
+.btn-outline{border-color:var(--chalk-dim); color:var(--chalk);}
+.btn-outline:hover{border-color:var(--chalk); background:rgba(243,239,230,0.06); transform:translateY(-2px);}
+
+/* ---------- Hero toolbox illustration ---------- */
+.tool-hang{transform-origin:top center; animation:sway 5.5s ease-in-out infinite;}
+.tool-hang.d1{animation-delay:0s;}
+.tool-hang.d2{animation-delay:.6s;}
+.tool-hang.d3{animation-delay:1.2s;}
+.tool-hang.d4{animation-delay:.3s;}
+@keyframes sway{0%,100%{transform:rotate(-3.5deg);} 50%{transform:rotate(3.5deg);}}
+.hero-draw-in{stroke-dasharray:1200; stroke-dashoffset:1200; animation:drawline 2.4s ease forwards;}
+@keyframes drawline{to{stroke-dashoffset:0;}}
+
+/* ---------- Reveal on scroll ---------- */
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+
+/* ---------- Drawer (service) card ---------- */
+.drawer-card{
+  background:var(--steel-mid);
+  border:1px solid var(--steel-line);
+  border-radius:6px;
+  overflow:hidden;
+  position:relative;
+  transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease, border-color .3s ease;
+}
+.drawer-card::before{
+  content:""; position:absolute; left:0; right:0; top:0; height:4px; background:var(--safety-orange);
+  transform:scaleX(0); transform-origin:left; transition:transform .35s ease;
+}
+.drawer-card:hover, .drawer-card:focus-within{
+  transform:translateY(-8px) scale(1.015);
+  box-shadow:0 20px 40px -12px rgba(0,0,0,0.55);
+  border-color:var(--safety-orange);
+}
+.drawer-card:hover::before, .drawer-card:focus-within::before{transform:scaleX(1);}
+.drawer-handle{
+  width:46px; height:8px; border-radius:6px; background:linear-gradient(180deg,#8a939a,#5c656b);
+  box-shadow:0 1px 0 rgba(255,255,255,0.15) inset, 0 2px 3px rgba(0,0,0,0.5);
+  transition:transform .3s ease;
+}
+.drawer-card:hover .drawer-handle{transform:translateY(2px);}
+
+/* ---------- Stats ---------- */
+.stat-num{font-family:'Anton',sans-serif; font-size:clamp(2.4rem,5vw,3.6rem); color:var(--caution-yellow);}
+
+/* ---------- Process ---------- */
+.process-step{position:relative;}
+.process-num{
+  font-family:'Space Mono',monospace; font-weight:700; font-size:0.85rem;
+  color:var(--ink); background:var(--caution-yellow); width:34px; height:34px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+
+/* ---------- Before/After drag slider ---------- */
+.ba-slider{position:relative; overflow:hidden; border-radius:6px; user-select:none; touch-action:pan-y; aspect-ratio:4/3; background:#000; cursor:ew-resize;}
+.ba-slider img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; pointer-events:none; -webkit-user-drag:none;}
+.ba-after{clip-path: inset(0 0 0 50%);}
+.ba-before{filter:grayscale(45%) sepia(12%) contrast(0.94) brightness(0.92);}
+.ba-handle{
+  position:absolute; top:0; bottom:0; left:50%; width:0; transform:translateX(-50%);
+  pointer-events:none;
+}
+.ba-handle::before{content:""; position:absolute; top:0; bottom:0; left:0; width:3px; background:var(--caution-yellow); box-shadow:0 0 0 1px rgba(0,0,0,.4);}
+.ba-grip{
+  position:absolute; top:50%; left:0; transform:translate(-50%,-50%);
+  width:42px; height:42px; border-radius:50%; background:var(--caution-yellow);
+  display:flex; align-items:center; justify-content:center; box-shadow:0 3px 10px rgba(0,0,0,.5);
+  color:var(--ink); font-weight:700;
+}
+.ba-tag{position:absolute; top:10px; font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:.08em; padding:3px 8px; border-radius:3px; background:rgba(20,23,26,0.75); color:var(--chalk); z-index:2;}
+.ba-tag.before{left:10px;}
+.ba-tag.after{right:10px;}
+
+/* ---------- Testimonial ticket ---------- */
+.ticket{
+  background:var(--chalk); color:var(--ink); border-radius:4px; position:relative;
+  box-shadow:0 12px 30px -10px rgba(0,0,0,.5);
+}
+.ticket::before{
+  content:""; position:absolute; left:0; top:14px; bottom:14px; width:6px;
+  background:repeating-linear-gradient(180deg, var(--safety-orange) 0 10px, transparent 10px 18px);
+}
+
+/* ---------- Team badge ---------- */
+.badge-card{background:var(--steel-mid); border:1px solid var(--steel-line); border-radius:8px;}
+.badge-photo{aspect-ratio:1/1; object-fit:cover;}
+.badge-tag{font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:.08em; color:var(--caution-yellow);}
+
+/* ---------- Marquee trust bar ---------- */
+.marquee-track{display:flex; gap:3.5rem; width:max-content; animation:marquee 28s linear infinite;}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused;}
+@keyframes marquee{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+
+/* ---------- Misc ---------- */
+.divider-dim{border-color:var(--steel-line);}
+.chip{font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:.08em; padding:3px 9px; border:1px solid var(--steel-line); border-radius:3px;}
+.section-eyebrow{font-family:'Space Mono',monospace; font-size:0.78rem; letter-spacing:.16em; color:var(--safety-orange);}
+
+/* corner registration marks */
+.corner-mark{position:absolute; width:16px; height:16px; border:2px solid var(--steel-line); opacity:.6;}
+.corner-mark.tl{top:0; left:0; border-right:none; border-bottom:none;}
+.corner-mark.tr{top:0; right:0; border-left:none; border-bottom:none;}
+.corner-mark.bl{bottom:0; left:0; border-right:none; border-top:none;}
+.corner-mark.br{bottom:0; right:0; border-left:none; border-top:none;}
+
+input, textarea{
+  background:var(--steel-dark); border:1px solid var(--steel-line); color:var(--chalk);
+  border-radius:4px; padding:0.85rem 1rem; width:100%; font-family:'Barlow',sans-serif;
+}
+input::placeholder, textarea::placeholder{color:var(--chalk-dim);}
+input:focus, textarea:focus{border-color:var(--safety-orange); outline:none;}
+
+.mobile-menu{
+  position:absolute; top:100%; left:0; right:0;
+  max-height:0; overflow:hidden; opacity:0; pointer-events:none;
+  transition:max-height .3s ease, opacity .25s ease;
+}
+.mobile-menu.open{max-height:420px; opacity:1; pointer-events:auto;}
+</style>
+</head>
+
+<body class="steel-bg">
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- =========================================================================================
+     ██████  ZERO-CODE CUSTOMIZATION PANEL  ██████
+     Everything on this website is generated from the single SITE object below.
+     To rebrand the whole site: edit the values on the RIGHT of each colon here,
+     save the file, and reopen it in your browser. You do NOT need to touch
+     any other part of this file, and you do NOT need any coding knowledge.
+
+     RULES OF THUMB
+     1. Keep the quote marks "like this" around every piece of text.
+     2. Keep the commas at the end of each line.
+     3. To add or remove a repeatable item (a service, a project, a team
+        member, a testimonial...) copy or delete one whole { ... } block,
+        including its trailing comma.
+     4. Image fields take a direct image URL. Replace the sample links with
+        links to your own photos (e.g. uploaded to your hosting, Google
+        Drive "share" link, or any image URL).
+     5. Full field-by-field instructions are in Customization Guide.pdf.
+     ========================================================================================= -->
+<script>
+const SITE = {
+
+  // 1. BUSINESS DETAILS ----------------------------------------------------
+  business: {
+    name: "YourBusiness Handyman & Trades Co.",      // Enter your own business name
+    shortName: "YourBusiness",
+    tagline: "Skilled Hands, Honest Work — Fixed Right, First Time",
+    foundedYear: "2012",
+    ownerName: "Your Name",
+    ownerTitle: "Founder & Master Tradesman",
+    phoneDisplay: "+91 98765 43210",
+    phoneLink: "+919876543210",
+    whatsappLink: "919876543210",
+    email: "hello@yourdomain.com",
+    addressLine1: "Shop No. 12, Industrial Estate Road",
+    addressLine2: "Your Area",
+    city: "Your City",
+    state: "Your State",
+    pincode: "000000",
+    country: "India",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0!2d78.4867!3d17.3850!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sIndia!5e0!3m2!1sen!2sin!4v1700000000000",
+    workingHours: "Mon–Sat, 9:00 AM – 7:00 PM",
+    gstin: "YOUR-GSTIN-NUMBER",
+    registrationNote: "Reg. No: YOUR-REGISTRATION-NUMBER",
+    socials: {
+      instagram: "https://instagram.com/yourbusiness",
+      facebook: "https://facebook.com/yourbusiness",
+      youtube: "https://youtube.com/@yourbusiness",
+      linkedin: "https://linkedin.com/company/yourbusiness",
+    },
+  },
+
+  // 2. SEO / META -----------------------------------------------------------
+  meta: {
+    canonicalUrl: "https://www.yourdomain.com/",
+  },
+
+  // 3. HERO SECTION -----------------------------------------------------------
+  hero: {
+    eyebrow: "LICENSED · INSURED · ON CALL 7 DAYS",
+    headline1: "Open The Toolbox.",
+    headline2: "Get It Fixed Today.",
+    subtext: "From a dripping tap to a full home renovation — our crew of licensed plumbers, electricians, carpenters and painters shows up on time, quotes a fair fixed price, and leaves the job site cleaner than they found it.",
+    ctaPrimary: "Book a Tradesman",
+    ctaSecondary: "See Our Work",
+    ticketNo: "JC-2026-014",
+    trade: "GENERAL CONTRACTING",
+    status: "AVAILABLE TODAY",
+    dispatch: "YOUR CITY",
+  },
+
+  // 4. TRUSTED-BY BAR -----------------------------------------------------------
+  trustedBy: [
+    "Sunrise Apartments", "GreenLeaf Builders", "Metro Facilities Mgmt.",
+    "Oakwood Residency", "Prime Realty Group", "CityCare Property Services",
+    "Harbor View Society", "Northgate Offices",
+  ],
+
+  // 5. STATISTICS -----------------------------------------------------------
+  stats: [
+    { value: 1200, suffix: "+", label: "Jobs Completed" },
+    { value: 14, suffix: "+", label: "Years On The Tools" },
+    { value: 35, suffix: " min", label: "Avg. Response Time" },
+    { value: 98, suffix: "%", label: "Client Satisfaction" },
+  ],
+
+  // 6. SERVICES (each shown as a pull-out tool drawer) -----------------------------------------------------------
+  services: [
+    { code: "TL-01", title: "Plumbing Repairs", description: "Leak fixes, tap & pipe replacement, drain clearing and full bathroom re-piping, done clean and code-compliant." },
+    { code: "TL-02", title: "Electrical Work", description: "Wiring, switchboard upgrades, fixture installs and safety inspections from licensed, insured electricians." },
+    { code: "TL-03", title: "Carpentry & Furniture", description: "Custom shelving, door & window repair, modular furniture fitting and fine finish woodwork." },
+    { code: "TL-04", title: "Painting & Finishing", description: "Interior and exterior painting, texture finishes and waterproof coatings that hold up to the seasons." },
+    { code: "TL-05", title: "Masonry & Tiling", description: "Wall repair, floor & wall tiling, waterproofing and small structural patch-up work." },
+    { code: "TL-06", title: "AC & Appliance Repair", description: "Installation, servicing and repair for split ACs, geysers, chimneys and major home appliances." },
+  ],
+
+  // 7. PROCESS -----------------------------------------------------------
+  process: [
+    { step: "01", title: "Call or Click", description: "Tell us what needs fixing — by phone, WhatsApp or the form below. Most calls are answered same-day." },
+    { step: "02", title: "Free Site Visit", description: "A tradesman visits, assesses the job, and takes accurate measurements before any work begins." },
+    { step: "03", title: "Fixed Quote", description: "You get one clear, written price before we lift a tool. No surprise charges once the job starts." },
+    { step: "04", title: "We Get To Work", description: "Our licensed crew arrives on schedule with the right tools for the job, from drawer to doorstep." },
+    { step: "05", title: "Clean Handover", description: "Site cleaned, work inspected with you, and a workmanship warranty logged on your job card." },
+  ],
+
+  // 8. PROJECTS (drag the slider to reveal before / after) -----------------------------------------------------------
+  projects: [
+    { name: "Kitchen Re-Plumb & Tiling", category: "Plumbing", location: "Your City", year: "2025", scope: "Full re-pipe + tile refresh", duration: "6 days", imageBefore: "https://picsum.photos/seed/tb-kitchen-before/800/600", imageAfter: "https://picsum.photos/seed/tb-kitchen-after/800/600" },
+    { name: "Living Room Rewire", category: "Electrical", location: "Your City", year: "2025", scope: "Full circuit upgrade", duration: "3 days", imageBefore: "https://picsum.photos/seed/tb-living-before/800/600", imageAfter: "https://picsum.photos/seed/tb-living-after/800/600" },
+    { name: "Balcony Waterproofing", category: "Masonry", location: "Your City", year: "2024", scope: "Waterproofing + tiling", duration: "4 days", imageBefore: "https://picsum.photos/seed/tb-balcony-before/800/600", imageAfter: "https://picsum.photos/seed/tb-balcony-after/800/600" },
+    { name: "Custom Built-In Wardrobe", category: "Carpentry", location: "Your City", year: "2024", scope: "Design + install", duration: "5 days", imageBefore: "https://picsum.photos/seed/tb-wardrobe-before/800/600", imageAfter: "https://picsum.photos/seed/tb-wardrobe-after/800/600" },
+    { name: "Exterior Repaint", category: "Painting", location: "Your City", year: "2024", scope: "Full exterior repaint", duration: "7 days", imageBefore: "https://picsum.photos/seed/tb-exterior-before/800/600", imageAfter: "https://picsum.photos/seed/tb-exterior-after/800/600" },
+    { name: "Office Pantry Fit-Out", category: "General", location: "Your City", year: "2023", scope: "Plumbing + carpentry + paint", duration: "9 days", imageBefore: "https://picsum.photos/seed/tb-pantry-before/800/600", imageAfter: "https://picsum.photos/seed/tb-pantry-after/800/600" },
+  ],
+
+  // 9. WHY CHOOSE US -----------------------------------------------------------
+  whyUs: [
+    { title: "Licensed & Insured Crew", description: "Every tradesman on the job is background-checked, licensed and covered — for your peace of mind." },
+    { title: "Transparent Fixed Pricing", description: "One written quote before work starts. What you're quoted is what you pay, no hidden add-ons." },
+    { title: "Same-Day Response", description: "Most calls get a site visit scheduled within 24 hours, with emergency slots available." },
+    { title: "1-Year Workmanship Warranty", description: "Every job leaves with a written warranty — if something's not right, we come back and fix it free." },
+  ],
+
+  // 10. TESTIMONIALS -----------------------------------------------------------
+  testimonials: [
+    { quote: "They fixed a leak two other plumbers couldn't find, and the price matched the quote to the rupee.", name: "Priya M.", role: "Homeowner, Your City" },
+    { quote: "Rewired our whole office over a weekend with zero downtime. Professional crew, spotless cleanup.", name: "Arjun K.", role: "Facilities Manager, Northgate Offices" },
+    { quote: "The carpentry work on our wardrobes is honestly better finish than the builder's original fittings.", name: "Fatima S.", role: "Homeowner, Your City" },
+  ],
+
+  // 11. TEAM -----------------------------------------------------------
+  team: [
+    { name: "Your Name", role: "Founder & Master Tradesman", tag: "TB-01", photo: "https://picsum.photos/seed/tb-team-1/400/400" },
+    { name: "Team Member Name", role: "Lead Electrician", tag: "TB-02", photo: "https://picsum.photos/seed/tb-team-2/400/400" },
+    { name: "Team Member Name", role: "Lead Plumber", tag: "TB-03", photo: "https://picsum.photos/seed/tb-team-3/400/400" },
+    { name: "Team Member Name", role: "Site Carpenter", tag: "TB-04", photo: "https://picsum.photos/seed/tb-team-4/400/400" },
+  ],
+
+  // 12. CALL-TO-ACTION BAND -----------------------------------------------------------
+  cta: {
+    headline: "Got A Job That Needs Doing Right?",
+    subtext: "Pull up a free quote in minutes. No obligation, no pressure — just an honest price from a tradesman who shows up.",
+    buttonText: "Get Your Free Quote",
+  },
+
+  // 13. FOOTER -----------------------------------------------------------
+  footer: {
+    about: "YourBusiness Handyman & Trades Co. is a licensed, insured contracting outfit serving homes and businesses across Your City with plumbing, electrical, carpentry, painting and general repair work since 2012.",
+    copyrightName: "YourBusiness Handyman & Trades Co.",
+  },
+};
+</script>
+<!-- =========================================================================================
+     ██████  END OF CUSTOMIZATION PANEL — do not edit below this line  ██████
+     ========================================================================================= -->
+
+
+<!-- ============================= HEADER ============================= -->
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50">
+  <div class="container mx-auto px-5 md:px-8">
+    <div class="flex items-center justify-between py-4">
+      <a href="#main-content" class="flex items-center gap-3 group" aria-label="Homepage">
+        <span class="w-10 h-10 rounded flex items-center justify-center text-xl" style="background:var(--safety-orange);" aria-hidden="true">🧰</span>
+        <span class="font-display text-xl leading-none" data-bind="business.shortName">YourBusiness</span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8" aria-label="Primary">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#process" class="nav-link">How It Works</a>
+        <a href="#projects" class="nav-link">Our Work</a>
+        <a href="#team" class="nav-link">Team</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-5">
+        <a data-bind-href="business.phoneLinkFull" href="tel:+919876543210" class="flex items-center gap-2 text-sm font-mono-tag" style="color:var(--chalk-dim);">
+          <span aria-hidden="true">☎</span> <span data-bind="business.phoneDisplay">+91 98765 43210</span>
+        </a>
+        <a href="#contact" class="btn btn-primary">Get a Quote</a>
+      </div>
+
+      <button id="menu-toggle" class="lg:hidden w-11 h-11 flex items-center justify-center border rounded" style="border-color:var(--steel-line);" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu lg:hidden border-t" style="border-color:var(--steel-line); background:var(--steel-dark);">
+    <nav class="flex flex-col px-5 py-4 gap-4" aria-label="Mobile">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#process" class="nav-link">How It Works</a>
+      <a href="#projects" class="nav-link">Our Work</a>
+      <a href="#team" class="nav-link">Team</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="#contact" class="btn btn-primary w-full mt-2">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- ============================= HERO ============================= -->
+<section class="steel-bg relative overflow-hidden pt-36 pb-20 md:pt-44 md:pb-28">
+  <div class="absolute inset-0 pointer-events-none opacity-40" style="background-image:radial-gradient(circle at 15% 20%, rgba(255,106,26,0.10), transparent 40%), radial-gradient(circle at 85% 75%, rgba(255,201,60,0.08), transparent 40%);"></div>
+
+  <div class="container mx-auto px-5 md:px-8 relative grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <p class="section-eyebrow mb-4" data-bind="hero.eyebrow">LICENSED · INSURED · ON CALL 7 DAYS</p>
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.95] mb-6">
+        <span data-bind="hero.headline1">Open The Toolbox.</span><br>
+        <span style="color:var(--safety-orange);" data-bind="hero.headline2">Get It Fixed Today.</span>
+      </h1>
+      <p class="text-lg max-w-xl mb-8" style="color:var(--chalk-dim);" data-bind="hero.subtext">From a dripping tap to a full home renovation — our crew shows up on time and quotes a fair fixed price.</p>
+      <div class="flex flex-wrap gap-4 mb-10">
+        <a href="#contact" class="btn btn-primary" data-bind="hero.ctaPrimary">Book a Tradesman</a>
+        <a href="#projects" class="btn btn-outline" data-bind="hero.ctaSecondary">See Our Work</a>
+      </div>
+
+      <!-- Job ticket strip -->
+      <div class="job-ticket inline-flex flex-wrap items-center gap-x-6 gap-y-2 px-4 py-3 rounded" style="color:var(--chalk-dim);">
+        <span>TICKET <span style="color:var(--chalk);" data-bind="hero.ticketNo">JC-2026-014</span></span>
+        <span class="hidden sm:inline">|</span>
+        <span data-bind="hero.trade">GENERAL CONTRACTING</span>
+        <span class="hidden sm:inline">|</span>
+        <span style="color:var(--caution-yellow);" data-bind="hero.status">AVAILABLE TODAY</span>
+        <span class="hidden sm:inline">|</span>
+        <span data-bind="hero.dispatch">YOUR CITY</span>
+      </div>
+    </div>
+
+    <!-- Toolbox illustration -->
+    <div class="relative" aria-hidden="true">
+      <svg viewBox="0 0 520 420" class="w-full h-auto max-w-lg mx-auto">
+        <!-- pegboard backdrop -->
+        <rect x="0" y="0" width="520" height="420" rx="14" fill="var(--pegboard)"></rect>
+        <g fill="var(--pegboard-dot)">
+          <!-- generated hole grid -->
+          <g id="peg-holes"></g>
+        </g>
+        <!-- hanging tools -->
+        <g class="tool-hang d1" transform="translate(90,60)">
+          <line x1="0" y1="0" x2="0" y2="18" stroke="var(--chalk-dim)" stroke-width="2"/>
+          <circle cx="0" cy="0" r="5" fill="var(--chalk-dim)"/>
+          <path d="M-22 18 L22 18 L14 70 Q0 82 -14 70 Z" fill="var(--safety-orange)"/>
+          <rect x="-6" y="55" width="12" height="34" rx="3" fill="#5c656b"/>
+        </g>
+        <g class="tool-hang d2" transform="translate(220,50)">
+          <line x1="0" y1="0" x2="0" y2="18" stroke="var(--chalk-dim)" stroke-width="2"/>
+          <circle cx="0" cy="0" r="5" fill="var(--chalk-dim)"/>
+          <rect x="-8" y="18" width="16" height="70" rx="4" fill="var(--oak-light)"/>
+          <rect x="-14" y="80" width="28" height="16" rx="3" fill="#8a939a"/>
+        </g>
+        <g class="tool-hang d3" transform="translate(350,65)">
+          <line x1="0" y1="0" x2="0" y2="18" stroke="var(--chalk-dim)" stroke-width="2"/>
+          <circle cx="0" cy="0" r="5" fill="var(--chalk-dim)"/>
+          <circle cx="0" cy="50" r="34" fill="none" stroke="var(--caution-yellow)" stroke-width="8"/>
+          <rect x="-5" y="18" width="10" height="20" fill="var(--caution-yellow)"/>
+        </g>
+        <g class="tool-hang d4" transform="translate(440,55)">
+          <line x1="0" y1="0" x2="0" y2="18" stroke="var(--chalk-dim)" stroke-width="2"/>
+          <circle cx="0" cy="0" r="5" fill="var(--chalk-dim)"/>
+          <rect x="-4" y="18" width="8" height="72" fill="#8a939a"/>
+          <path d="M-4 18 L4 18 L10 4 L-10 4 Z" fill="#c9d0d4"/>
+        </g>
+
+        <!-- open toolbox base -->
+        <g transform="translate(60,235)">
+          <rect x="0" y="0" width="400" height="150" rx="10" fill="var(--steel-mid)" stroke="var(--steel-line)" stroke-width="2"/>
+          <rect x="16" y="18" width="368" height="46" rx="6" fill="var(--steel-dark)"/>
+          <rect x="16" y="76" width="176" height="56" rx="6" fill="var(--oak)"/>
+          <rect x="208" y="76" width="176" height="56" rx="6" fill="var(--oak)"/>
+          <circle cx="200" cy="18" r="4" fill="var(--caution-yellow)"/>
+          <rect x="150" y="-14" width="100" height="20" rx="6" fill="var(--steel-line)"/>
+        </g>
+        <!-- drawn outline accent -->
+        <path class="hero-draw-in" d="M20 400 L500 400" stroke="var(--safety-orange)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= TRUSTED BY ============================= -->
+<section class="py-10 border-y" style="border-color:var(--steel-line); background:var(--steel-mid);">
+  <div class="container mx-auto px-5 md:px-8 mb-5">
+    <p class="section-eyebrow text-center">TRUSTED ON JOB SITES BY</p>
+  </div>
+  <div class="marquee-wrap overflow-hidden">
+    <div class="marquee-track" id="trusted-track"></div>
+  </div>
+</section>
+
+<!-- ============================= SERVICES ============================= -->
+<section id="services" class="pegboard-bg py-24">
+  <div class="container mx-auto px-5 md:px-8 relative">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="section-eyebrow mb-3">PULL OUT A DRAWER</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-4">Every Trade, One Toolbox</h2>
+      <p style="color:var(--chalk-dim);">Six drawers, six trades — each stocked with a licensed crew ready to open up and get to work.</p>
+    </div>
+    <div id="services-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- ============================= STATS ============================= -->
+<section class="steel-bg py-20 border-y" style="border-color:var(--steel-line);">
+  <div class="container mx-auto px-5 md:px-8 grid grid-cols-2 lg:grid-cols-4 gap-10 text-center" id="stats-grid"></div>
+</section>
+
+<!-- ============================= PROCESS ============================= -->
+<section id="process" class="pegboard-bg py-24">
+  <div class="container mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="section-eyebrow mb-3">HOW WE WORK</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-4">From First Call To Clean Handover</h2>
+      <p style="color:var(--chalk-dim);">A straightforward five-step sequence, the same on every job, so there are never any surprises.</p>
+    </div>
+    <div id="process-list" class="grid md:grid-cols-5 gap-6"></div>
+  </div>
+</section>
+
+<!-- ============================= PROJECTS ============================= -->
+<section id="projects" class="steel-bg py-24">
+  <div class="container mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="section-eyebrow mb-3">DRAG THE HANDLE</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-4">Before / After, In Your Hands</h2>
+      <p style="color:var(--chalk-dim);">Drag the yellow handle across each photo — left for before, right for after.</p>
+    </div>
+    <div id="projects-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+  </div>
+</section>
+
+<!-- ============================= WHY CHOOSE US ============================= -->
+<section class="pegboard-bg py-24">
+  <div class="container mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="section-eyebrow mb-3">WHY US</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-4">Built On A Fair Day's Work</h2>
+    </div>
+    <div id="whyus-grid" class="grid sm:grid-cols-2 gap-7"></div>
+  </div>
+</section>
+
+<!-- ============================= TESTIMONIALS ============================= -->
+<section class="steel-bg py-24">
+  <div class="container mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="section-eyebrow mb-3">JOB DOCKETS</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-4">Signed Off By Our Clients</h2>
+    </div>
+    <div id="testimonials-grid" class="grid md:grid-cols-3 gap-7"></div>
+  </div>
+</section>
+
+<!-- ============================= TEAM ============================= -->
+<section id="team" class="pegboard-bg py-24">
+  <div class="container mx-auto px-5 md:px-8">
+    <div class="max-w-2xl mb-14 reveal">
+      <p class="section-eyebrow mb-3">THE CREW</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-4">Hands You Can Trust On Site</h2>
+    </div>
+    <div id="team-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+  </div>
+</section>
+
+<!-- ============================= CTA BAND ============================= -->
+<section class="py-20 relative overflow-hidden" style="background:var(--safety-orange);">
+  <div class="absolute inset-0 opacity-10" style="background-image:repeating-linear-gradient(45deg, #000 0 2px, transparent 2px 22px);"></div>
+  <div class="container mx-auto px-5 md:px-8 relative text-center" style="color:var(--ink);">
+    <h2 class="font-display text-4xl md:text-5xl mb-4" data-bind="cta.headline">Got A Job That Needs Doing Right?</h2>
+    <p class="text-lg mb-8 max-w-xl mx-auto font-medium" data-bind="cta.subtext">Pull up a free quote in minutes.</p>
+    <a href="#contact" class="btn" style="background:var(--ink); color:var(--chalk); box-shadow:0 4px 0 #000;" data-bind="cta.buttonText">Get Your Free Quote</a>
+  </div>
+</section>
+
+<!-- ============================= CONTACT ============================= -->
+<section id="contact" class="steel-bg py-24">
+  <div class="container mx-auto px-5 md:px-8 grid lg:grid-cols-2 gap-14">
+    <div class="reveal">
+      <p class="section-eyebrow mb-3">GET IN TOUCH</p>
+      <h2 class="font-display text-4xl md:text-5xl mb-6">Request A Free Quote</h2>
+      <form id="contactForm" class="space-y-4" aria-label="Contact form">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="cf-name" class="block text-sm mb-1" style="color:var(--chalk-dim);">Full name</label>
+            <input id="cf-name" name="name" type="text" required placeholder="Your name">
+          </div>
+          <div>
+            <label for="cf-phone" class="block text-sm mb-1" style="color:var(--chalk-dim);">Phone number</label>
+            <input id="cf-phone" name="phone" type="tel" required placeholder="+91 98765 43210">
+          </div>
+        </div>
+        <div>
+          <label for="cf-service" class="block text-sm mb-1" style="color:var(--chalk-dim);">Service needed</label>
+          <select id="cf-service" name="service" class="w-full" style="background:var(--steel-dark); border:1px solid var(--steel-line); color:var(--chalk); border-radius:4px; padding:0.85rem 1rem;">
+            <option>Plumbing Repairs</option>
+            <option>Electrical Work</option>
+            <option>Carpentry & Furniture</option>
+            <option>Painting & Finishing</option>
+            <option>Masonry & Tiling</option>
+            <option>AC & Appliance Repair</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div>
+          <label for="cf-message" class="block text-sm mb-1" style="color:var(--chalk-dim);">Tell us about the job</label>
+          <textarea id="cf-message" name="message" rows="4" placeholder="What needs fixing?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-full sm:w-auto">Send Request</button>
+        <p id="cf-success" class="hidden text-sm mt-2" style="color:var(--caution-yellow);" role="status">Thanks — your job ticket has been logged. We'll call you shortly.</p>
+        <p class="text-xs pt-2" style="color:var(--chalk-dim);">This form currently shows a confirmation on-screen only. See Customization Guide.pdf, Chapter 17, to connect it to your inbox.</p>
+      </form>
+    </div>
+
+    <div class="reveal">
+      <div class="job-ticket rounded p-6 mb-6" style="background:var(--steel-mid);">
+        <p class="font-mono-tag text-xs mb-4" style="color:var(--chalk-dim);">BUSINESS TITLE BLOCK</p>
+        <dl class="space-y-3 text-sm">
+          <div class="flex justify-between gap-4"><dt style="color:var(--chalk-dim);">Business</dt><dd class="text-right" data-bind="business.name">YourBusiness Handyman & Trades Co.</dd></div>
+          <div class="flex justify-between gap-4"><dt style="color:var(--chalk-dim);">Address</dt><dd class="text-right"><span data-bind="business.addressLine1">Shop No. 12</span>, <span data-bind="business.addressLine2">Your Area</span>, <span data-bind="business.city">Your City</span>, <span data-bind="business.state">Your State</span> <span data-bind="business.pincode">000000</span></dd></div>
+          <div class="flex justify-between gap-4"><dt style="color:var(--chalk-dim);">Phone</dt><dd class="text-right" data-bind="business.phoneDisplay">+91 98765 43210</dd></div>
+          <div class="flex justify-between gap-4"><dt style="color:var(--chalk-dim);">Email</dt><dd class="text-right" data-bind="business.email">hello@yourdomain.com</dd></div>
+          <div class="flex justify-between gap-4"><dt style="color:var(--chalk-dim);">Hours</dt><dd class="text-right" data-bind="business.workingHours">Mon–Sat, 9:00 AM – 7:00 PM</dd></div>
+          <div class="flex justify-between gap-4"><dt style="color:var(--chalk-dim);">GSTIN</dt><dd class="text-right" data-bind="business.gstin">YOUR-GSTIN-NUMBER</dd></div>
+        </dl>
+        <div class="flex gap-3 mt-6">
+          <a data-bind-href="business.waLinkFull" href="#" target="_blank" rel="noopener" class="btn btn-primary flex-1 !text-xs">WhatsApp Us</a>
+          <a data-bind-href="business.phoneLinkFull" href="#" class="btn btn-outline flex-1 !text-xs">Call Now</a>
+        </div>
+      </div>
+      <div class="rounded overflow-hidden border" style="border-color:var(--steel-line);">
+        <iframe id="map-frame" src="" title="Business location map" width="100%" height="260" style="border:0; display:block;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="steel-bg border-t" style="border-color:var(--steel-line);">
+  <div class="container mx-auto px-5 md:px-8 pt-16 pb-8">
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-9 h-9 rounded flex items-center justify-center text-lg" style="background:var(--safety-orange);" aria-hidden="true">🧰</span>
+          <span class="font-display text-lg" data-bind="business.shortName">YourBusiness</span>
+        </div>
+        <p class="text-sm max-w-sm mb-4" style="color:var(--chalk-dim);" data-bind="footer.about">About text.</p>
+        <div class="flex gap-3" id="footer-socials"></div>
+      </div>
+      <div>
+        <p class="font-mono-tag text-xs mb-4" style="color:var(--caution-yellow);">SITEMAP</p>
+        <ul class="space-y-2 text-sm" style="color:var(--chalk-dim);">
+          <li><a href="#services" class="hover:text-white">Services</a></li>
+          <li><a href="#process" class="hover:text-white">How It Works</a></li>
+          <li><a href="#projects" class="hover:text-white">Our Work</a></li>
+          <li><a href="#team" class="hover:text-white">Team</a></li>
+          <li><a href="#contact" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-mono-tag text-xs mb-4" style="color:var(--caution-yellow);">SERVICES</p>
+        <ul class="space-y-2 text-sm" style="color:var(--chalk-dim);" id="footer-services"></ul>
+      </div>
+    </div>
+
+    <div class="border-t pt-6 flex flex-col gap-4" style="border-color:var(--steel-line);">
+      <div class="flex flex-col md:flex-row justify-between gap-3 text-xs" style="color:var(--chalk-dim);">
+        <p>© <span id="copyright-year">2026</span> <span data-bind="footer.copyrightName">YourBusiness Handyman & Trades Co.</span> · <span data-bind="business.registrationNote">Reg. No: YOUR-REGISTRATION-NUMBER</span></p>
+        <p data-bind="business.city">Your City</p>
+      </div>
+
+      <!-- Lifehut Branding Strip -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 border-t pt-5 mt-2" style="border-color:var(--steel-line);">
+        <p class="text-xs" style="color:var(--chalk-dim);">Website crafted &amp; powered by</p>
+        <a href="https://studio.lifehutsolutions.com/" target="_blank" rel="noopener" class="font-mono-tag text-xs tracking-widest px-4 py-2 rounded border transition-colors" style="border-color:var(--steel-line); color:var(--caution-yellow);">
+          LIFEHUT STUDIO ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =======================================================================
+   RENDER ENGINE — reads SITE (above) and populates the page.
+   No editing needed here for content changes — use the panel above.
+   ======================================================================= */
+(function(){
+  function getPath(obj, path){
+    return path.split('.').reduce((acc, key) => (acc == null ? undefined : acc[key]), obj);
+  }
+
+  function bindStatic(){
+    document.querySelectorAll('[data-bind]').forEach(el => {
+      const v = getPath(SITE, el.getAttribute('data-bind'));
+      if (v !== undefined) el.textContent = v;
+    });
+  }
+
+  // Derived / computed convenience fields
+  SITE.business.phoneLinkFull = 'tel:' + SITE.business.phoneLink;
+  SITE.business.waLinkFull = 'https://wa.me/' + SITE.business.whatsappLink;
+
+  document.querySelectorAll('[data-bind-href="business.phoneLinkFull"]').forEach(a => a.setAttribute('href', SITE.business.phoneLinkFull));
+  document.querySelectorAll('[data-bind-href="business.waLinkFull"]').forEach(a => a.setAttribute('href', SITE.business.waLinkFull));
+
+  document.getElementById('map-frame').src = SITE.business.mapEmbedUrl;
+  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  document.title = SITE.business.name + " | " + SITE.business.city + ", " + SITE.business.country;
+
+  // Canonical / meta sync (best-effort — edit head tags directly too, see guide)
+  const canon = document.querySelector('link[rel="canonical"]');
+  if (canon) canon.href = SITE.meta.canonicalUrl;
+
+  // ---- Pegboard holes generator ----
+  const holesGroup = document.getElementById('peg-holes');
+  if (holesGroup){
+    let holesSvg = '';
+    for(let x = 24; x < 500; x += 34){
+      for(let y = 24; y < 220; y += 34){
+        holesSvg += `<circle cx="${x}" cy="${y}" r="3"></circle>`;
+      }
+    }
+    holesGroup.innerHTML = holesSvg;
+  }
+
+  // ---- Trusted-by marquee ----
+  const track = document.getElementById('trusted-track');
+  const names = [...SITE.trustedBy, ...SITE.trustedBy]; // duplicate for seamless loop
+  track.innerHTML = names.map(n => `<span class="font-mono-tag text-sm whitespace-nowrap" style="color:var(--chalk-dim);">${n}</span>`).join('');
+
+  // ---- Services (drawers) ----
+  const servicesGrid = document.getElementById('services-grid');
+  servicesGrid.innerHTML = SITE.services.map(s => `
+    <div class="drawer-card p-6 reveal" tabindex="0">
+      <div class="flex items-center justify-between mb-5">
+        <span class="chip" style="color:var(--caution-yellow); border-color:var(--caution-yellow);">${s.code}</span>
+        <span class="drawer-handle" aria-hidden="true"></span>
+      </div>
+      <h3 class="font-display text-xl mb-2" style="letter-spacing:0.01em;">${s.title}</h3>
+      <p class="text-sm" style="color:var(--chalk-dim);">${s.description}</p>
+    </div>`).join('');
+
+  // ---- Stats ----
+  const statsGrid = document.getElementById('stats-grid');
+  statsGrid.innerHTML = SITE.stats.map((s,i) => `
+    <div class="reveal">
+      <p class="stat-num" data-count="${s.value}" data-suffix="${s.suffix}">0${s.suffix}</p>
+      <p class="text-xs font-mono-tag mt-2" style="color:var(--chalk-dim); letter-spacing:.06em;">${s.label.toUpperCase()}</p>
+    </div>`).join('');
+
+  // ---- Process ----
+  const processList = document.getElementById('process-list');
+  processList.innerHTML = SITE.process.map(p => `
+    <div class="process-step reveal">
+      <div class="process-num mb-4">${p.step}</div>
+      <h3 class="font-display text-lg mb-2">${p.title}</h3>
+      <p class="text-sm" style="color:var(--chalk-dim);">${p.description}</p>
+    </div>`).join('');
+
+  // ---- Projects (before/after drag slider) ----
+  const projectsGrid = document.getElementById('projects-grid');
+  projectsGrid.innerHTML = SITE.projects.map((p,i) => `
+    <div class="reveal">
+      <div class="ba-slider" data-slider="${i}">
+        <span class="ba-tag before">BEFORE</span>
+        <span class="ba-tag after">AFTER</span>
+        <img class="ba-before" src="${p.imageBefore}" alt="${p.name} before" draggable="false">
+        <img class="ba-after" src="${p.imageAfter}" alt="${p.name} after" draggable="false">
+        <div class="ba-handle"><div class="ba-grip" aria-hidden="true">⇔</div></div>
+      </div>
+      <div class="flex items-center justify-between mt-3">
+        <div>
+          <h3 class="font-display text-base leading-tight">${p.name}</h3>
+          <p class="text-xs font-mono-tag mt-1" style="color:var(--chalk-dim);">${p.category} · ${p.location} · ${p.year}</p>
+        </div>
+        <span class="chip" style="color:var(--chalk-dim);">${p.duration}</span>
+      </div>
+    </div>`).join('');
+
+  // ---- Why Us ----
+  const whyGrid = document.getElementById('whyus-grid');
+  whyGrid.innerHTML = SITE.whyUs.map(w => `
+    <div class="reveal flex gap-4 p-6 rounded" style="background:var(--steel-mid); border:1px solid var(--steel-line);">
+      <span class="rivet mt-1 flex-shrink-0" aria-hidden="true"></span>
+      <div>
+        <h3 class="font-display text-lg mb-2">${w.title}</h3>
+        <p class="text-sm" style="color:var(--chalk-dim);">${w.description}</p>
+      </div>
+    </div>`).join('');
+
+  // ---- Testimonials ----
+  const testGrid = document.getElementById('testimonials-grid');
+  testGrid.innerHTML = SITE.testimonials.map(t => `
+    <div class="ticket p-7 pl-9 reveal">
+      <p class="font-mono-tag text-[0.65rem] mb-4 opacity-60">JOB DOCKET · SIGNED</p>
+      <p class="text-base leading-relaxed mb-5" style="font-style:italic;">"${t.quote}"</p>
+      <p class="font-display text-sm">${t.name}</p>
+      <p class="text-xs opacity-70">${t.role}</p>
+    </div>`).join('');
+
+  // ---- Team ----
+  const teamGrid = document.getElementById('team-grid');
+  teamGrid.innerHTML = SITE.team.map(m => `
+    <div class="badge-card overflow-hidden reveal">
+      <img class="badge-photo w-full" src="${m.photo}" alt="${m.name}, ${m.role}" loading="lazy">
+      <div class="p-4">
+        <p class="badge-tag mb-1">${m.tag}</p>
+        <h3 class="font-display text-base leading-tight">${m.name}</h3>
+        <p class="text-xs" style="color:var(--chalk-dim);">${m.role}</p>
+      </div>
+    </div>`).join('');
+
+  // ---- Footer service list + socials ----
+  document.getElementById('footer-services').innerHTML = SITE.services.map(s => `<li>${s.title}</li>`).join('');
+  const socialIcons = { instagram:'IG', facebook:'FB', youtube:'YT', linkedin:'IN' };
+  const socialsWrap = document.getElementById('footer-socials');
+  Object.keys(SITE.business.socials).forEach(key => {
+    const url = SITE.business.socials[key];
+    if(!url) return;
+    const a = document.createElement('a');
+    a.href = url; a.target = '_blank'; a.rel = 'noopener';
+    a.className = 'w-9 h-9 rounded-full flex items-center justify-center text-[0.65rem] font-mono-tag border';
+    a.style.borderColor = 'var(--steel-line)'; a.style.color = 'var(--chalk-dim)';
+    a.textContent = socialIcons[key] || key.slice(0,2).toUpperCase();
+    a.setAttribute('aria-label', key);
+    socialsWrap.appendChild(a);
+  });
+
+  bindStatic();
+
+  // ---- Header scroll state ----
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.style.padding = window.scrollY > 40 ? '0' : '';
+  });
+
+  // ---- Mobile menu ----
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuToggle.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // ---- Scroll reveal ----
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // ---- Count-up stats ----
+  const statNums = document.querySelectorAll('.stat-num');
+  const countIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        const el = entry.target;
+        const target = parseFloat(el.getAttribute('data-count'));
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1400;
+        const start = performance.now();
+        function tick(now){
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(target * eased);
+          el.textContent = current + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        countIo.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  statNums.forEach(el => countIo.observe(el));
+
+  // ---- Before / After drag sliders ----
+  document.querySelectorAll('.ba-slider').forEach(slider => {
+    const after = slider.querySelector('.ba-after');
+    const handle = slider.querySelector('.ba-handle');
+    let dragging = false;
+
+    function setPos(clientX){
+      const rect = slider.getBoundingClientRect();
+      let pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(0, Math.min(100, pct));
+      after.style.clipPath = `inset(0 0 0 ${pct}%)`;
+      handle.style.left = pct + '%';
+    }
+
+    function down(e){ dragging = true; setPos((e.touches ? e.touches[0].clientX : e.clientX)); }
+    function move(e){ if(!dragging) return; setPos((e.touches ? e.touches[0].clientX : e.clientX)); }
+    function up(){ dragging = false; }
+
+    slider.addEventListener('mousedown', down);
+    slider.addEventListener('touchstart', down, {passive:true});
+    window.addEventListener('mousemove', move);
+    window.addEventListener('touchmove', move, {passive:true});
+    window.addEventListener('mouseup', up);
+    window.addEventListener('touchend', up);
+
+    // keyboard accessible: focus + arrow keys
+    slider.setAttribute('tabindex', '0');
+    slider.setAttribute('role', 'slider');
+    slider.setAttribute('aria-label', 'Drag to compare before and after photos');
+    slider.setAttribute('aria-valuemin', '0');
+    slider.setAttribute('aria-valuemax', '100');
+    slider.setAttribute('aria-valuenow', '50');
+    let currentPct = 50;
+    slider.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') currentPct = Math.max(0, currentPct - 5);
+      else if (e.key === 'ArrowRight') currentPct = Math.min(100, currentPct + 5);
+      else return;
+      after.style.clipPath = `inset(0 0 0 ${currentPct}%)`;
+      handle.style.left = currentPct + '%';
+      slider.setAttribute('aria-valuenow', String(currentPct));
+      e.preventDefault();
+    });
+  });
+
+  // ---- Hero mouse parallax on hanging tools ----
+  const heroTools = document.querySelectorAll('.tool-hang');
+  document.addEventListener('mousemove', (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 6;
+    heroTools.forEach(t => t.style.setProperty('--mx', x + 'deg'));
+  });
+
+  // ---- Contact form (front-end only demo) ----
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('cf-success');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    success.classList.remove('hidden');
+    form.reset();
+  });
+
+})();
+</script>
+
+</body>
+</html>
